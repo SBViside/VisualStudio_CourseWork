@@ -37,9 +37,18 @@
             this.посикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запросВручнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.товарыBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shopBDDataSet = new dns.shopBDDataSet();
-            this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.addPanel = new System.Windows.Forms.Panel();
+            this.priceTextBox = new System.Windows.Forms.NumericUpDown();
+            this.countTextBox = new System.Windows.Forms.NumericUpDown();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,31 +59,18 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.currUserLabel = new System.Windows.Forms.ToolStripLabel();
-            this.товарыTableAdapter = new dns.shopBDDataSetTableAdapters.товарыTableAdapter();
-            this.addPanel = new System.Windows.Forms.Panel();
-            this.priceTextBox = new System.Windows.Forms.NumericUpDown();
-            this.countTextBox = new System.Windows.Forms.NumericUpDown();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.типыBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.типыTableAdapter = new dns.shopBDDataSetTableAdapters.типыTableAdapter();
+            this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
-            this.bindingNavigator.SuspendLayout();
             this.addPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
+            this.bindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -132,8 +128,14 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
@@ -144,120 +146,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(882, 525);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
-            // 
-            // товарыBindingSource
-            // 
-            this.товарыBindingSource.DataMember = "товары";
-            this.товарыBindingSource.DataSource = this.shopBDDataSet;
-            // 
-            // shopBDDataSet
-            // 
-            this.shopBDDataSet.DataSetName = "shopBDDataSet";
-            this.shopBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingNavigator
-            // 
-            this.bindingNavigator.AddNewItem = null;
-            this.bindingNavigator.CountItem = null;
-            this.bindingNavigator.DeleteItem = null;
-            this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorAddNewItem,
-            this.toolStripSeparator1,
-            this.bindingNavigatorDelete,
-            this.toolStripSeparator2,
-            this.refreshButton,
-            this.toolStripSeparator3,
-            this.toolStripButton1,
-            this.toolStripSeparator4,
-            this.currUserLabel});
-            this.bindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.bindingNavigator.Location = new System.Drawing.Point(0, 526);
-            this.bindingNavigator.MoveFirstItem = null;
-            this.bindingNavigator.MoveLastItem = null;
-            this.bindingNavigator.MoveNextItem = null;
-            this.bindingNavigator.MovePreviousItem = null;
-            this.bindingNavigator.Name = "bindingNavigator";
-            this.bindingNavigator.PositionItem = null;
-            this.bindingNavigator.Size = new System.Drawing.Size(882, 27);
-            this.bindingNavigator.TabIndex = 3;
-            this.bindingNavigator.Text = "bindingNavigator";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(100, 24);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorDelete
-            // 
-            this.bindingNavigatorDelete.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDelete.Image")));
-            this.bindingNavigatorDelete.Name = "bindingNavigatorDelete";
-            this.bindingNavigatorDelete.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDelete.Size = new System.Drawing.Size(89, 24);
-            this.bindingNavigatorDelete.Text = "Удалить";
-            this.bindingNavigatorDelete.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
-            this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(102, 24);
-            this.refreshButton.Text = "Обновить";
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(102, 24);
-            this.toolStripButton1.Text = "Изменить";
-            this.toolStripButton1.ToolTipText = "Изменить";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // currUserLabel
-            // 
-            this.currUserLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.currUserLabel.Name = "currUserLabel";
-            this.currUserLabel.Size = new System.Drawing.Size(107, 24);
-            this.currUserLabel.Text = "Пользователь";
-            // 
-            // товарыTableAdapter
-            // 
-            this.товарыTableAdapter.ClearBeforeFill = true;
             // 
             // addPanel
             // 
@@ -335,7 +223,6 @@
             // 
             // typeComboBox
             // 
-            this.typeComboBox.DataSource = this.типыBindingSource;
             this.typeComboBox.DisplayMember = "название_типа";
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
@@ -344,11 +231,6 @@
             this.typeComboBox.Size = new System.Drawing.Size(167, 24);
             this.typeComboBox.TabIndex = 9;
             this.typeComboBox.ValueMember = "название_типа";
-            // 
-            // типыBindingSource
-            // 
-            this.типыBindingSource.DataMember = "типы";
-            this.типыBindingSource.DataSource = this.shopBDDataSet;
             // 
             // label5
             // 
@@ -403,9 +285,143 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ввод данных:";
             // 
-            // типыTableAdapter
+            // bindingNavigatorSeparator1
             // 
-            this.типыTableAdapter.ClearBeforeFill = true;
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(100, 24);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorDelete
+            // 
+            this.bindingNavigatorDelete.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDelete.Image")));
+            this.bindingNavigatorDelete.Name = "bindingNavigatorDelete";
+            this.bindingNavigatorDelete.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDelete.Size = new System.Drawing.Size(89, 24);
+            this.bindingNavigatorDelete.Text = "Удалить";
+            this.bindingNavigatorDelete.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
+            this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(102, 24);
+            this.refreshButton.Text = "Обновить";
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(102, 24);
+            this.toolStripButton1.Text = "Изменить";
+            this.toolStripButton1.ToolTipText = "Изменить";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // currUserLabel
+            // 
+            this.currUserLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.currUserLabel.Name = "currUserLabel";
+            this.currUserLabel.Size = new System.Drawing.Size(107, 24);
+            this.currUserLabel.Text = "Пользователь";
+            // 
+            // bindingNavigator
+            // 
+            this.bindingNavigator.AddNewItem = null;
+            this.bindingNavigator.CountItem = null;
+            this.bindingNavigator.DeleteItem = null;
+            this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorAddNewItem,
+            this.toolStripSeparator1,
+            this.bindingNavigatorDelete,
+            this.toolStripSeparator2,
+            this.refreshButton,
+            this.toolStripSeparator3,
+            this.toolStripButton1,
+            this.toolStripSeparator4,
+            this.currUserLabel});
+            this.bindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.bindingNavigator.Location = new System.Drawing.Point(0, 526);
+            this.bindingNavigator.MoveFirstItem = null;
+            this.bindingNavigator.MoveLastItem = null;
+            this.bindingNavigator.MoveNextItem = null;
+            this.bindingNavigator.MovePreviousItem = null;
+            this.bindingNavigator.Name = "bindingNavigator";
+            this.bindingNavigator.PositionItem = null;
+            this.bindingNavigator.Size = new System.Drawing.Size(882, 27);
+            this.bindingNavigator.TabIndex = 3;
+            this.bindingNavigator.Text = "bindingNavigator";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 25.95899F;
+            this.Column2.HeaderText = "Название";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.FillWeight = 25.95899F;
+            this.Column3.HeaderText = "Тип";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.FillWeight = 288.4332F;
+            this.Column4.HeaderText = "Количество";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 130;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.FillWeight = 25.95899F;
+            this.Column5.HeaderText = "Стоимость";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 130;
             // 
             // Items
             // 
@@ -422,20 +438,17 @@
             this.Name = "Items";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товары";
-            this.Load += new System.EventHandler(this.Items_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Items_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
-            this.bindingNavigator.ResumeLayout(false);
-            this.bindingNavigator.PerformLayout();
             this.addPanel.ResumeLayout(false);
             this.addPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
+            this.bindingNavigator.ResumeLayout(false);
+            this.bindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,17 +459,6 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
-        private System.Windows.Forms.BindingNavigator bindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDelete;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private shopBDDataSet shopBDDataSet;
-        private System.Windows.Forms.BindingSource товарыBindingSource;
-        private shopBDDataSetTableAdapters.товарыTableAdapter товарыTableAdapter;
-        private System.Windows.Forms.ToolStripButton refreshButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem действияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem посикToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem запросВручнуюToolStripMenuItem;
@@ -470,13 +472,23 @@
         private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource типыBindingSource;
-        private shopBDDataSetTableAdapters.типыTableAdapter типыTableAdapter;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.NumericUpDown priceTextBox;
         private System.Windows.Forms.NumericUpDown countTextBox;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton refreshButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripLabel currUserLabel;
+        private System.Windows.Forms.BindingNavigator bindingNavigator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

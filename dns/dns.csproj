@@ -78,11 +78,6 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="shopBDDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>shopBDDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UpdateDataForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,17 +110,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="shopBDDataSet.xsc">
-      <DependentUpon>shopBDDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="shopBDDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>shopBDDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="shopBDDataSet.xss">
-      <DependentUpon>shopBDDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -135,9 +119,6 @@
     <None Include="img\floppy-disk-4567213_960_720.png" />
     <None Include="img\Refresh_icon.png" />
     <None Include="img\1827175.png" />
-    <Content Include="shopBD.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="img\plus-31216_1280.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

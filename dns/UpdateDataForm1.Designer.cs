@@ -39,13 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.countTextBox = new System.Windows.Forms.NumericUpDown();
             this.priceTextBox = new System.Windows.Forms.NumericUpDown();
-            this.shopBDDataSet = new dns.shopBDDataSet();
-            this.типыBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.типыTableAdapter = new dns.shopBDDataSetTableAdapters.типыTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.countTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -69,8 +64,7 @@
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // typeComboBox
-            // 
-            this.typeComboBox.DataSource = this.типыBindingSource;
+            //
             this.typeComboBox.DisplayMember = "название_типа";
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
@@ -154,21 +148,7 @@
             this.priceTextBox.Size = new System.Drawing.Size(78, 22);
             this.priceTextBox.TabIndex = 13;
             this.priceTextBox.ThousandsSeparator = true;
-            // 
-            // shopBDDataSet
-            // 
-            this.shopBDDataSet.DataSetName = "shopBDDataSet";
-            this.shopBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // типыBindingSource
-            // 
-            this.типыBindingSource.DataMember = "типы";
-            this.типыBindingSource.DataSource = this.shopBDDataSet;
-            // 
-            // типыTableAdapter
-            // 
-            this.типыTableAdapter.ClearBeforeFill = true;
-            // 
+            //
             // UpdateDataForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,8 +173,6 @@
             this.Load += new System.EventHandler(this.UpdateDataForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,8 +190,5 @@
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.NumericUpDown countTextBox;
         public System.Windows.Forms.NumericUpDown priceTextBox;
-        private shopBDDataSet shopBDDataSet;
-        private System.Windows.Forms.BindingSource типыBindingSource;
-        private shopBDDataSetTableAdapters.типыTableAdapter типыTableAdapter;
     }
 }

@@ -18,13 +18,8 @@ namespace dns
         {
             InitializeComponent();
             form = f;
-
-            //for (int i = 0; i < this.typeComboBox.Items.Count; i++)
-            //    if (this.typeComboBox.Items[i] == form.dataGridView1.CurrentRow.Cells[2].Value.ToString())
-            //    {
-            //        this.typeComboBox.SelectedIndex = i;
-            //        break;
-            //    }
+            // Запись данных в typeComboBox
+            form.SetDataIntoList(typeComboBox);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -34,14 +29,13 @@ namespace dns
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            // Вызов метода UpdateData из главной формы
             form.UpdateData(nameTextBox.Text, typeComboBox.SelectedIndex + 1, (int)countTextBox.Value, (int)priceTextBox.Value);
             this.Close();
         }
 
         private void UpdateDataForm1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'shopBDDataSet.типы' table. You can move, or remove it, as needed.
-            this.типыTableAdapter.Fill(this.shopBDDataSet.типы);
 
         }
     }

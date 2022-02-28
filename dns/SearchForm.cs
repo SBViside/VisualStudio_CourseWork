@@ -22,7 +22,7 @@ namespace dns
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            form.Search(wordTextBox.Text, typeComboBox.SelectedIndex+1, checkRegister.Checked);
+            form.Search(wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
             this.Close();
         }
 

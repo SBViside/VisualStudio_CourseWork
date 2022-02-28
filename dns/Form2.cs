@@ -8,18 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Configuration;
 
 namespace dns
 {
     public partial class Items : Form
     {
-        public string connectionString = ConfigurationManager.ConnectionStrings["dns.Properties.Settings.shopBDConnectionString"].ConnectionString;
+        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        private OleDbConnection myConnection;
 
         public Items(string log)
         {
             InitializeComponent();
             currUserLabel.Text = log;
+
+            // Подлючение к БД
+            myConnection = new OleDbConnection(connectionString);
+            myConnection.Open();
+
+            // Заполнение таблицы
+            TableRefresh();
+
+            // Заполнение ComboBox
+            SetDataIntoList(typeComboBox);
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,25 +37,22 @@ namespace dns
             Application.Exit();
         }
 
-        private void Items_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'shopBDDataSet.типы' table. You can move, or remove it, as needed.
-            this.типыTableAdapter.Fill(this.shopBDDataSet.типы);
-            TableRefresh();
-        }
-
+        // Метод обновления данных в таблице
         private void TableRefresh()
         {
             try
             {
-                string query = "SELECT товары.код_товара as Код, товары.название as Название, типы.название_типа as Тип, товары.количество as Количество, товары.стоимость as Стоимость FROM типы INNER JOIN товары ON типы.код_типа = товары.код_типа";
-                using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connectionString))
-                {
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
-                }
-                dataGridView1.Columns[0].Width = 40;
+                dataGridView1.Rows.Clear();
+                // Строка запроса к БД
+                string query = "SELECT товары.название, типы.название_типа, товары.количество, товары.стоимость FROM типы INNER JOIN товары ON типы.код_типа = товары.код_типа";
+                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                OleDbDataReader dbReader = command.ExecuteReader();   // Считываю данные
+
+                // Загрузка данных в таблицу
+                while (dbReader.Read())
+                    dataGridView1.Rows.Add(dbReader["название"], dbReader["название_типа"], dbReader["количество"], dbReader["стоимость"]);
+
+                dbReader.Close();
             }
             catch (Exception ex)
             {
@@ -55,6 +62,7 @@ namespace dns
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            // Вызов метода обновления данных
             TableRefresh();
         }
 
@@ -66,12 +74,12 @@ namespace dns
                 // Окно подтверждения
                 if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    // Строка запроса к БД
                     string query = $"DELETE FROM товары WHERE код_товара={dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value}";
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connectionString))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                    }
+                    OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                    command.ExecuteNonQuery();  // Выполняю запрос
+
+                    // Обновление таблицы
                     TableRefresh();
                 }
             }
@@ -94,13 +102,12 @@ namespace dns
             TableRefresh();
         }
 
+        // Метод очистки полей ввода
         private void ClearData()
         {
-            button1.Text = "Добавить";
-            // Метод очистки полей ввода
             nameTextBox.Clear();
-            countTextBox.Value = 0;
-            priceTextBox.Value = 0;
+            countTextBox.Value = 1;
+            priceTextBox.Value = 1;
             typeComboBox.SelectedIndex = 0;
         }
 
@@ -117,12 +124,15 @@ namespace dns
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
+            // Выделяет всю строку по клику на ячейку dataGridView
             dataGridView1.CurrentRow.Selected = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (nameTextBox.Text == "" || countTextBox.Value <= 0 || priceTextBox.Value <= 0)
+            if (nameTextBox.Text == "" || 
+                countTextBox.Value <= 0 || 
+                priceTextBox.Value <= 0)
             {
                 MessageBox.Show("Проверьте введённые данные.", "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -131,12 +141,12 @@ namespace dns
             // Добавление новой записи в таблицу
             try
             {
+                // Строка запроса к БД
                 string query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {typeComboBox.SelectedIndex + 1}, {countTextBox.Value}, {priceTextBox.Value})";
-                using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connectionString))
-                {
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                }
+                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                command.ExecuteNonQuery();  // Выполняю запрос
+
+                // Обновление таблицы
                 TableRefresh();
             }
             catch (Exception ex)
@@ -160,10 +170,10 @@ namespace dns
 
             UpdateDataForm1 udf = new UpdateDataForm1(this);
             DataGridViewRow curRow = dataGridView1.CurrentRow;
-            udf.Text = $"Изменение {curRow.Cells[1].Value.ToString()}";
-            udf.nameTextBox.Text = curRow.Cells[1].Value.ToString();
-            udf.countTextBox.Value = int.Parse(curRow.Cells[3].Value.ToString());
-            udf.priceTextBox.Value = int.Parse(curRow.Cells[4].Value.ToString());
+            udf.Text = $"Изменение {curRow.Cells[0].Value.ToString()}";
+            udf.nameTextBox.Text = curRow.Cells[0].Value.ToString();
+            udf.countTextBox.Value = int.Parse(curRow.Cells[2].Value.ToString());
+            udf.priceTextBox.Value = int.Parse(curRow.Cells[3].Value.ToString());
             udf.ShowDialog();
         }
 
@@ -197,14 +207,15 @@ namespace dns
 
         public void UpdateData(string name, int type, double count, double price)
         {
+            // Изменение данных в таблице
             try
             {
+                // Строка запроса к БД
                 string query = $"UPDATE товары SET код_типа = {type}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
-                using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connectionString))
-                {
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                }
+                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                command.ExecuteNonQuery();  // Выполняю запрос
+
+                // Обновление таблицы
                 TableRefresh();
             }
             catch (Exception ex)
@@ -216,10 +227,35 @@ namespace dns
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchForm sf = new SearchForm(this);
-            for (int i = 1; i < dataGridView1.ColumnCount; i++) 
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
             sf.typeComboBox.SelectedIndex = 0;
             sf.ShowDialog();
+        }
+
+        private void Items_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            myConnection.Close();
+        }
+
+        // Метод загрузки данных в ComboBox
+        public void SetDataIntoList(ComboBox cb)
+        {
+            try
+            {
+                // Строка запроса к БД
+                string query = $"SELECT название_типа FROM типы";
+                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                OleDbDataReader dbReader = command.ExecuteReader();
+                
+                // Запись данных
+                while (dbReader.Read())
+                    cb.Items.Add(dbReader["название_типа"]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
