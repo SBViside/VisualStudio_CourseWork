@@ -1,0 +1,30 @@
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\bin\Debug\dns.exe.config
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\bin\Debug\dns.exe
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\bin\Debug\dns.pdb
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.Properties.Resources.resources
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.exe
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.pdb
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.Form1.resources
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.items.resources
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\bin\Debug\shopBD.accdb
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.SearchForm.resources
+C:\Users\HP\Desktop\курсовая Магазин электроники\project\dns\dns\obj\Debug\dns.UpdateDataForm1.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\bin\Debug\shopBD.accdb
+C:\Users\HP\Desktop\COURSEWOK\project\dns\bin\Debug\dns.exe.config
+C:\Users\HP\Desktop\COURSEWOK\project\dns\bin\Debug\dns.exe
+C:\Users\HP\Desktop\COURSEWOK\project\dns\bin\Debug\dns.pdb
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.Form1.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.Items.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.Properties.Resources.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.SearchForm.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.UpdateDataForm1.resources
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.exe
+C:\Users\HP\Desktop\COURSEWOK\project\dns\obj\Debug\dns.pdb
