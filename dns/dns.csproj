@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="img\product.png" />
     <None Include="img\floppy-disk-4567213_960_720.png" />
     <None Include="img\Refresh_icon.png" />
     <None Include="img\1827175.png" />

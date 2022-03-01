@@ -75,7 +75,7 @@ namespace dns
                 if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // Строка запроса к БД
-                    string query = $"DELETE FROM товары WHERE код_товара={dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value}";
+                    string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
                     OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                     command.ExecuteNonQuery();  // Выполняю запрос
 
@@ -130,8 +130,8 @@ namespace dns
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (nameTextBox.Text == "" || 
-                countTextBox.Value <= 0 || 
+            if (nameTextBox.Text == "" ||
+                countTextBox.Value <= 0 ||
                 priceTextBox.Value <= 0)
             {
                 MessageBox.Show("Проверьте введённые данные.", "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -168,7 +168,11 @@ namespace dns
                 return;
             }
 
-            UpdateDataForm1 udf = new UpdateDataForm1(this);
+            // Строка запроса к БД
+            string query = $"SELECT код_типа FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}'";
+            OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+
+            UpdateDataForm1 udf = new UpdateDataForm1(this, int.Parse(command.ExecuteScalar().ToString()) - 1);
             DataGridViewRow curRow = dataGridView1.CurrentRow;
             udf.Text = $"Изменение {curRow.Cells[0].Value.ToString()}";
             udf.nameTextBox.Text = curRow.Cells[0].Value.ToString();
@@ -247,7 +251,7 @@ namespace dns
                 string query = $"SELECT название_типа FROM типы";
                 OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                 OleDbDataReader dbReader = command.ExecuteReader();
-                
+
                 // Запись данных
                 while (dbReader.Read())
                     cb.Items.Add(dbReader["название_типа"]);

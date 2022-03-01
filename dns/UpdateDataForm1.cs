@@ -14,12 +14,13 @@ namespace dns
     {
         private Items form;
 
-        public UpdateDataForm1(Items f)
+        public UpdateDataForm1(Items f, int index)
         {
             InitializeComponent();
             form = f;
             // Запись данных в typeComboBox
             form.SetDataIntoList(typeComboBox);
+            typeComboBox.SelectedIndex = index;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

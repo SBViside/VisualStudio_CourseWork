@@ -98,9 +98,9 @@
             // 
             // executeButton
             // 
-            this.executeButton.Location = new System.Drawing.Point(100, 168);
+            this.executeButton.Location = new System.Drawing.Point(100, 166);
             this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(102, 23);
+            this.executeButton.Size = new System.Drawing.Size(102, 28);
             this.executeButton.TabIndex = 4;
             this.executeButton.Text = "Выполнить";
             this.executeButton.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(209, 168);
+            this.cancelButton.Location = new System.Drawing.Point(209, 166);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(102, 23);
+            this.cancelButton.Size = new System.Drawing.Size(102, 28);
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Отменить";
             this.cancelButton.UseVisualStyleBackColor = true;
