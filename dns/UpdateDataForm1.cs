@@ -12,9 +12,9 @@ namespace dns
 {
     public partial class UpdateDataForm1 : Form
     {
-        private Items form;
+        private ItemsForm form;
 
-        public UpdateDataForm1(Items f, int index)
+        public UpdateDataForm1(ItemsForm f, int index)
         {
             InitializeComponent();
             form = f;

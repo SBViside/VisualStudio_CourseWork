@@ -11,12 +11,12 @@ using System.Data.OleDb;
 
 namespace dns
 {
-    public partial class Items : Form
+    public partial class ItemsForm : Form
     {
         private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
         private OleDbConnection myConnection;
 
-        public Items(string log)
+        public ItemsForm(string log)
         {
             InitializeComponent();
             currUserLabel.Text = "Вход выполнен: " + log;
@@ -260,6 +260,20 @@ namespace dns
             {
                 MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void слеваToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPanel.Dock = DockStyle.Left;
+            слеваToolStripMenuItem.Checked = true;
+            справаToolStripMenuItem.Checked = false;
+        }
+
+        private void справаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPanel.Dock = DockStyle.Right;
+            справаToolStripMenuItem.Checked = true;
+            слеваToolStripMenuItem.Checked = false;
         }
     }
 }

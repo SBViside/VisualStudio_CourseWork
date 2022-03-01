@@ -36,7 +36,7 @@ namespace dns
         private void itemsButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
-            Items itemsForm = new Items(loginTextBox.Text);
+            ItemsForm itemsForm = new ItemsForm(loginTextBox.Text);
             this.Hide();
             itemsForm.ShowDialog();
             this.Show();
