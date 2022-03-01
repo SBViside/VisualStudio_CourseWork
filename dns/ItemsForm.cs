@@ -275,5 +275,29 @@ namespace dns
             справаToolStripMenuItem.Checked = true;
             слеваToolStripMenuItem.Checked = false;
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 30;
+            height_30.Checked = true;
+            height_40.Checked = false;
+            height_50.Checked = false;
+        }
+
+        private void height_40_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 40;
+            height_30.Checked = false;
+            height_40.Checked = true;
+            height_50.Checked = false;
+        }
+
+        private void height_50_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 50;
+            height_30.Checked = false;
+            height_40.Checked = false;
+            height_50.Checked = true;
+        }
     }
 }

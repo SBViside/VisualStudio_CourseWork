@@ -37,7 +37,7 @@ namespace dns
         {
             if (!CheckLogin()) return;
             ItemsForm itemsForm = new ItemsForm(loginTextBox.Text);
-            this.Hide();
+            //this.Hide();
             itemsForm.ShowDialog();
             this.Show();
         }
@@ -70,13 +70,13 @@ namespace dns
 
         private void itemsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'товар' (электронная техника) содержит информацию о продаваемых товарах, их категориях, количестве и цене за единицу товара.";
+            string desc = "База данных 'Товар' (электронная техника) содержит информацию о продаваемых товарах, их категориях, количестве и цене за единицу товара.";
             LabelDescription.Text = desc;
         }
 
         private void clientsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "CLIENTS";
+            string desc = "База данных 'Клиенты' содержит информацию о клиентах, которые хотя бы раз совершали покупку в нашем магазине. Мы записываем ФИО, возраст и телефон (для уведомления о скидках) клиента.";
             LabelDescription.Text = desc;
         }
 
