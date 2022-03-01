@@ -19,7 +19,7 @@ namespace dns
         public Items(string log)
         {
             InitializeComponent();
-            currUserLabel.Text = log;
+            currUserLabel.Text = "Вход выполнен: " + log;
 
             // Подлючение к БД
             myConnection = new OleDbConnection(connectionString);

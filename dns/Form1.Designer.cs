@@ -1,6 +1,6 @@
 ﻿namespace dns
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.itemsButton = new System.Windows.Forms.Button();
             this.clientsButton = new System.Windows.Forms.Button();
@@ -37,21 +37,27 @@
             this.employeesButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LabelWarning = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LabelDescription = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginTextBox
@@ -65,6 +71,8 @@
             this.itemsButton.Name = "itemsButton";
             this.itemsButton.UseVisualStyleBackColor = true;
             this.itemsButton.Click += new System.EventHandler(this.itemsButton_Click);
+            this.itemsButton.MouseEnter += new System.EventHandler(this.itemsButton_MouseEnter);
+            this.itemsButton.MouseLeave += new System.EventHandler(this.itemsButton_MouseLeave);
             // 
             // clientsButton
             // 
@@ -72,6 +80,8 @@
             this.clientsButton.Name = "clientsButton";
             this.clientsButton.UseVisualStyleBackColor = true;
             this.clientsButton.Click += new System.EventHandler(this.clientsButton_Click);
+            this.clientsButton.MouseEnter += new System.EventHandler(this.clientsButton_MouseEnter);
+            this.clientsButton.MouseLeave += new System.EventHandler(this.clientsButton_MouseLeave);
             // 
             // ordersButton
             // 
@@ -79,6 +89,8 @@
             this.ordersButton.Name = "ordersButton";
             this.ordersButton.UseVisualStyleBackColor = true;
             this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
+            this.ordersButton.MouseEnter += new System.EventHandler(this.ordersButton_MouseEnter);
+            this.ordersButton.MouseLeave += new System.EventHandler(this.ordersButton_MouseLeave);
             // 
             // employeesButton
             // 
@@ -86,6 +98,8 @@
             this.employeesButton.Name = "employeesButton";
             this.employeesButton.UseVisualStyleBackColor = true;
             this.employeesButton.Click += new System.EventHandler(this.employeesButton_Click);
+            this.employeesButton.MouseEnter += new System.EventHandler(this.employeesButton_MouseEnter);
+            this.employeesButton.MouseLeave += new System.EventHandler(this.employeesButton_MouseLeave);
             // 
             // label1
             // 
@@ -106,17 +120,11 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBox4
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -124,28 +132,38 @@
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
+            // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // panel2
+            // label4
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.loginTextBox);
-            this.panel2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Name = "label3";
             // 
             // label2
             // 
@@ -153,7 +171,37 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Name = "label2";
             // 
-            // Form1
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.LabelWarning);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.loginTextBox);
+            this.panel2.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // LabelWarning
+            // 
+            resources.ApplyResources(this.LabelWarning, "LabelWarning");
+            this.LabelWarning.ForeColor = System.Drawing.Color.Red;
+            this.LabelWarning.Name = "LabelWarning";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.LabelDescription);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // LabelDescription
+            // 
+            resources.ApplyResources(this.LabelDescription, "LabelDescription");
+            this.LabelDescription.Name = "LabelDescription";
+            // 
+            // MainMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,16 +209,17 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -191,6 +240,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label LabelDescription;
+        private System.Windows.Forms.Label LabelWarning;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
