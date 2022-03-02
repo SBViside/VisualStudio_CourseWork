@@ -37,7 +37,7 @@ namespace dns
         {
             if (!CheckLogin()) return;
             ItemsForm itemsForm = new ItemsForm(loginTextBox.Text);
-            //this.Hide();
+            this.Hide();
             itemsForm.ShowDialog();
             this.Show();
         }
@@ -70,7 +70,7 @@ namespace dns
 
         private void itemsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Товар' (электронная техника) содержит информацию о продаваемых товарах, их категориях, количестве и цене за единицу товара.";
+            string desc = "База данных 'Товары' (электронная техника) содержит информацию о продаваемых товарах, их категориях, количестве и цене за единицу товара.";
             LabelDescription.Text = desc;
         }
 

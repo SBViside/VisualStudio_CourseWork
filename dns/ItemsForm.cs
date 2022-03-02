@@ -13,8 +13,8 @@ namespace dns
 {
     public partial class ItemsForm : Form
     {
-        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
-        private OleDbConnection myConnection;
+        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public OleDbConnection myConnection;
 
         public ItemsForm(string log)
         {
@@ -247,6 +247,7 @@ namespace dns
         {
             try
             {
+                cb.Items.Clear();
                 // Строка запроса к БД
                 string query = $"SELECT название_типа FROM типы";
                 OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
@@ -298,6 +299,13 @@ namespace dns
             height_30.Checked = false;
             height_40.Checked = false;
             height_50.Checked = true;
+        }
+
+        private void редакторКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TypeEditor te = new TypeEditor(this);
+            te.ShowDialog();
+            SetDataIntoList(typeComboBox);
         }
     }
 }
