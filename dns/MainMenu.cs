@@ -45,6 +45,10 @@ namespace dns
         private void clientsButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+            ClientsForm clientsForm = new ClientsForm(loginTextBox.Text);
+            this.Hide();
+            clientsForm.ShowDialog();
+            this.Show();
         }
 
         private void ordersButton_Click(object sender, EventArgs e)

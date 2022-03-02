@@ -175,34 +175,6 @@ namespace dns
             udf.ShowDialog();
         }
 
-        public void Search(string keyWord, int col, bool reg)
-        {
-            string currWord;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                currWord = dataGridView1.Rows[i].Cells[col].Value.ToString();
-                if (reg)
-                {
-                    if (currWord.Contains(keyWord))
-                    {
-                        dataGridView1.ClearSelection();
-                        dataGridView1.Rows[i].Selected = true;
-                        return;
-                    }
-                }
-                else
-                {
-                    if (currWord.ToLower().Contains(keyWord.ToLower()))
-                    {
-                        dataGridView1.ClearSelection();
-                        dataGridView1.Rows[i].Selected = true;
-                        return;
-                    }
-                }
-            }
-            MessageBox.Show("Совпадений не найдено!", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         public void UpdateData(string name, string type, int count, double price)
         {
             // Изменение данных в таблице
@@ -253,6 +225,8 @@ namespace dns
                 // Запись данных
                 while (dbReader.Read())
                     cb.Items.Add(dbReader["название_типа"]);
+
+                dbReader.Close();
             }
             catch (Exception ex)
             {
