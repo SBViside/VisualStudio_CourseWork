@@ -14,13 +14,13 @@ namespace dns
     {
         private ItemsForm form;
 
-        public UpdateDataForm1(ItemsForm f, int index)
+        public UpdateDataForm1(ItemsForm f, string item)
         {
             InitializeComponent();
             form = f;
             // Запись данных в typeComboBox
             form.SetDataIntoList(typeComboBox);
-            typeComboBox.SelectedIndex = index;
+            typeComboBox.SelectedItem = item;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace dns
         private void submitButton_Click(object sender, EventArgs e)
         {
             // Вызов метода UpdateData из главной формы
-            form.UpdateData(nameTextBox.Text, typeComboBox.SelectedIndex + 1, (int)countTextBox.Value, (int)priceTextBox.Value);
+            form.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), (int)countTextBox.Value, (double)priceTextBox.Value);
             this.Close();
         }
 

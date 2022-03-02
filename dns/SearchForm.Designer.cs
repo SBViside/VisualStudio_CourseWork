@@ -43,25 +43,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Что искать:";
             // 
             // wordTextBox
             // 
+            this.wordTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.wordTextBox.Location = new System.Drawing.Point(100, 12);
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(211, 22);
+            this.wordTextBox.Size = new System.Drawing.Size(211, 24);
             this.wordTextBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 23);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(9, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 15);
+            this.label2.Size = new System.Drawing.Size(142, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Колонка для поиска:";
             // 
@@ -70,7 +73,7 @@
             this.groupBox1.Controls.Add(this.typeComboBox);
             this.groupBox1.Controls.Add(this.checkRegister);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 92);
@@ -81,10 +84,11 @@
             // typeComboBox
             // 
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeComboBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(156, 20);
+            this.typeComboBox.Location = new System.Drawing.Point(156, 22);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(137, 23);
+            this.typeComboBox.Size = new System.Drawing.Size(137, 25);
             this.typeComboBox.TabIndex = 6;
             // 
             // checkRegister
@@ -92,13 +96,14 @@
             this.checkRegister.AutoSize = true;
             this.checkRegister.Location = new System.Drawing.Point(13, 59);
             this.checkRegister.Name = "checkRegister";
-            this.checkRegister.Size = new System.Drawing.Size(143, 19);
+            this.checkRegister.Size = new System.Drawing.Size(152, 23);
             this.checkRegister.TabIndex = 0;
             this.checkRegister.Text = "Учитывать регистр";
             this.checkRegister.UseVisualStyleBackColor = true;
             // 
             // executeButton
             // 
+            this.executeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.executeButton.Location = new System.Drawing.Point(100, 166);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(102, 28);
@@ -109,6 +114,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.Location = new System.Drawing.Point(209, 166);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(102, 28);

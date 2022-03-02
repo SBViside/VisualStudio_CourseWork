@@ -142,9 +142,13 @@ namespace dns
             try
             {
                 // Строка запроса к БД
-                string query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {typeComboBox.SelectedIndex + 1}, {countTextBox.Value}, {priceTextBox.Value})";
-                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
-                command.ExecuteNonQuery();  // Выполняю запрос
+                string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
+                OleDbCommand command = new OleDbCommand(query, myConnection); 
+                string id = command.ExecuteScalar().ToString();
+
+                query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
+                command = new OleDbCommand(query, myConnection); 
+                command.ExecuteNonQuery(); 
 
                 // Обновление таблицы
                 TableRefresh();
@@ -168,11 +172,7 @@ namespace dns
                 return;
             }
 
-            // Строка запроса к БД
-            string query = $"SELECT код_типа FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}'";
-            OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
-
-            UpdateDataForm1 udf = new UpdateDataForm1(this, int.Parse(command.ExecuteScalar().ToString()) - 1);
+            UpdateDataForm1 udf = new UpdateDataForm1(this, dataGridView1.CurrentRow.Cells[1].Value.ToString());
             DataGridViewRow curRow = dataGridView1.CurrentRow;
             udf.Text = $"Изменение {curRow.Cells[0].Value.ToString()}";
             udf.nameTextBox.Text = curRow.Cells[0].Value.ToString();
@@ -209,14 +209,17 @@ namespace dns
             MessageBox.Show("Совпадений не найдено!", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void UpdateData(string name, int type, double count, double price)
+        public void UpdateData(string name, string type, int count, double price)
         {
             // Изменение данных в таблице
             try
             {
-                // Строка запроса к БД
-                string query = $"UPDATE товары SET код_типа = {type}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
-                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
+                string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
+                OleDbCommand command = new OleDbCommand(query, myConnection);
+                string id = command.ExecuteScalar().ToString();
+
+                query = $"UPDATE товары SET код_типа = {id}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
+                command = new OleDbCommand(query, myConnection); // Создаю запрос
                 command.ExecuteNonQuery();  // Выполняю запрос
 
                 // Обновление таблицы
