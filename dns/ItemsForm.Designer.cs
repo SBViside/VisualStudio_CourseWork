@@ -99,7 +99,7 @@
             this.редакторКатегорийToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(882, 28);
+            this.menuStrip.Size = new System.Drawing.Size(882, 27);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -109,7 +109,7 @@
             this.настройкиToolStripMenuItem1,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -200,7 +200,7 @@
             this.обновитьToolStripMenuItem,
             this.посикToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -241,7 +241,7 @@
             // редакторКатегорийToolStripMenuItem
             // 
             this.редакторКатегорийToolStripMenuItem.Name = "редакторКатегорийToolStripMenuItem";
-            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
             this.редакторКатегорийToolStripMenuItem.Text = "Редактор категорий";
             this.редакторКатегорийToolStripMenuItem.Click += new System.EventHandler(this.редакторКатегорийToolStripMenuItem_Click);
             // 
@@ -270,6 +270,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -280,7 +281,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -288,9 +289,9 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(882, 525);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(882, 526);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // Column2
             // 
@@ -342,9 +343,9 @@
             this.addPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.addPanel.Enabled = false;
             this.addPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addPanel.Location = new System.Drawing.Point(0, 28);
+            this.addPanel.Location = new System.Drawing.Point(0, 27);
             this.addPanel.Name = "addPanel";
-            this.addPanel.Size = new System.Drawing.Size(296, 495);
+            this.addPanel.Size = new System.Drawing.Size(296, 496);
             this.addPanel.TabIndex = 4;
             this.addPanel.Visible = false;
             this.addPanel.VisibleChanged += new System.EventHandler(this.addPanel_VisibleChanged);
@@ -353,7 +354,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 316);
+            this.groupBox2.Location = new System.Drawing.Point(11, 317);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(275, 135);
             this.groupBox2.TabIndex = 17;
@@ -375,7 +376,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(11, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 307);
+            this.groupBox1.Size = new System.Drawing.Size(275, 308);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
@@ -470,7 +471,7 @@
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(193, 457);
+            this.cancelButton.Location = new System.Drawing.Point(193, 458);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(93, 33);
             this.cancelButton.TabIndex = 11;
@@ -485,7 +486,7 @@
             this.submitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.submitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submitButton.Location = new System.Drawing.Point(98, 457);
+            this.submitButton.Location = new System.Drawing.Point(98, 458);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(93, 33);
             this.submitButton.TabIndex = 10;

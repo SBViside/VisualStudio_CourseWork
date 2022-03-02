@@ -122,12 +122,6 @@ namespace dns
             ClearData();
         }
 
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            // Выделяет всю строку по клику на ячейку dataGridView
-            dataGridView1.CurrentRow.Selected = true;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (nameTextBox.Text == "" ||

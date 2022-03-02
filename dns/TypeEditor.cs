@@ -56,6 +56,7 @@ namespace dns
                     return;
                 }
             }
+            MessageBox.Show("Совпадений не найдено.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,9 +109,19 @@ namespace dns
                 // Окно подтверждения
                 if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // Строка запроса к БД
-                    string query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
+                    string query = $"SELECT название FROM товары WHERE код_типа IN (SELECT код_типа FROM типы WHERE название_типа='{listBox.SelectedItem}')";
                     OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
+                    OleDbDataReader dbReader = command.ExecuteReader();
+                    if (dbReader.HasRows)
+                    {
+                        MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'.", "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+
+                    // Строка запроса к БД
+                    query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
+                    command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
                     command.ExecuteNonQuery();  // Выполняю запрос
 
                     // Обновление таблицы

@@ -67,6 +67,7 @@
             // 
             // itemsButton
             // 
+            this.itemsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.itemsButton, "itemsButton");
             this.itemsButton.Name = "itemsButton";
             this.itemsButton.UseVisualStyleBackColor = true;
@@ -76,6 +77,7 @@
             // 
             // clientsButton
             // 
+            this.clientsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.clientsButton, "clientsButton");
             this.clientsButton.Name = "clientsButton";
             this.clientsButton.UseVisualStyleBackColor = true;
@@ -85,6 +87,7 @@
             // 
             // ordersButton
             // 
+            this.ordersButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.ordersButton, "ordersButton");
             this.ordersButton.Name = "ordersButton";
             this.ordersButton.UseVisualStyleBackColor = true;
@@ -94,6 +97,7 @@
             // 
             // employeesButton
             // 
+            this.employeesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.employeesButton, "employeesButton");
             this.employeesButton.Name = "employeesButton";
             this.employeesButton.UseVisualStyleBackColor = true;
