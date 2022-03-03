@@ -23,6 +23,10 @@ namespace dns
 
             // Заполнение ComboBox
             QueriesClass.SetDataIntoList(myConnection, typeComboBox);
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = 30;
+            }
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,6 +227,11 @@ namespace dns
         {
             addPanel.Visible = false;
             addPanel.Enabled = false;
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            PanelOff();
         }
     }
 }

@@ -106,7 +106,7 @@ namespace dns
         private void employeesButton_MouseEnter(object sender, EventArgs e)
         {
             string desc = "База данных 'Сотрудники' содержит информацию о сотрудниках, " +
-                "которые работают в нашем магазинеб, а именно их ФИО, адреса, контакты";
+                "которые работают в нашем магазине, а именно их ФИО, адреса, контакты и должности.";
             LabelDescription.Text = desc;
         }
 

@@ -27,6 +27,11 @@ namespace dns
 
             // Заполнение таблицы
             TableRefresh();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = 30;
+            }
         }
 
         // Метод обновления данных в таблице
