@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dns
@@ -19,18 +12,15 @@ namespace dns
 
         private bool CheckLogin()
         {
-            if (loginTextBox.Text != "")
+            if (loginTextBox.Text.Length > 2)
             {
                 LabelWarning.Visible = false;
                 return (true);
             }
-            else
-            {
-                MessageBox.Show("Не указан логин для входа.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                loginTextBox.Focus();
-                LabelWarning.Visible = true;
-                return (false);
-            }
+            LabelWarning.Visible = true;
+            MessageBox.Show("Не указан логин для входа.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            loginTextBox.Focus();
+            return (false);
         }
 
         private void itemsButton_Click(object sender, EventArgs e)
@@ -54,11 +44,19 @@ namespace dns
         private void ordersButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+            //ClientsForm clientsForm = new ClientsForm(loginTextBox.Text);
+            //this.Hide();
+            //clientsForm.ShowDialog();
+            //this.Show();
         }
 
         private void employeesButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+            //ClientsForm clientsForm = new ClientsForm(loginTextBox.Text);
+            //this.Hide();
+            //clientsForm.ShowDialog();
+            //this.Show();
         }
 
         private void RestoreDescription()
@@ -91,7 +89,7 @@ namespace dns
 
         private void ordersButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "ORDERS";
+            string desc = "База данных 'Заказы' содержит информацию о заказах наших клиентов, товаре, кторый они заказали, количество и итоговую стоимость.";
             LabelDescription.Text = desc;
         }
 
@@ -102,7 +100,7 @@ namespace dns
 
         private void employeesButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "EMPLOYEES";
+            string desc = "База данных 'Сотрудники' содержит информацию о сотрудниках, которые работают в нашем магазинеб, а именно их ФИО, адреса, контакты";
             LabelDescription.Text = desc;
         }
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -29,7 +22,7 @@ namespace dns
             TableRefresh();
 
             // Заполнение ComboBox
-            SetDataIntoList(typeComboBox);
+            QueriesClass.SetDataIntoList(myConnection, typeComboBox);
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,25 +61,13 @@ namespace dns
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            // По индексу строки удаляем всю строку
-            try
-            {
-                // Окно подтверждения
-                if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    // Строка запроса к БД
-                    string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
-                    OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
-                    command.ExecuteNonQuery();  // Выполняю запрос
-
-                    // Обновление таблицы
-                    TableRefresh();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            PanelOff();
+            // Окно подтверждения
+            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
+            TableRefresh();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -113,8 +94,7 @@ namespace dns
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            addPanel.Enabled = false;
-            addPanel.Visible = false;
+            PanelOff();
         }
 
         private void addPanel_VisibleChanged(object sender, EventArgs e)
@@ -132,34 +112,18 @@ namespace dns
                 return;
             }
 
-            // Добавление новой записи в таблицу
-            try
-            {
-                // Строка запроса к БД
-                string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
-                OleDbCommand command = new OleDbCommand(query, myConnection); 
-                string id = command.ExecuteScalar().ToString();
+            string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
+            string id = QueriesClass.ApplyQuery_Return(myConnection, dataGridView1, query);
 
-                query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
-                command = new OleDbCommand(query, myConnection); 
-                command.ExecuteNonQuery(); 
-
-                // Обновление таблицы
-                TableRefresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                addPanel.Visible = false;
-                addPanel.Enabled = false;
-            }
+            query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
+            TableRefresh();
+            PanelOff();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            PanelOff();
             if (!(dataGridView1.CurrentRow.Index >= 0))
             {
                 MessageBox.Show("Объект для изменения не выбран.", "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -177,24 +141,14 @@ namespace dns
 
         public void UpdateData(string name, string type, int count, double price)
         {
-            // Изменение данных в таблице
-            try
-            {
-                string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
-                OleDbCommand command = new OleDbCommand(query, myConnection);
-                string id = command.ExecuteScalar().ToString();
+            string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
+            string id = QueriesClass.ApplyQuery_Return(myConnection, dataGridView1, query);
 
-                query = $"UPDATE товары SET код_типа = {id}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
-                command = new OleDbCommand(query, myConnection); // Создаю запрос
-                command.ExecuteNonQuery();  // Выполняю запрос
+            query = $"UPDATE товары SET код_типа = {id}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
 
-                // Обновление таблицы
-                TableRefresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Обновление таблицы
+            TableRefresh();
         }
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,35 +157,13 @@ namespace dns
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
             sf.typeComboBox.SelectedIndex = 0;
+            PanelOff();
             sf.ShowDialog();
         }
 
         private void Items_FormClosed(object sender, FormClosedEventArgs e)
         {
             myConnection.Close();
-        }
-
-        // Метод загрузки данных в ComboBox
-        public void SetDataIntoList(ComboBox cb)
-        {
-            try
-            {
-                cb.Items.Clear();
-                // Строка запроса к БД
-                string query = $"SELECT название_типа FROM типы";
-                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
-                OleDbDataReader dbReader = command.ExecuteReader();
-
-                // Запись данных
-                while (dbReader.Read())
-                    cb.Items.Add(dbReader["название_типа"]);
-
-                dbReader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private void слеваToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,9 +206,16 @@ namespace dns
 
         private void редакторКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PanelOff();
             TypeEditor te = new TypeEditor(this);
             te.ShowDialog();
-            SetDataIntoList(typeComboBox);
+            QueriesClass.SetDataIntoList(myConnection, typeComboBox);
+        }
+
+        private void PanelOff()
+        {
+            addPanel.Visible = false;
+            addPanel.Enabled = false;
         }
     }
 }

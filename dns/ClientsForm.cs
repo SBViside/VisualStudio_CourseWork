@@ -37,13 +37,13 @@ namespace dns
                 // Очистка таблицы на форме
                 dataGridView1.Rows.Clear();
                 // Строка запроса к БД
-                string query = "SELECT фамилия, имя, отчество, возраст, телефон FROM клиенты";
+                string query = "SELECT фамилия, имя, отчество, возраст, телефон, эл_почта FROM клиенты";
                 OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                 OleDbDataReader dbReader = command.ExecuteReader();   // Считываю данные
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"], dbReader["отчество"], dbReader["возраст"], dbReader["телефон"]);
+                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"], dbReader["отчество"], dbReader["возраст"], dbReader["телефон"], dbReader["эл_почта"]);
 
                 dbReader.Close();
             }
@@ -94,6 +94,25 @@ namespace dns
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
             sf.typeComboBox.SelectedIndex = 0;
             sf.ShowDialog();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            string query = $"DELETE FROM клиенты WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' and имя='{dataGridView1.CurrentRow.Cells[1].Value}' and отчество='{dataGridView1.CurrentRow.Cells[2].Value}' and возраст={dataGridView1.CurrentRow.Cells[3].Value}";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
+            TableRefresh();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            TableRefresh();
         }
     }
 }

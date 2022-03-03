@@ -35,9 +35,6 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.позицияПонелиДобавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.слеваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ширинаСтолбцовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.height_30 = new System.Windows.Forms.ToolStripMenuItem();
             this.height_40 = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +63,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -81,7 +79,7 @@
             this.действияToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(848, 27);
+            this.menuStrip.Size = new System.Drawing.Size(976, 27);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -97,36 +95,10 @@
             // настройкиToolStripMenuItem1
             // 
             this.настройкиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.позицияПонелиДобавитьToolStripMenuItem,
             this.ширинаСтолбцовToolStripMenuItem});
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
             this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
-            // 
-            // позицияПонелиДобавитьToolStripMenuItem
-            // 
-            this.позицияПонелиДобавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.слеваToolStripMenuItem,
-            this.справаToolStripMenuItem});
-            this.позицияПонелиДобавитьToolStripMenuItem.Name = "позицияПонелиДобавитьToolStripMenuItem";
-            this.позицияПонелиДобавитьToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
-            this.позицияПонелиДобавитьToolStripMenuItem.Text = "Позиция панели \"Добавить\"";
-            // 
-            // слеваToolStripMenuItem
-            // 
-            this.слеваToolStripMenuItem.Checked = true;
-            this.слеваToolStripMenuItem.CheckOnClick = true;
-            this.слеваToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.слеваToolStripMenuItem.Name = "слеваToolStripMenuItem";
-            this.слеваToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
-            this.слеваToolStripMenuItem.Text = "Слева";
-            // 
-            // справаToolStripMenuItem
-            // 
-            this.справаToolStripMenuItem.CheckOnClick = true;
-            this.справаToolStripMenuItem.Name = "справаToolStripMenuItem";
-            this.справаToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
-            this.справаToolStripMenuItem.Text = "Справа";
             // 
             // ширинаСтолбцовToolStripMenuItem
             // 
@@ -135,7 +107,7 @@
             this.height_40,
             this.height_50});
             this.ширинаСтолбцовToolStripMenuItem.Name = "ширинаСтолбцовToolStripMenuItem";
-            this.ширинаСтолбцовToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.ширинаСтолбцовToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.ширинаСтолбцовToolStripMenuItem.Text = "Высота шапки таблицы";
             // 
             // height_30
@@ -194,6 +166,7 @@
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.bindingNavigatorDelete_Click);
             // 
             // изменитьToolStripMenuItem
             // 
@@ -206,6 +179,7 @@
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
             this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // посикToolStripMenuItem
             // 
@@ -226,7 +200,7 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -239,7 +213,8 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column1});
+            this.Column1,
+            this.Column6});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -260,7 +235,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(848, 499);
+            this.dataGridView1.Size = new System.Drawing.Size(976, 499);
             this.dataGridView1.TabIndex = 2;
             // 
             // bindingNavigator
@@ -292,7 +267,7 @@
             this.bindingNavigator.MovePreviousItem = null;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = null;
-            this.bindingNavigator.Size = new System.Drawing.Size(848, 30);
+            this.bindingNavigator.Size = new System.Drawing.Size(976, 30);
             this.bindingNavigator.TabIndex = 4;
             this.bindingNavigator.Text = "bindingNavigator";
             // 
@@ -308,6 +283,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(116, 27);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -321,6 +297,7 @@
             this.bindingNavigatorDelete.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDelete.Size = new System.Drawing.Size(102, 27);
             this.bindingNavigatorDelete.Text = "Удалить";
+            this.bindingNavigatorDelete.Click += new System.EventHandler(this.bindingNavigatorDelete_Click);
             // 
             // toolStripSeparator2
             // 
@@ -348,6 +325,7 @@
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(119, 27);
             this.refreshButton.Text = "Обновить";
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // toolStripSeparator4
             // 
@@ -399,6 +377,7 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
             // 
             // Column1
             // 
@@ -408,11 +387,19 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "Email";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 526);
+            this.ClientSize = new System.Drawing.Size(976, 526);
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip);
@@ -438,9 +425,6 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem позицияПонелиДобавитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem слеваToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ширинаСтолбцовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem height_30;
         private System.Windows.Forms.ToolStripMenuItem height_40;
@@ -469,5 +453,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

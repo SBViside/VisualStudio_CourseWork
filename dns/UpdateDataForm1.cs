@@ -18,8 +18,9 @@ namespace dns
         {
             InitializeComponent();
             form = f;
+
             // Запись данных в typeComboBox
-            form.SetDataIntoList(typeComboBox);
+            QueriesClass.SetDataIntoList(form.myConnection, typeComboBox);
             typeComboBox.SelectedItem = item;
         }
 
@@ -33,11 +34,6 @@ namespace dns
             // Вызов метода UpdateData из главной формы
             form.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), (int)countTextBox.Value, (double)priceTextBox.Value);
             this.Close();
-        }
-
-        private void UpdateDataForm1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

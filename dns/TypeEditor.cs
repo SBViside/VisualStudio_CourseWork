@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -47,10 +40,11 @@ namespace dns
 
         private void ListSearch(string keyWord)
         {
-            for(int i = 0; i < listBox.Items.Count; i++)
+            keyWord = keyWord.ToLower();
+            for (int i = 0; i < listBox.Items.Count; i++)
             {
-                string currentWord = listBox.Items[i].ToString();
-                if (currentWord.ToLower().Contains(keyWord.ToLower()))
+                string currentWord = listBox.Items[i].ToString().ToLower();
+                if (currentWord.Contains(keyWord))
                 {
                     listBox.SetSelected(i, true);
                     return;
@@ -74,19 +68,11 @@ namespace dns
                 return;
             }
 
-            try
-            {
-                // Строка запроса к БД
-                string query = $"INSERT INTO типы (название_типа) VALUES ('{typeName.Text}')";
-                OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
-                command.ExecuteNonQuery();
+            string query = $"INSERT INTO типы (название_типа) VALUES ('{typeName.Text}')";
+            QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, parentForm.dataGridView1, query);
 
-                ListRefresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ListRefresh();
+
             typeName.Clear();
         }
 
@@ -118,11 +104,8 @@ namespace dns
                         return;
                     }
 
-
-                    // Строка запроса к БД
                     query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
-                    command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
-                    command.ExecuteNonQuery();  // Выполняю запрос
+                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, parentForm.dataGridView1, query);
 
                     // Обновление таблицы
                     ListRefresh();

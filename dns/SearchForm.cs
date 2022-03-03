@@ -28,7 +28,7 @@ namespace dns
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            switch(formType)
+            switch (formType)
             {
                 case 1:
                     Search(itemsForm.dataGridView1, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
