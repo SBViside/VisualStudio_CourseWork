@@ -117,7 +117,7 @@
             // 
             this.nameTextBox.Enabled = false;
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameTextBox.Location = new System.Drawing.Point(111, 20);
+            this.nameTextBox.Location = new System.Drawing.Point(111, 21);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(159, 24);
             this.nameTextBox.TabIndex = 2;

@@ -50,7 +50,8 @@ namespace dns
                     return;
                 }
             }
-            MessageBox.Show("Совпадений не найдено.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Совпадений не найдено.", "Результат поиска",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,13 +64,14 @@ namespace dns
             if (typeName.Text.Length < 3) return;
             if (listBox.Items.Contains(typeName.Text))
             {
-                MessageBox.Show("Похожий элемент уже существует.", "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Похожий элемент уже существует.", "Действие невозможно.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 typeName.Clear();
                 return;
             }
 
             string query = $"INSERT INTO типы (название_типа) VALUES ('{typeName.Text}')";
-            QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, parentForm.dataGridView1, query);
+            QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
 
             ListRefresh();
 
@@ -86,30 +88,35 @@ namespace dns
         {
             if (listBox.SelectedIndex < 0)
             {
-                MessageBox.Show("Элемент не выбран.", "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Элемент не выбран.", "Действие невозможно.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
                 // Окно подтверждения
-                if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+                string query = $"SELECT название FROM товары WHERE код_типа " +
+                    $"IN (SELECT код_типа FROM типы WHERE название_типа='{listBox.SelectedItem}')";
+                OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
+                OleDbDataReader dbReader = command.ExecuteReader();
+                
+                if (dbReader.HasRows)
                 {
-                    string query = $"SELECT название FROM товары WHERE код_типа IN (SELECT код_типа FROM типы WHERE название_типа='{listBox.SelectedItem}')";
-                    OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
-                    OleDbDataReader dbReader = command.ExecuteReader();
-                    if (dbReader.HasRows)
-                    {
-                        MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'.", "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
-                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, parentForm.dataGridView1, query);
-
-                    // Обновление таблицы
-                    ListRefresh();
+                    MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'.",
+                        "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
+                QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+
+                // Обновление таблицы
+                ListRefresh();
+
             }
             catch (Exception ex)
             {

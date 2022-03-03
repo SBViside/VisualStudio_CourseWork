@@ -31,10 +31,12 @@ namespace dns
             switch (formType)
             {
                 case 1:
-                    Search(itemsForm.dataGridView1, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
+                    Search(itemsForm.dataGridView1, wordTextBox.Text, 
+                        typeComboBox.SelectedIndex, checkRegister.Checked);
                     break;
                 case 2:
-                    Search(clientsForm.dataGridView1, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
+                    Search(clientsForm.dataGridView1, wordTextBox.Text, 
+                        typeComboBox.SelectedIndex, checkRegister.Checked);
                     break;
             }
             this.Close();
@@ -70,7 +72,8 @@ namespace dns
                     }
                 }
             }
-            MessageBox.Show("Совпадений не найдено!", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Совпадений не найдено!", "Результат поиска", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

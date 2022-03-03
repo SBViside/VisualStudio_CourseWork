@@ -11,7 +11,7 @@ namespace dns
     {
         /// <summary> Данный метод выполняет запрос к Базе Даннах, но не возвращает результат.
         /// Подходит для добавления элемента, удаления, обновления данных. </summary>
-        static public void ApplyQuery_ReturnNone(OleDbConnection myConnection, DataGridView dataGridView1, string query)
+        static public void ApplyQuery_ReturnNone(OleDbConnection myConnection, string query)
         {
             try
             {
@@ -20,24 +20,26 @@ namespace dns
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Действие невозможно", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         /// <summary> Данный метод выполняет запрос к Базе Даннах и возвращает результат
         /// в виде строки. Подходит для поиска отдельного элемента в БД. </summary>
-        static public string ApplyQuery_Return(OleDbConnection myConnection, DataGridView dataGridView1, string query)
+        static public string ApplyQuery_Return(OleDbConnection myConnection, string query)
         {
             try
             {
                 OleDbCommand command = new OleDbCommand(query, myConnection);
-                return command.ExecuteScalar().ToString();
+                return (command.ExecuteScalar().ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Действие невозможно", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            return "";
+            return ("");
         }
 
         /// <summary> Данный метод используется для занесения данных об имеющихся категориях товаров
@@ -52,7 +54,6 @@ namespace dns
                 OleDbCommand command = new OleDbCommand(query, myConnection);
                 OleDbDataReader dbReader = command.ExecuteReader();
 
-
                 while (dbReader.Read())
                     cb.Items.Add(dbReader["название_типа"]);
 
@@ -60,7 +61,8 @@ namespace dns
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Действие невозможно", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

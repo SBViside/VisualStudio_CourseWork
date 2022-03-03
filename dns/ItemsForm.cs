@@ -37,13 +37,15 @@ namespace dns
             {
                 dataGridView1.Rows.Clear();
                 // Строка запроса к БД
-                string query = "SELECT товары.название, типы.название_типа, товары.количество, товары.стоимость FROM типы INNER JOIN товары ON типы.код_типа = товары.код_типа";
+                string query = "SELECT товары.название, типы.название_типа, товары.количество, товары.стоимость " +
+                    "FROM типы INNER JOIN товары ON типы.код_типа = товары.код_типа";
                 OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                 OleDbDataReader dbReader = command.ExecuteReader();   // Считываю данные
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    dataGridView1.Rows.Add(dbReader["название"], dbReader["название_типа"], dbReader["количество"], dbReader["стоимость"]);
+                    dataGridView1.Rows.Add(dbReader["название"], dbReader["название_типа"], 
+                        dbReader["количество"], dbReader["стоимость"]);
 
                 dbReader.Close();
             }
@@ -63,10 +65,12 @@ namespace dns
         {
             PanelOff();
             // Окно подтверждения
-            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                return;
-            string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
-            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
+            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and " +
+                $"количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             TableRefresh();
         }
 
@@ -113,12 +117,13 @@ namespace dns
             }
 
             string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
-            string id = QueriesClass.ApplyQuery_Return(myConnection, dataGridView1, query);
+            string id = QueriesClass.ApplyQuery_Return(myConnection, query);
 
-            query = $"INSERT INTO товары (название, код_типа, количество, стоимость) VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
-            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
-            TableRefresh();
+            query = $"INSERT INTO товары (название, код_типа, количество, стоимость) " +
+                $"VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             PanelOff();
+            TableRefresh();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -126,7 +131,8 @@ namespace dns
             PanelOff();
             if (!(dataGridView1.CurrentRow.Index >= 0))
             {
-                MessageBox.Show("Объект для изменения не выбран.", "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Объект для изменения не выбран.", "Действие невозможно", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -142,10 +148,11 @@ namespace dns
         public void UpdateData(string name, string type, int count, double price)
         {
             string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
-            string id = QueriesClass.ApplyQuery_Return(myConnection, dataGridView1, query);
+            string id = QueriesClass.ApplyQuery_Return(myConnection, query);
 
-            query = $"UPDATE товары SET код_типа = {id}, количество = {count}, стоимость = {price} WHERE название = '{name}'";
-            QueriesClass.ApplyQuery_ReturnNone(myConnection, dataGridView1, query);
+            query = $"UPDATE товары SET код_типа = {id}, количество = {count}, " +
+                $"стоимость = {price} WHERE название = '{name}'";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
             // Обновление таблицы
             TableRefresh();

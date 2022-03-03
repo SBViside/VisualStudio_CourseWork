@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dns
@@ -32,7 +25,8 @@ namespace dns
         private void submitButton_Click(object sender, EventArgs e)
         {
             // Вызов метода UpdateData из главной формы
-            form.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), (int)countTextBox.Value, (double)priceTextBox.Value);
+            form.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), 
+                (int)countTextBox.Value, (int)priceTextBox.Value);
             this.Close();
         }
     }

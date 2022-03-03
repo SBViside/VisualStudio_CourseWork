@@ -12,13 +12,14 @@ namespace dns
 
         private bool CheckLogin()
         {
-            if (loginTextBox.Text.Length > 2)
+            if (loginTextBox.Text.Length > 1)
             {
                 LabelWarning.Visible = false;
                 return (true);
             }
             LabelWarning.Visible = true;
-            MessageBox.Show("Не указан логин для входа.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Не указан логин для входа.", "Внимание", 
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             loginTextBox.Focus();
             return (false);
         }
@@ -72,13 +73,16 @@ namespace dns
 
         private void itemsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Товары' (электронная техника) содержит информацию о продаваемых товарах, их категориях, количестве и цене за единицу товара.";
+            string desc = "База данных 'Товары' (электронная техника) содержит информацию о " +
+                "продаваемых товарах, их категориях, количестве и цене за единицу товара.";
             LabelDescription.Text = desc;
         }
 
         private void clientsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Клиенты' содержит информацию о клиентах, которые хотя бы раз совершали покупку в нашем магазине. Мы записываем ФИО, возраст и телефон (для уведомления о скидках) клиента.";
+            string desc = "База данных 'Клиенты' содержит информацию о клиентах, которые " +
+                "хотя бы раз совершали покупку в нашем магазине. Мы записываем ФИО, возраст и " +
+                "телефон (для уведомления о скидках) клиента.";
             LabelDescription.Text = desc;
         }
 
@@ -89,7 +93,8 @@ namespace dns
 
         private void ordersButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Заказы' содержит информацию о заказах наших клиентов, товаре, кторый они заказали, количество и итоговую стоимость.";
+            string desc = "База данных 'Заказы' содержит информацию о заказах наших клиентов, " +
+                "товаре, кторый они заказали, количество и итоговую стоимость.";
             LabelDescription.Text = desc;
         }
 
@@ -100,7 +105,8 @@ namespace dns
 
         private void employeesButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Сотрудники' содержит информацию о сотрудниках, которые работают в нашем магазинеб, а именно их ФИО, адреса, контакты";
+            string desc = "База данных 'Сотрудники' содержит информацию о сотрудниках, " +
+                "которые работают в нашем магазинеб, а именно их ФИО, адреса, контакты";
             LabelDescription.Text = desc;
         }
 

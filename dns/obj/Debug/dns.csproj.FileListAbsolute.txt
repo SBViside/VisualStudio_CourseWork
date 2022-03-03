@@ -44,3 +44,4 @@ C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.MainMenu.resources
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.ItemsForm.resources
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.TypeEditor.resources
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.ClientsForm.resources
+C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.AddClientForm.resources
