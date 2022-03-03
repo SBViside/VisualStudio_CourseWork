@@ -100,7 +100,7 @@ namespace dns
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            AddClientForm addClientForm = new AddClientForm(this);
+            AddClientForm addClientForm = new AddClientForm(this, "adding");
             addClientForm.ShowDialog();
             TableRefresh();
         }
@@ -120,6 +120,26 @@ namespace dns
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            TableRefresh();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            AddClientForm addClientForm = new AddClientForm(this, "updating");
+
+            addClientForm.surnameTextBox.Enabled = false;
+            addClientForm.nameTextBox.Enabled = false;
+            addClientForm.patronymicTextBox.Enabled = false;
+            addClientForm.dateTimePicker.Enabled = false;
+
+            addClientForm.surnameTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            addClientForm.nameTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            addClientForm.patronymicTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            addClientForm.adressTextBox.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            addClientForm.phoneTextBox.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            addClientForm.emailTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+
+            addClientForm.ShowDialog();
             TableRefresh();
         }
     }

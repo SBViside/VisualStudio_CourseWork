@@ -6,11 +6,13 @@ namespace dns
     public partial class AddClientForm : Form
     {
         private ClientsForm parentForm;
+        private string action;
 
-        public AddClientForm(ClientsForm f)
+        public AddClientForm(ClientsForm f, string ac)
         {
             InitializeComponent();
             parentForm = f;
+            action = ac;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -37,10 +39,22 @@ namespace dns
             string phone = phoneTextBox.Text;
             string email = emailTextBox.Text;
 
-            string query = $"INSERT INTO клиенты (фамилия, имя, отчество, дата_рождения, адрес, телефон, эл_почта) " +
-                $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{adress}', '{phone}', '{email}')";
-            QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+            string query;
 
+            switch (action)
+            {
+                case "adding":
+                    query = $"INSERT INTO клиенты (фамилия, имя, отчество, дата_рождения, адрес, телефон, эл_почта) " +
+                        $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{adress}', '{phone}', '{email}')";
+                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+                    break;
+                case "updating":
+                    query = $"UPDATE клиенты SET адрес='{adress}', " +
+                        $"телефон='{phone}', эл_почта='{email}' WHERE фамилия='{surname}' " +
+                        $"and имя='{name}' and отчество='{patronymic}'";
+                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+                    break;
+            }
             this.Close();
         }
     }
