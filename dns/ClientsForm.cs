@@ -27,11 +27,6 @@ namespace dns
 
             // Заполнение таблицы
             TableRefresh();
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Height = 30;
-            }
         }
 
         // Метод обновления данных в таблице
@@ -53,6 +48,11 @@ namespace dns
                         dbReader["телефон"], dbReader["эл_почта"]);
 
                 dbReader.Close();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Height = 30;
+                }
             }
             catch (Exception ex)
             {

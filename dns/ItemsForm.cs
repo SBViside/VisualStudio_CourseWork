@@ -23,10 +23,6 @@ namespace dns
 
             // Заполнение ComboBox
             QueriesClass.SetDataIntoList(myConnection, typeComboBox);
-            foreach(DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Height = 30;
-            }
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,6 +48,11 @@ namespace dns
                         dbReader["количество"], dbReader["стоимость"]);
 
                 dbReader.Close();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Height = 30;
+                }
             }
             catch (Exception ex)
             {
@@ -110,7 +111,7 @@ namespace dns
             ClearData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submitButton_Click(object sender, EventArgs e)
         {
             if (nameTextBox.Text == "" ||
                 countTextBox.Value <= 0 ||
@@ -225,6 +226,7 @@ namespace dns
 
         private void PanelOff()
         {
+            ClearData();
             addPanel.Visible = false;
             addPanel.Enabled = false;
         }
