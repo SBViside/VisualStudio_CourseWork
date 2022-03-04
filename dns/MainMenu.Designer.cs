@@ -67,40 +67,45 @@
             // 
             // itemsButton
             // 
+            this.itemsButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.itemsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.itemsButton, "itemsButton");
+            this.itemsButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemsButton.Name = "itemsButton";
-            this.itemsButton.UseVisualStyleBackColor = true;
+            this.itemsButton.UseVisualStyleBackColor = false;
             this.itemsButton.Click += new System.EventHandler(this.itemsButton_Click);
             this.itemsButton.MouseEnter += new System.EventHandler(this.itemsButton_MouseEnter);
             this.itemsButton.MouseLeave += new System.EventHandler(this.itemsButton_MouseLeave);
             // 
             // clientsButton
             // 
+            this.clientsButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.clientsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.clientsButton, "clientsButton");
             this.clientsButton.Name = "clientsButton";
-            this.clientsButton.UseVisualStyleBackColor = true;
+            this.clientsButton.UseVisualStyleBackColor = false;
             this.clientsButton.Click += new System.EventHandler(this.clientsButton_Click);
             this.clientsButton.MouseEnter += new System.EventHandler(this.clientsButton_MouseEnter);
             this.clientsButton.MouseLeave += new System.EventHandler(this.clientsButton_MouseLeave);
             // 
             // ordersButton
             // 
+            this.ordersButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ordersButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.ordersButton, "ordersButton");
             this.ordersButton.Name = "ordersButton";
-            this.ordersButton.UseVisualStyleBackColor = true;
+            this.ordersButton.UseVisualStyleBackColor = false;
             this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
             this.ordersButton.MouseEnter += new System.EventHandler(this.ordersButton_MouseEnter);
             this.ordersButton.MouseLeave += new System.EventHandler(this.ordersButton_MouseLeave);
             // 
             // employeesButton
             // 
+            this.employeesButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.employeesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.employeesButton, "employeesButton");
             this.employeesButton.Name = "employeesButton";
-            this.employeesButton.UseVisualStyleBackColor = true;
+            this.employeesButton.UseVisualStyleBackColor = false;
             this.employeesButton.Click += new System.EventHandler(this.employeesButton_Click);
             this.employeesButton.MouseEnter += new System.EventHandler(this.employeesButton_MouseEnter);
             this.employeesButton.MouseLeave += new System.EventHandler(this.employeesButton_MouseLeave);
@@ -177,7 +182,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.LabelWarning);
             this.panel2.Controls.Add(this.groupBox2);

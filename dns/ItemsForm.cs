@@ -62,6 +62,7 @@ namespace dns
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            PanelOff();
             // Вызов метода обновления данных
             TableRefresh();
         }
@@ -234,6 +235,19 @@ namespace dns
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             PanelOff();
+        }
+
+        private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.Font = fontDialog1.Font;
+        }
+
+        private void цветВыделенияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = colorDialog1.Color;
+            dataGridView1.GridColor = colorDialog1.Color;
         }
     }
 }

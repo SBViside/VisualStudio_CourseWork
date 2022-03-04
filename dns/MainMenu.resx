@@ -1711,7 +1711,7 @@
     <value>Fill</value>
   </data>
   <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+    <value>Tahoma, 9pt</value>
   </data>
   <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 25</value>

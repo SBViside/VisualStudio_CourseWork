@@ -55,6 +55,7 @@ namespace dns
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
                     break;
             }
+            parentForm.TableRefresh();
             this.Close();
         }
     }

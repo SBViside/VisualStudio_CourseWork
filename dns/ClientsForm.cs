@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -30,7 +23,7 @@ namespace dns
         }
 
         // Метод обновления данных в таблице
-        private void TableRefresh()
+        public void TableRefresh()
         {
             try
             {
@@ -107,7 +100,6 @@ namespace dns
         {
             AddClientForm addClientForm = new AddClientForm(this, "adding");
             addClientForm.ShowDialog();
-            TableRefresh();
         }
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
@@ -145,7 +137,19 @@ namespace dns
             addClientForm.emailTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
             addClientForm.ShowDialog();
-            TableRefresh();
+        }
+
+        private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.Font = fontDialog1.Font;
+        }
+
+        private void цветВыделенияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = colorDialog1.Color;
+            dataGridView1.GridColor = colorDialog1.Color;
         }
     }
 }
