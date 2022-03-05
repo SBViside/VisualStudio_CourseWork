@@ -50,9 +50,7 @@ namespace dns
                 dbReader.Close();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
                     row.Height = 30;
-                }
             }
             catch (Exception ex)
             {
