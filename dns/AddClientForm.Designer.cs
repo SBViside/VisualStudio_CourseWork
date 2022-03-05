@@ -103,9 +103,9 @@
             this.dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(139, 145);
+            this.dateTimePicker.Location = new System.Drawing.Point(142, 145);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(124, 24);
+            this.dateTimePicker.Size = new System.Drawing.Size(121, 24);
             this.dateTimePicker.TabIndex = 9;
             this.dateTimePicker.Value = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
             // 
@@ -122,9 +122,9 @@
             // patronymicTextBox
             // 
             this.patronymicTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.patronymicTextBox.Location = new System.Drawing.Point(104, 86);
+            this.patronymicTextBox.Location = new System.Drawing.Point(108, 86);
             this.patronymicTextBox.Name = "patronymicTextBox";
-            this.patronymicTextBox.Size = new System.Drawing.Size(159, 24);
+            this.patronymicTextBox.Size = new System.Drawing.Size(155, 24);
             this.patronymicTextBox.TabIndex = 8;
             // 
             // label1
@@ -140,9 +140,9 @@
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameTextBox.Location = new System.Drawing.Point(104, 56);
+            this.nameTextBox.Location = new System.Drawing.Point(108, 56);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(159, 24);
+            this.nameTextBox.Size = new System.Drawing.Size(155, 24);
             this.nameTextBox.TabIndex = 6;
             // 
             // label2
@@ -158,9 +158,9 @@
             // surnameTextBox
             // 
             this.surnameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.surnameTextBox.Location = new System.Drawing.Point(104, 26);
+            this.surnameTextBox.Location = new System.Drawing.Point(108, 26);
             this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(159, 24);
+            this.surnameTextBox.Size = new System.Drawing.Size(155, 24);
             this.surnameTextBox.TabIndex = 4;
             // 
             // groupBox2

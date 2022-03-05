@@ -5,40 +5,18 @@ namespace dns
 {
     public partial class SearchForm : Form
     {
-        private ItemsForm itemsForm;
-        private ClientsForm clientsForm;
-        //private ItemsForm form;
-        //private ItemsForm form;
+        private DataGridView dgv;
 
-        private byte formType;
-
-        public SearchForm(ItemsForm f)
+        public SearchForm(DataGridView d)
         {
             InitializeComponent();
-            itemsForm = f;
-            formType = 1;
+            dgv = d;
         }
 
-        public SearchForm(ClientsForm f)
-        {
-            InitializeComponent();
-            clientsForm = f;
-            formType = 2;
-        }
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            switch (formType)
-            {
-                case 1:
-                    Search(itemsForm.dataGridView1, wordTextBox.Text, 
-                        typeComboBox.SelectedIndex, checkRegister.Checked);
-                    break;
-                case 2:
-                    Search(clientsForm.dataGridView1, wordTextBox.Text, 
-                        typeComboBox.SelectedIndex, checkRegister.Checked);
-                    break;
-            }
+            Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
             this.Close();
         }
 
@@ -72,7 +50,7 @@ namespace dns
                     }
                 }
             }
-            MessageBox.Show("Совпадений не найдено!", "Результат поиска", 
+            MessageBox.Show("Совпадений не найдено!", "Результат поиска",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

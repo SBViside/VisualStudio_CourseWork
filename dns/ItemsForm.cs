@@ -166,7 +166,7 @@ namespace dns
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(this);
+            SearchForm sf = new SearchForm(this.dataGridView1);
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
             sf.typeComboBox.SelectedIndex = 0;

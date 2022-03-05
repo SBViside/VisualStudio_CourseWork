@@ -54,9 +54,9 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(274, 27);
+            this.panel1.Location = new System.Drawing.Point(274, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 433);
+            this.panel1.Size = new System.Drawing.Size(195, 430);
             this.panel1.TabIndex = 1;
             // 
             // button1
@@ -115,7 +115,7 @@
             this.groupBox1.Size = new System.Drawing.Size(181, 121);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Добавление категории";
+            this.groupBox1.Text = "Новая категория";
             // 
             // typeName
             // 
@@ -160,11 +160,11 @@
             "testItem_3",
             "testItem_4",
             "testItem_5"});
-            this.listBox.Location = new System.Drawing.Point(0, 27);
+            this.listBox.Location = new System.Drawing.Point(0, 30);
             this.listBox.Margin = new System.Windows.Forms.Padding(0);
             this.listBox.Name = "listBox";
             this.listBox.ScrollAlwaysVisible = true;
-            this.listBox.Size = new System.Drawing.Size(274, 433);
+            this.listBox.Size = new System.Drawing.Size(274, 430);
             this.listBox.Sorted = true;
             this.listBox.TabIndex = 2;
             // 
@@ -176,14 +176,14 @@
             this.обновитьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(469, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(469, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(87, 23);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
             // 

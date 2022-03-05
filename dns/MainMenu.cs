@@ -54,10 +54,10 @@ namespace dns
         private void employeesButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
-            //ClientsForm clientsForm = new ClientsForm(loginTextBox.Text);
-            //this.Hide();
-            //clientsForm.ShowDialog();
-            //this.Show();
+            EmployeesForm employeesForm = new EmployeesForm(loginTextBox.Text);
+            this.Hide();
+            employeesForm.ShowDialog();
+            this.Show();
         }
 
         private void RestoreDescription()

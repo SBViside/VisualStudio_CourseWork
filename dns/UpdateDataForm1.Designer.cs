@@ -49,7 +49,7 @@
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(180, 202);
+            this.cancelButton.Location = new System.Drawing.Point(203, 202);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(108, 33);
             this.cancelButton.TabIndex = 11;
@@ -62,7 +62,7 @@
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.submitButton.Location = new System.Drawing.Point(73, 202);
+            this.submitButton.Location = new System.Drawing.Point(96, 202);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(105, 33);
             this.submitButton.TabIndex = 10;
@@ -76,9 +76,9 @@
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(111, 54);
+            this.typeComboBox.Location = new System.Drawing.Point(118, 54);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(159, 27);
+            this.typeComboBox.Size = new System.Drawing.Size(175, 27);
             this.typeComboBox.Sorted = true;
             this.typeComboBox.TabIndex = 9;
             this.typeComboBox.ValueMember = "название_типа";
@@ -117,9 +117,9 @@
             // 
             this.nameTextBox.Enabled = false;
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameTextBox.Location = new System.Drawing.Point(111, 21);
+            this.nameTextBox.Location = new System.Drawing.Point(118, 21);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(159, 24);
+            this.nameTextBox.Size = new System.Drawing.Size(175, 24);
             this.nameTextBox.TabIndex = 2;
             // 
             // label2
@@ -135,7 +135,7 @@
             // countTextBox
             // 
             this.countTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countTextBox.Location = new System.Drawing.Point(111, 89);
+            this.countTextBox.Location = new System.Drawing.Point(118, 89);
             this.countTextBox.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -154,7 +154,7 @@
             0,
             0,
             0});
-            this.priceTextBox.Location = new System.Drawing.Point(111, 123);
+            this.priceTextBox.Location = new System.Drawing.Point(118, 123);
             this.priceTextBox.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -177,7 +177,7 @@
             this.groupBox1.Controls.Add(this.typeComboBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 167);
+            this.groupBox1.Size = new System.Drawing.Size(299, 167);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные";
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 242);
+            this.ClientSize = new System.Drawing.Size(319, 242);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);

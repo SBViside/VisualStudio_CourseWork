@@ -71,7 +71,7 @@ namespace dns
             height_50.Checked = false;
         }
 
-        private void height_40_Click_1(object sender, EventArgs e)
+        private void height_40_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 40;
             height_30.Checked = false;
@@ -89,7 +89,7 @@ namespace dns
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(this);
+            SearchForm sf = new SearchForm(this.dataGridView1);
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
             sf.typeComboBox.SelectedIndex = 0;

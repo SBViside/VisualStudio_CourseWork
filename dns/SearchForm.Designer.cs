@@ -55,7 +55,7 @@
             this.wordTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.wordTextBox.Location = new System.Drawing.Point(100, 12);
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(211, 24);
+            this.wordTextBox.Size = new System.Drawing.Size(224, 24);
             this.wordTextBox.TabIndex = 1;
             // 
             // label2
@@ -64,7 +64,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(9, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 19);
+            this.label2.Size = new System.Drawing.Size(137, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Колонка для поиска:";
             // 
@@ -76,7 +76,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 92);
+            this.groupBox1.Size = new System.Drawing.Size(312, 92);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
@@ -88,7 +88,7 @@
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Location = new System.Drawing.Point(156, 22);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(137, 25);
+            this.typeComboBox.Size = new System.Drawing.Size(150, 25);
             this.typeComboBox.TabIndex = 6;
             // 
             // checkRegister
@@ -104,7 +104,7 @@
             // executeButton
             // 
             this.executeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.executeButton.Location = new System.Drawing.Point(100, 166);
+            this.executeButton.Location = new System.Drawing.Point(114, 166);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(102, 28);
             this.executeButton.TabIndex = 4;
@@ -115,7 +115,7 @@
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.Location = new System.Drawing.Point(209, 166);
+            this.cancelButton.Location = new System.Drawing.Point(222, 166);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(102, 28);
             this.cancelButton.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 203);
+            this.ClientSize = new System.Drawing.Size(336, 203);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.executeButton);
             this.Controls.Add(this.groupBox1);
