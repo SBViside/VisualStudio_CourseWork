@@ -124,13 +124,14 @@ namespace dns
             dbReader.Close();
 
             query = $"SELECT заказы.код_товара AS [Код товара], заказы.количество AS Количество, " +
-                $"заказы.вид_доставки AS Доставка, товары.стоимость AS Стоимость, заказы.статус AS Статус " +
+                $"заказы.вид_доставки AS Доставка, товары.стоимость AS Стоимость, заказы.статус AS Статус, заказы.дата_оформления AS Дата " +
                 $"FROM заказы INNER JOIN товары ON заказы.код_товара=товары.код_товара WHERE заказы.код_заказа={row.Cells[0].Value}";
 
             command = new OleDbCommand(query, myConnection);
             dbReader = command.ExecuteReader();
 
             dbReader.Read();
+            groupBox2.Text = "Заказ от " + dbReader["Дата"].ToString().Split()[0];
             productLabel.Text = dbReader["Код товара"].ToString();
             countLabel.Text = dbReader["Количество"].ToString();
             deliveryLabel.Text = dbReader["Доставка"].ToString();
@@ -150,6 +151,7 @@ namespace dns
             deliveryLabel.Text = "(нет данных)";
             priceLabel.Text = "0$";
             statusLabel.Text = "(нет данных)";
+            groupBox2.Text = "Заказ";
         }
 
         private void statusLabel_TextChanged(object sender, EventArgs e)

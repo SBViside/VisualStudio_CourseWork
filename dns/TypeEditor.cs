@@ -101,13 +101,11 @@ namespace dns
 
                 string query = $"SELECT название FROM товары WHERE код_типа " +
                     $"IN (SELECT код_типа FROM типы WHERE название_типа='{listBox.SelectedItem}')";
-                OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
-                OleDbDataReader dbReader = command.ExecuteReader();
                 
-                if (dbReader.HasRows)
+                if (QueriesClass.HasLinks(parentForm.myConnection, query))
                 {
-                    MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'.",
-                        "Действие невозможно.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'",
+                        "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 

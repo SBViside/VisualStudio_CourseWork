@@ -65,5 +65,15 @@ namespace dns
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        static public bool HasLinks(OleDbConnection myConnection, string query)
+        {
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader dbReader = command.ExecuteReader();
+
+            if (dbReader.HasRows) return (true);
+            return (false);
+
+        }
     }
 }

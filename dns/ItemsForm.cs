@@ -44,7 +44,7 @@ namespace dns
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    dataGridView1.Rows.Add(dbReader["название"], dbReader["название_типа"], 
+                    dataGridView1.Rows.Add(dbReader["название"], dbReader["название_типа"],
                         dbReader["количество"], dbReader["стоимость"]);
 
                 dbReader.Close();
@@ -69,10 +69,20 @@ namespace dns
         {
             PanelOff();
             // Окно подтверждения
-            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", 
+            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            string query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and " +
+            string query = $"SELECT * FROM заказы WHERE код_товара " +
+                $"IN (SELECT код_товара FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}')";
+
+            if (QueriesClass.HasLinks(myConnection, query))
+            {
+                MessageBox.Show("Невозможно удалить товар, так как он имеет связь с таблицей 'Заказы'",
+                    "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and " +
                 $"количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             TableRefresh();
@@ -135,7 +145,7 @@ namespace dns
             PanelOff();
             if (!(dataGridView1.CurrentRow.Index >= 0))
             {
-                MessageBox.Show("Объект для изменения не выбран.", "Действие невозможно", 
+                MessageBox.Show("Объект для изменения не выбран.", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

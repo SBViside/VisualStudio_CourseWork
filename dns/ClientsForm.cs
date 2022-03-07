@@ -107,7 +107,18 @@ namespace dns
             if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            string query = $"DELETE FROM клиенты WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
+            string query = $"SELECT * FROM заказы WHERE код_клиента " +
+                $"IN (SELECT код_клиента FROM клиенты WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
+                $"AND имя='{dataGridView1.CurrentRow.Cells[1].Value}' AND отчество='{dataGridView1.CurrentRow.Cells[2].Value}')";
+
+            if (QueriesClass.HasLinks(myConnection, query))
+            {
+                MessageBox.Show("Невозможно удалить клиента, так как он имеет связь с таблицей 'Заказы'",
+                    "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            query = $"DELETE FROM клиенты WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
                 $"and имя='{dataGridView1.CurrentRow.Cells[1].Value}' and отчество='{dataGridView1.CurrentRow.Cells[2].Value}' " +
                 $"and адрес='{dataGridView1.CurrentRow.Cells[4].Value}'";
 
