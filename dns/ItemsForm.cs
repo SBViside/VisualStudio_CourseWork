@@ -89,7 +89,7 @@ namespace dns
 
             if (QueriesClass.HasLinks(myConnection, query))
             {
-                MessageBox.Show("Удаление невозможно, так как этот товар имеются заказы",
+                MessageBox.Show("Удаление невозможно, так как на этот товар имеются заказы",
                     "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

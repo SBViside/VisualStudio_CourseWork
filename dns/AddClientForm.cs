@@ -32,9 +32,9 @@ namespace dns
                 return;
             }
 
-            string surname = surnameTextBox.Text;
-            string name = nameTextBox.Text;
-            string patronymic = patronymicTextBox.Text;
+            string surname = surnameTextBox.Text.Replace(' ', '_');
+            string name = nameTextBox.Text.Replace(' ', '_');
+            string patronymic = patronymicTextBox.Text.Replace(' ', '_');
             string date = dateTimePicker.Value.ToString();
             string adress = adressTextBox.Text;
             string phone = phoneTextBox.Text;
@@ -49,6 +49,7 @@ namespace dns
                         $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{adress}', '{phone}', '{email}')";
                     QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
+
                 case "updating":
                     query = $"UPDATE клиенты SET адрес='{adress}', " +
                         $"телефон='{phone}', эл_почта='{email}' WHERE фамилия='{surname}' " +

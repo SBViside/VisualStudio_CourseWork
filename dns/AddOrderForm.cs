@@ -83,6 +83,9 @@ namespace dns
                 return;
             }
 
+            // ВНИМАНИЕ!!! split сработает корректно только в том случае, если в фамилии, имени и отчестве
+            // не будет пробелов (пробелы между фамилией, именем и отчеством не считаются).
+
             // Получение ID клиента
             string[] client = clientComboBox.Text.Split();
             string query = $"SELECT код_клиента FROM клиенты WHERE фамилия='{client[0]}' " +
@@ -95,7 +98,7 @@ namespace dns
 
             // Запись данных в базу данных
             query = $"INSERT INTO заказы (код_клиента, дата_оформления, код_товара, количество, статус, вид_доставки) " +
-                $"VALUES ({clientID}, '{DateTime.Now.ToString("yyyy-MM-dd")}', {itemID}, {countTextBox.Value}, " +
+                $"VALUES ({clientID}, '{DateTime.Now.ToString("dd.MM.yyyy")}', {itemID}, {countTextBox.Value}, " +
                 $"'активен', '{deliveryComboBox.SelectedItem}')";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
@@ -106,7 +109,7 @@ namespace dns
         {
             for (int i = 0; i <= 100; i++)
             {
-                System.Threading.Thread.Sleep(30);
+                System.Threading.Thread.Sleep(35);
                 progressBar1.Value = i;
             }
         }

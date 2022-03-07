@@ -64,7 +64,7 @@ namespace dns
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
+            if (MessageBox.Show("Вы действительно хотите удалить сотрудника?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
             string query = $"DELETE FROM сотрудники WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +

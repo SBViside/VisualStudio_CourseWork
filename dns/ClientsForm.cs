@@ -105,7 +105,7 @@ namespace dns
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия", 
+            if (MessageBox.Show("Вы действительно хотите удалить клиента?", "Подтверждение действия", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
             string query = $"SELECT * FROM заказы WHERE код_клиента " +

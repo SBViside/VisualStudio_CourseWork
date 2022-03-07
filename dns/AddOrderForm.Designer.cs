@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.submitButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.deliveryComboBox = new System.Windows.Forms.ComboBox();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.itemComboBox = new System.Windows.Forms.ComboBox();
             this.countTextBox = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.clientComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.itemComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.deliveryComboBox = new System.Windows.Forms.ComboBox();
-            this.addClientButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.countTextBox)).BeginInit();
@@ -64,32 +64,64 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
             // 
-            // cancelButton
+            // label2
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(244, 224);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(108, 33);
-            this.cancelButton.TabIndex = 15;
-            this.cancelButton.Text = "Отменить";
-            this.cancelButton.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Доставка:";
             // 
-            // submitButton
+            // deliveryComboBox
             // 
-            this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
-            this.submitButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.submitButton.Location = new System.Drawing.Point(137, 224);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(105, 33);
-            this.submitButton.TabIndex = 14;
-            this.submitButton.Text = "Создать";
-            this.submitButton.UseVisualStyleBackColor = false;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            this.deliveryComboBox.DisplayMember = "название_типа";
+            this.deliveryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deliveryComboBox.DropDownWidth = 167;
+            this.deliveryComboBox.FormattingEnabled = true;
+            this.deliveryComboBox.Items.AddRange(new object[] {
+            "Курьер",
+            "Почта",
+            "Самовывоз"});
+            this.deliveryComboBox.Location = new System.Drawing.Point(108, 122);
+            this.deliveryComboBox.Name = "deliveryComboBox";
+            this.deliveryComboBox.Size = new System.Drawing.Size(141, 24);
+            this.deliveryComboBox.Sorted = true;
+            this.deliveryComboBox.TabIndex = 23;
+            this.deliveryComboBox.ValueMember = "название_типа";
+            // 
+            // addClientButton
+            // 
+            this.addClientButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addClientButton.BackgroundImage")));
+            this.addClientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addClientButton.Location = new System.Drawing.Point(309, 25);
+            this.addClientButton.Name = "addClientButton";
+            this.addClientButton.Size = new System.Drawing.Size(25, 25);
+            this.addClientButton.TabIndex = 21;
+            this.addClientButton.UseVisualStyleBackColor = true;
+            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Товар:";
+            // 
+            // itemComboBox
+            // 
+            this.itemComboBox.DisplayMember = "название_типа";
+            this.itemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.itemComboBox.DropDownWidth = 167;
+            this.itemComboBox.FormattingEnabled = true;
+            this.itemComboBox.Location = new System.Drawing.Point(73, 59);
+            this.itemComboBox.Name = "itemComboBox";
+            this.itemComboBox.Size = new System.Drawing.Size(230, 24);
+            this.itemComboBox.Sorted = true;
+            this.itemComboBox.TabIndex = 20;
+            this.itemComboBox.ValueMember = "название_типа";
             // 
             // countTextBox
             // 
@@ -138,64 +170,32 @@
             this.clientComboBox.TabIndex = 17;
             this.clientComboBox.ValueMember = "название_типа";
             // 
-            // label1
+            // cancelButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Товар:";
+            this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cancelButton.Location = new System.Drawing.Point(244, 224);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(108, 33);
+            this.cancelButton.TabIndex = 15;
+            this.cancelButton.Text = "Отменить";
+            this.cancelButton.UseVisualStyleBackColor = false;
             // 
-            // itemComboBox
+            // submitButton
             // 
-            this.itemComboBox.DisplayMember = "название_типа";
-            this.itemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.itemComboBox.DropDownWidth = 167;
-            this.itemComboBox.FormattingEnabled = true;
-            this.itemComboBox.Location = new System.Drawing.Point(73, 59);
-            this.itemComboBox.Name = "itemComboBox";
-            this.itemComboBox.Size = new System.Drawing.Size(230, 24);
-            this.itemComboBox.Sorted = true;
-            this.itemComboBox.TabIndex = 20;
-            this.itemComboBox.ValueMember = "название_типа";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Доставка:";
-            // 
-            // deliveryComboBox
-            // 
-            this.deliveryComboBox.DisplayMember = "название_типа";
-            this.deliveryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.deliveryComboBox.DropDownWidth = 167;
-            this.deliveryComboBox.FormattingEnabled = true;
-            this.deliveryComboBox.Items.AddRange(new object[] {
-            "Курьер",
-            "Почта",
-            "Самовывоз"});
-            this.deliveryComboBox.Location = new System.Drawing.Point(108, 122);
-            this.deliveryComboBox.Name = "deliveryComboBox";
-            this.deliveryComboBox.Size = new System.Drawing.Size(141, 24);
-            this.deliveryComboBox.Sorted = true;
-            this.deliveryComboBox.TabIndex = 23;
-            this.deliveryComboBox.ValueMember = "название_типа";
-            // 
-            // addClientButton
-            // 
-            this.addClientButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addClientButton.BackgroundImage")));
-            this.addClientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addClientButton.Location = new System.Drawing.Point(309, 25);
-            this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(25, 25);
-            this.addClientButton.TabIndex = 21;
-            this.addClientButton.UseVisualStyleBackColor = true;
-            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
+            this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
+            this.submitButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.submitButton.Location = new System.Drawing.Point(137, 224);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(105, 33);
+            this.submitButton.TabIndex = 14;
+            this.submitButton.Text = "Создать";
+            this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // progressBar1
             // 

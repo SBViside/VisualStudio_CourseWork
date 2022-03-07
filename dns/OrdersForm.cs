@@ -63,6 +63,7 @@ namespace dns
 
                 foreach (DataGridViewRow row in dgv.Rows)
                     row.Height = 30;
+
                 dgv.ClearSelection();
                 ClearLabels();
             }
@@ -174,7 +175,7 @@ namespace dns
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetInfo(dataGridView1.CurrentRow);
+            //GetInfo(dataGridView1.CurrentRow);
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -189,8 +190,14 @@ namespace dns
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
+            if (GetCurrentTab().SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Заказ не выбран", "Действие невозможно",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             // Окно подтверждения
-            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
+            if (MessageBox.Show("Вы действительно хотите удалить заказ?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
             DataGridView dgv = GetCurrentTab();
@@ -235,5 +242,12 @@ namespace dns
             if(addOrderForm.ShowDialog() == DialogResult.OK) 
                 SetRefresh();
         }
+
+        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (GetCurrentTab().SelectedRows.Count == 0) return;
+            GetInfo(GetCurrentTab().CurrentRow);
+        }
+
     }
 }

@@ -57,11 +57,6 @@ namespace dns
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ListRefresh();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (typeName.Text.Length < 3) return;
@@ -86,6 +81,13 @@ namespace dns
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            if (searchText.Text.Length < 1)
+            {
+                MessageBox.Show("Строка поиска пустая", "Действие невозможно",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             ListSearch(searchText.Text);
             searchText.Clear();
         }
@@ -95,16 +97,17 @@ namespace dns
             if (dataGridView1.CurrentRow.Index < 0)
             {
                 MessageBox.Show("Категория не выбрана", "Действие невозможно",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            try
-            {
-                // Окно подтверждения
-                if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+            // Окно подтверждения
+            if (MessageBox.Show("Вы действительно хотите удалить категорию?", "Подтверждение действия",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
+
+            try
+            { 
                 string query = $"SELECT название FROM товары WHERE код_типа " +
                     $"IN (SELECT код_типа FROM типы WHERE название_типа='{dataGridView1.CurrentRow.Cells[0].Value}')";
 
@@ -126,6 +129,11 @@ namespace dns
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            ListRefresh();
         }
     }
 }

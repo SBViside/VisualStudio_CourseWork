@@ -44,7 +44,7 @@ namespace dns
                 MessageBox.Show(ex.Message, "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            return ("");
+            return (null);
         }
 
         /// <summary> Данный метод используется для занесения данных 
