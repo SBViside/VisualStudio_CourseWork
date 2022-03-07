@@ -228,5 +228,12 @@ namespace dns
             sf.typeComboBox.SelectedIndex = 0;
             sf.ShowDialog();
         }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            AddOrderForm addOrderForm = new AddOrderForm();
+            if(addOrderForm.ShowDialog() == DialogResult.OK) 
+                SetRefresh();
+        }
     }
 }

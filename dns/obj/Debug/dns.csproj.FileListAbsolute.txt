@@ -48,3 +48,4 @@ C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.AddClientForm.reso
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.EmployeesForm.resources
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.AddEmployeeForm.resources
 C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.OrdersForm.resources
+C:\Users\HP\Desktop\VisualStudio_CourseWork\dns\obj\Debug\dns.AddOrderForm.resources

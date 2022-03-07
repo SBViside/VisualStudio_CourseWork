@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace dns
 {
     public partial class AddClientForm : Form
     {
-        private ClientsForm parentForm;
+        private OleDbConnection myConnection;
         private string action;
 
-        public AddClientForm(ClientsForm f, string ac)
+        public AddClientForm(OleDbConnection con, string ac)
         {
             InitializeComponent();
-            parentForm = f;
+            myConnection = con;
             action = ac;
         }
 
@@ -46,16 +47,15 @@ namespace dns
                 case "adding":
                     query = $"INSERT INTO клиенты (фамилия, имя, отчество, дата_рождения, адрес, телефон, эл_почта) " +
                         $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{adress}', '{phone}', '{email}')";
-                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+                    QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
                 case "updating":
                     query = $"UPDATE клиенты SET адрес='{adress}', " +
                         $"телефон='{phone}', эл_почта='{email}' WHERE фамилия='{surname}' " +
                         $"and имя='{name}' and отчество='{patronymic}'";
-                    QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+                    QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
             }
-            parentForm.TableRefresh();
             this.Close();
         }
     }

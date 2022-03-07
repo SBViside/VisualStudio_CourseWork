@@ -98,8 +98,9 @@ namespace dns
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            AddClientForm addClientForm = new AddClientForm(this, "adding");
-            addClientForm.ShowDialog();
+            AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
+            if (addClientForm.ShowDialog() == DialogResult.OK)
+                TableRefresh();
         }
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace dns
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            AddClientForm addClientForm = new AddClientForm(this, "updating");
+            AddClientForm addClientForm = new AddClientForm(myConnection, "updating");
 
             addClientForm.surnameTextBox.Enabled = false;
             addClientForm.nameTextBox.Enabled = false;
