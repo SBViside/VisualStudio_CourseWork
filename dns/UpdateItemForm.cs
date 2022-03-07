@@ -3,17 +3,17 @@ using System.Windows.Forms;
 
 namespace dns
 {
-    public partial class UpdateDataForm1 : Form
+    public partial class UpdateItemForm : Form
     {
-        private ItemsForm form;
+        private ItemsForm parentForm;
 
-        public UpdateDataForm1(ItemsForm f, string item)
+        public UpdateItemForm(ItemsForm f, string item)
         {
             InitializeComponent();
-            form = f;
+            parentForm = f;
 
             // Запись данных в typeComboBox
-            QueriesClass.SetDataIntoList(form.myConnection, typeComboBox);
+            QueriesClass.SetDataIntoList(parentForm.myConnection, typeComboBox, "название_типа", "типы");
             typeComboBox.SelectedItem = item;
         }
 
@@ -25,7 +25,7 @@ namespace dns
         private void submitButton_Click(object sender, EventArgs e)
         {
             // Вызов метода UpdateData из главной формы
-            form.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), 
+            parentForm.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), 
                 (int)countTextBox.Value, (int)priceTextBox.Value);
             this.Close();
         }

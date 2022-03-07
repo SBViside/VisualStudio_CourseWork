@@ -6,12 +6,14 @@ namespace dns
 {
     public partial class TypeEditor : Form
     {
-        private ItemsForm parentForm;
+        //private ItemsForm parentForm;
+        private OleDbConnection myConnection;
 
-        public TypeEditor(ItemsForm f)
+        public TypeEditor(OleDbConnection con)
         {
             InitializeComponent();
-            parentForm = f;
+
+            myConnection = con;
             ListRefresh();
         }
 
@@ -19,16 +21,16 @@ namespace dns
         {
             try
             {
-                listBox.Items.Clear();
+                dataGridView1.Rows.Clear();
 
                 // Строка запроса к БД
                 string query = "SELECT название_типа FROM типы";
-                OleDbCommand command = new OleDbCommand(query, parentForm.myConnection); // Создаю запрос
+                OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                 OleDbDataReader dbReader = command.ExecuteReader();   // Считываю данные
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    listBox.Items.Add(dbReader["название_типа"]);
+                    dataGridView1.Rows.Add(dbReader["название_типа"]);
 
                 dbReader.Close();
             }
@@ -41,16 +43,17 @@ namespace dns
         private void ListSearch(string keyWord)
         {
             keyWord = keyWord.ToLower();
-            for (int i = 0; i < listBox.Items.Count; i++)
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                string currentWord = listBox.Items[i].ToString().ToLower();
+                string currentWord = dataGridView1.Rows[i].Cells[0].Value.ToString().ToLower();
                 if (currentWord.Contains(keyWord))
                 {
-                    listBox.SetSelected(i, true);
+                    dataGridView1.Rows[i].Selected = true;
                     return;
                 }
             }
-            MessageBox.Show("Совпадений не найдено.", "Результат поиска",
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -62,16 +65,19 @@ namespace dns
         private void button3_Click(object sender, EventArgs e)
         {
             if (typeName.Text.Length < 3) return;
-            if (listBox.Items.Contains(typeName.Text))
-            {
-                MessageBox.Show("Похожий элемент уже существует.", "Действие невозможно.",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                typeName.Clear();
-                return;
-            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+                if (row.Cells[0].Value.ToString() == typeName.Text.Trim())
+                {
+                    MessageBox.Show("Похожая категория уже существует", "Действие невозможно",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    typeName.Clear();
+                    return;
+                }
 
             string query = $"INSERT INTO типы (название_типа) VALUES ('{typeName.Text}')";
-            QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
             ListRefresh();
 
@@ -86,9 +92,9 @@ namespace dns
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listBox.SelectedIndex < 0)
+            if (dataGridView1.CurrentRow.Index < 0)
             {
-                MessageBox.Show("Элемент не выбран.", "Действие невозможно.",
+                MessageBox.Show("Категория не выбрана", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -100,17 +106,17 @@ namespace dns
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
                 string query = $"SELECT название FROM товары WHERE код_типа " +
-                    $"IN (SELECT код_типа FROM типы WHERE название_типа='{listBox.SelectedItem}')";
-                
-                if (QueriesClass.HasLinks(parentForm.myConnection, query))
+                    $"IN (SELECT код_типа FROM типы WHERE название_типа='{dataGridView1.CurrentRow.Cells[0].Value}')";
+
+                if (QueriesClass.HasLinks(myConnection, query))
                 {
                     MessageBox.Show("Невозможно удалить категорию, так как она имеет связь с таблицей 'Товары'",
                         "Действие невозможно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                query = $"DELETE FROM типы WHERE название_типа='{listBox.SelectedItem}'";
-                QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
+                query = $"DELETE FROM типы WHERE название_типа='{dataGridView1.CurrentRow.Cells[0].Value}'";
+                QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
                 // Обновление таблицы
                 ListRefresh();
@@ -118,7 +124,7 @@ namespace dns
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

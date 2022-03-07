@@ -121,11 +121,11 @@
     <Compile Include="TypeEditor.Designer.cs">
       <DependentUpon>TypeEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDataForm1.cs">
+    <Compile Include="UpdateItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateDataForm1.Designer.cs">
-      <DependentUpon>UpdateDataForm1.cs</DependentUpon>
+    <Compile Include="UpdateItemForm.Designer.cs">
+      <DependentUpon>UpdateItemForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
@@ -162,8 +162,8 @@
     <EmbeddedResource Include="TypeEditor.resx">
       <DependentUpon>TypeEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateDataForm1.resx">
-      <DependentUpon>UpdateDataForm1.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateItemForm.resx">
+      <DependentUpon>UpdateItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

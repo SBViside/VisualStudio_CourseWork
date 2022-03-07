@@ -23,9 +23,9 @@ namespace dns
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if ( surnameTextBox.Text.Length < 2 || nameTextBox.Text.Length < 2 ||
-                patronymicTextBox.Text.Length < 2 || adressTextBox.Text.Length < 2 ||
-                phoneTextBox.Text.Length < 2 || emailTextBox.Text.Length < 2 )
+            if ( surnameTextBox.Text.Length < 1 || nameTextBox.Text.Length < 1 ||
+                patronymicTextBox.Text.Length < 1 || adressTextBox.Text.Length < 1 ||
+                phoneTextBox.Text.Length < 1 || emailTextBox.Text.Length < 1 )
             {
                 MessageBox.Show("Проверьте введённые данные.", "Действие невозможно", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

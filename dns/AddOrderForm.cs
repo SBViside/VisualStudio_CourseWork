@@ -52,21 +52,7 @@ namespace dns
 
         private void UpdateItems()
         {
-            itemComboBox.Items.Clear();
-            try
-            {
-                string query = $"SELECT название FROM товары";
-                OleDbCommand command = new OleDbCommand(query, myConnection);
-                OleDbDataReader dbReader = command.ExecuteReader();
-
-                while (dbReader.Read())
-                    itemComboBox.Items.Add(dbReader["название"]);
-                dbReader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            QueriesClass.SetDataIntoList(myConnection, itemComboBox, "название", "товары");
         }
 
         private void addClientButton_Click(object sender, EventArgs e)
