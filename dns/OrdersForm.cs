@@ -137,8 +137,6 @@ namespace dns
             priceLabel.Text = (double.Parse(dbReader["Стоимость"].ToString()) * int.Parse(countLabel.Text)).ToString() + "$";
             statusLabel.Text = dbReader["Статус"].ToString();
             dbReader.Close();
-
-            if (statusLabel.Text == "активен") setStatusButton.Visible = true;
         }
 
         private void ClearLabels()
@@ -152,7 +150,6 @@ namespace dns
             deliveryLabel.Text = "(нет данных)";
             priceLabel.Text = "0$";
             statusLabel.Text = "(нет данных)";
-            setStatusButton.Visible = false;
         }
 
         private void statusLabel_TextChanged(object sender, EventArgs e)
@@ -160,19 +157,74 @@ namespace dns
             if (statusLabel.Text == "активен")
             {
                 statusLabel.ForeColor = Color.IndianRed;
+                setStatusButton.Visible = true;
                 return;
             }
             if (statusLabel.Text == "выполнен")
             {
                 statusLabel.ForeColor = Color.OliveDrab;
+                setStatusButton.Visible = false;
                 return;
             }
             statusLabel.ForeColor = SystemColors.ControlText;
+            setStatusButton.Visible = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             GetInfo(dataGridView1.CurrentRow);
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetInfo(dataGridView2.CurrentRow);
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetInfo(dataGridView3.CurrentRow);
+        }
+
+        private void bindingNavigatorDelete_Click(object sender, EventArgs e)
+        {
+            // Окно подтверждения
+            if (MessageBox.Show("Вы действительно хотите удалить строку?", "Подтверждение действия",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            DataGridView dgv = GetCurrentTab();
+            string query = $"DELETE FROM заказы WHERE код_заказа={dgv.CurrentRow.Cells[0].Value}";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
+            SetRefresh();
+        }
+
+        private void setStatusButton_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = GetCurrentTab();
+            string query = $"UPDATE заказы SET статус='выполнен' WHERE код_заказа={dgv.CurrentRow.Cells[0].Value}";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
+            SetRefresh();
+        }
+
+        private DataGridView GetCurrentTab()
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 1:
+                    return dataGridView2;
+                case 2:
+                    return dataGridView3;
+            }
+            return dataGridView1;
+        }
+
+        private void посикToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = GetCurrentTab();
+            SearchForm sf = new SearchForm(dgv);
+            for (int i = 0; i < dgv.ColumnCount; i++)
+                sf.typeComboBox.Items.Add(dgv.Columns[i].HeaderText);
+            sf.typeComboBox.SelectedIndex = 0;
+            sf.ShowDialog();
         }
     }
 }
