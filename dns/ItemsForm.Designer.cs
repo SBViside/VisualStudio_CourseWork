@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,10 +55,6 @@
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редакторКатегорийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -89,6 +85,10 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -110,7 +110,7 @@
             this.редакторКатегорийToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(882, 30);
+            this.menuStrip.Size = new System.Drawing.Size(882, 27);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -120,7 +120,7 @@
             this.настройкиToolStripMenuItem1,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -228,7 +228,7 @@
             this.обновитьToolStripMenuItem,
             this.поискToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -274,7 +274,7 @@
             // редакторКатегорийToolStripMenuItem
             // 
             this.редакторКатегорийToolStripMenuItem.Name = "редакторКатегорийToolStripMenuItem";
-            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
             this.редакторКатегорийToolStripMenuItem.Text = "Редактор категорий";
             this.редакторКатегорийToolStripMenuItem.Click += new System.EventHandler(this.редакторКатегорийToolStripMenuItem_Click);
             // 
@@ -329,48 +329,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(882, 429);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 25.95899F;
-            this.Column2.HeaderText = "Название";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.FillWeight = 25.95899F;
-            this.Column3.HeaderText = "Тип";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.FillWeight = 288.4332F;
-            this.Column4.HeaderText = "Количество";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 130;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column5.FillWeight = 25.95899F;
-            this.Column5.HeaderText = "Стоимость ($)";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 140;
             // 
             // bindingNavigatorSeparator1
             // 
@@ -526,9 +484,9 @@
             this.addPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.addPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.addPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addPanel.Location = new System.Drawing.Point(0, 30);
+            this.addPanel.Location = new System.Drawing.Point(0, 27);
             this.addPanel.Name = "addPanel";
-            this.addPanel.Size = new System.Drawing.Size(330, 475);
+            this.addPanel.Size = new System.Drawing.Size(330, 478);
             this.addPanel.TabIndex = 7;
             this.addPanel.Visible = false;
             this.addPanel.VisibleChanged += new System.EventHandler(this.addPanel_VisibleChanged);
@@ -537,7 +495,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 299);
+            this.groupBox2.Location = new System.Drawing.Point(11, 302);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(309, 123);
             this.groupBox2.TabIndex = 17;
@@ -559,7 +517,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(11, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 290);
+            this.groupBox1.Size = new System.Drawing.Size(309, 293);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
@@ -665,7 +623,7 @@
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(227, 432);
+            this.cancelButton.Location = new System.Drawing.Point(227, 435);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(93, 33);
             this.cancelButton.TabIndex = 11;
@@ -680,7 +638,7 @@
             this.submitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.submitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submitButton.Location = new System.Drawing.Point(132, 432);
+            this.submitButton.Location = new System.Drawing.Point(132, 435);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(93, 33);
             this.submitButton.TabIndex = 10;
@@ -697,6 +655,49 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(882, 3);
             this.panel2.TabIndex = 8;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.FillWeight = 25.95899F;
+            this.Column2.HeaderText = "Название";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.FillWeight = 25.95899F;
+            this.Column3.HeaderText = "Тип";
+            this.Column3.MinimumWidth = 200;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.FillWeight = 288.4332F;
+            this.Column4.HeaderText = "Количество";
+            this.Column4.MinimumWidth = 130;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 130;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column5.FillWeight = 25.95899F;
+            this.Column5.HeaderText = "Стоимость ($)";
+            this.Column5.MinimumWidth = 140;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 140;
             // 
             // ItemsForm
             // 
@@ -782,14 +783,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ToolStripMenuItem шрифтТаблицыToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ToolStripMenuItem цветВыделенияToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

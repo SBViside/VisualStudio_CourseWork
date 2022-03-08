@@ -43,9 +43,9 @@ namespace dns
                 dbReader.Close();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
                     row.Height = 30;
-                }
+                
+                dataGridView1.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -100,13 +100,23 @@ namespace dns
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
+
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
             addClientForm.ShowDialog();
+
             TableRefresh();
         }
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Клиент не выбран", "Действие невозможно",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (MessageBox.Show("Вы действительно хотите удалить клиента?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
@@ -136,6 +146,13 @@ namespace dns
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Клиент не выбран", "Действие невозможно",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             AddClientForm addClientForm = new AddClientForm(myConnection, "updating");
 
             addClientForm.surnameTextBox.Enabled = false;
@@ -151,6 +168,8 @@ namespace dns
             addClientForm.emailTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
             addClientForm.ShowDialog();
+
+            TableRefresh();
         }
 
         private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)

@@ -159,16 +159,19 @@ namespace dns
         {
             if (statusLabel.Text == "активен")
             {
+                statusLabel.Font = new Font(statusLabel.Font, FontStyle.Bold);
                 statusLabel.ForeColor = Color.IndianRed;
                 setStatusButton.Visible = true;
                 return;
             }
             if (statusLabel.Text == "выполнен")
             {
+                statusLabel.Font = new Font(statusLabel.Font, FontStyle.Bold);
                 statusLabel.ForeColor = Color.OliveDrab;
                 setStatusButton.Visible = false;
                 return;
             }
+            statusLabel.Font = new Font(statusLabel.Font, FontStyle.Regular);
             statusLabel.ForeColor = SystemColors.ControlText;
             setStatusButton.Visible = false;
         }
@@ -241,7 +244,11 @@ namespace dns
             myConnection.Close();
 
             AddOrderForm addOrderForm = new AddOrderForm();
-            addOrderForm.ShowDialog();
+            if (addOrderForm.ShowDialog() == DialogResult.No)
+            {
+                myConnection.Open();
+                return;
+            }
 
             myConnection.Open();
             SetRefresh();

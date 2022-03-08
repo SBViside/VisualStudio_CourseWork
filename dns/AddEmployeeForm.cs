@@ -14,6 +14,8 @@ namespace dns
 
             parentForm = f;
             action = ac;
+
+            progressBar1.Maximum = 100;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace dns
                 phoneTextBox.Text.Length < 2 || educationTextBox.Text.Length < 2 ||
                 passportTextBox.Text.Length < 2 || positionTextBox.Text.Length < 2)
             {
-                MessageBox.Show("Проверьте введённые данные.", "Действие невозможно",
+                MessageBox.Show("Проверьте введённые данные", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -36,14 +38,21 @@ namespace dns
             string surname = surnameTextBox.Text;
             string name = nameTextBox.Text;
             string patronymic = patronymicTextBox.Text;
+
+            string query = $"SELECT * FROM сотрудники WHERE фамилия='{surname}' AND имя='{name}' AND отчество='{patronymic}'";
+            if (action=="adding" && QueriesClass.HasLinks(parentForm.myConnection, query))
+            {
+                MessageBox.Show("Сотрудник с таким именен уже существует", "Повторите попытку",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             string date = dateTimePicker.Value.ToString();
             string adress = adressTextBox.Text;
             string passport = passportTextBox.Text;
             string education = educationTextBox.Text;
             string phone = phoneTextBox.Text;
             string position = positionTextBox.Text;
-
-            string query;
 
             switch (action)
             {
@@ -61,8 +70,19 @@ namespace dns
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
                     break;
             }
+            FillProgressBar();
             parentForm.TableRefresh();
             this.Close();
+        }
+
+        private void FillProgressBar()
+        {
+            progressBar1.Visible = true;
+            for (int i = 0; i <= 100; i++)
+            {
+                System.Threading.Thread.Sleep(10);
+                progressBar1.Value = i;
+            }
         }
     }
 }

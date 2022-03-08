@@ -173,21 +173,23 @@
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.No;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(244, 224);
+            this.cancelButton.Location = new System.Drawing.Point(244, 196);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(108, 33);
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Отменить";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.submitButton.Location = new System.Drawing.Point(137, 224);
+            this.submitButton.Location = new System.Drawing.Point(137, 196);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(105, 33);
             this.submitButton.TabIndex = 14;
@@ -197,16 +199,18 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 195);
+            this.progressBar1.Location = new System.Drawing.Point(11, 201);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(340, 23);
+            this.progressBar1.Size = new System.Drawing.Size(120, 23);
             this.progressBar1.TabIndex = 24;
+            this.progressBar1.UseWaitCursor = true;
+            this.progressBar1.Visible = false;
             // 
             // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 261);
+            this.ClientSize = new System.Drawing.Size(356, 238);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);

@@ -80,6 +80,13 @@ namespace dns
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Сотрудник не выбран", "Действие невозможно",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (MessageBox.Show("Вы действительно хотите удалить сотрудника?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 

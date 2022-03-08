@@ -13,10 +13,14 @@ namespace dns
             dgv = d;
         }
 
-
         private void executeButton_Click(object sender, EventArgs e)
         {
-            Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
+            if (isNumber.Checked)
+                Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
+            else
+                Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
+
+
             this.Close();
         }
 
@@ -25,7 +29,7 @@ namespace dns
             this.Close();
         }
 
-        public void Search(DataGridView dataGridView1, string keyWord, int col, bool reg)
+        private void Search(DataGridView dataGridView1, string keyWord, int col, bool reg)
         {
             string currWord;
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -50,7 +54,25 @@ namespace dns
                     }
                 }
             }
-            MessageBox.Show("Совпадений не найдено!", "Результат поиска",
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Search(DataGridView dataGridView1, string keyNum, int col)
+        {
+            string currNum;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                currNum = dataGridView1.Rows[i].Cells[col].Value.ToString();
+
+                if (currNum == keyNum)
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[i].Selected = true;
+                    return;
+                }
+            }
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

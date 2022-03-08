@@ -61,6 +61,8 @@ namespace dns
                 // Установка высоты каждой строки в таблице
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                     row.Height = 30;
+
+                dataGridView1.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -78,6 +80,14 @@ namespace dns
         {
             // Скрыть панель добавления
             addPanel.Visible = false;
+
+            // Проверка на выбранный товар
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Товар не выбран", "Действие невозможно",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             // Окно подтверждения
             if (MessageBox.Show("Вы действительно хотите удалить товар?", "Подтверждение действия",
@@ -105,6 +115,7 @@ namespace dns
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
             // открытие панели ввода данных
             addPanel.Visible = !addPanel.Visible;
         }
@@ -141,6 +152,16 @@ namespace dns
                 return;
             }
 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == nameTextBox.Text)
+                {
+                    MessageBox.Show("Товар с похожим названием уже существует", "Повторите попытку",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
             string id = QueriesClass.ApplyQuery_Return(myConnection, query);
 
@@ -156,10 +177,10 @@ namespace dns
             addPanel.Visible = false;
 
             // Проверка, выбран ли товар
-            if (dataGridView1.CurrentRow.Index < 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Товар для изменения не выбран", "Действие невозможно",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

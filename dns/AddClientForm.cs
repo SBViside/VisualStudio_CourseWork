@@ -12,13 +12,14 @@ namespace dns
         public AddClientForm(OleDbConnection con, string ac)
         {
             InitializeComponent();
+
             myConnection = con;
             action = ac;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace dns
                 patronymicTextBox.Text.Length < 1 || adressTextBox.Text.Length < 1 ||
                 phoneTextBox.Text.Length < 1 || emailTextBox.Text.Length < 1 )
             {
-                MessageBox.Show("Проверьте введённые данные.", "Действие невозможно", 
+                MessageBox.Show("Проверьте введённые данные", "Действие невозможно", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -35,12 +36,19 @@ namespace dns
             string surname = surnameTextBox.Text.Replace(' ', '_');
             string name = nameTextBox.Text.Replace(' ', '_');
             string patronymic = patronymicTextBox.Text.Replace(' ', '_');
+
+            string query = $"SELECT * FROM клиенты WHERE фамилия='{surname}' AND имя='{name}' AND отчество='{patronymic}'";
+            if (action=="adding" && QueriesClass.HasLinks(myConnection, query))
+            {
+                MessageBox.Show("Клиент с таким именен уже существует", "Повторите попытку",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             string date = dateTimePicker.Value.ToString();
             string adress = adressTextBox.Text;
             string phone = phoneTextBox.Text;
             string email = emailTextBox.Text;
-
-            string query;
 
             switch (action)
             {

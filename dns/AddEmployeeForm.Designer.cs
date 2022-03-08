@@ -50,6 +50,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -284,11 +285,23 @@
             this.surnameTextBox.Size = new System.Drawing.Size(155, 24);
             this.surnameTextBox.TabIndex = 4;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
+            this.progressBar1.Location = new System.Drawing.Point(12, 317);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(340, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 25;
+            this.progressBar1.UseWaitCursor = true;
+            this.progressBar1.Visible = false;
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 356);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.groupBox2);
@@ -331,5 +344,6 @@
         public System.Windows.Forms.TextBox passportTextBox;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.TextBox educationTextBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

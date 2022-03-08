@@ -69,6 +69,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.passportLabel = new System.Windows.Forms.Label();
+            this.phoneLabel = new System.Windows.Forms.Label();
             this.addressLabel = new System.Windows.Forms.Label();
             this.educationLabel = new System.Windows.Forms.Label();
             this.labelPA = new System.Windows.Forms.Label();
@@ -76,6 +78,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.positionLabel = new System.Windows.Forms.Label();
+            this.birthLabel = new System.Windows.Forms.Label();
             this.labelD = new System.Windows.Forms.Label();
             this.patronymicLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -88,10 +92,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthLabel = new System.Windows.Forms.Label();
-            this.positionLabel = new System.Windows.Forms.Label();
-            this.phoneLabel = new System.Windows.Forms.Label();
-            this.passportLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -147,7 +147,7 @@
             this.действияToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1062, 30);
+            this.menuStrip.Size = new System.Drawing.Size(1062, 27);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -157,7 +157,7 @@
             this.настройкиToolStripMenuItem1,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -237,7 +237,7 @@
             this.обновитьToolStripMenuItem,
             this.посикToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -480,6 +480,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Подробнее";
             // 
+            // passportLabel
+            // 
+            this.passportLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passportLabel.Location = new System.Drawing.Point(147, 266);
+            this.passportLabel.Name = "passportLabel";
+            this.passportLabel.Size = new System.Drawing.Size(165, 19);
+            this.passportLabel.TabIndex = 12;
+            this.passportLabel.Text = "(нет данных)";
+            // 
+            // phoneLabel
+            // 
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.phoneLabel.Location = new System.Drawing.Point(96, 239);
+            this.phoneLabel.Name = "phoneLabel";
+            this.phoneLabel.Size = new System.Drawing.Size(216, 19);
+            this.phoneLabel.TabIndex = 11;
+            this.phoneLabel.Text = "(нет данных)";
+            // 
             // addressLabel
             // 
             this.addressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -560,6 +578,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общая информация";
             // 
+            // positionLabel
+            // 
+            this.positionLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.positionLabel.Location = new System.Drawing.Point(111, 174);
+            this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Size = new System.Drawing.Size(201, 19);
+            this.positionLabel.TabIndex = 9;
+            this.positionLabel.Text = "(нет данных)";
+            // 
+            // birthLabel
+            // 
+            this.birthLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthLabel.Location = new System.Drawing.Point(137, 125);
+            this.birthLabel.Name = "birthLabel";
+            this.birthLabel.Size = new System.Drawing.Size(175, 19);
+            this.birthLabel.TabIndex = 8;
+            this.birthLabel.Text = "(нет данных)";
+            // 
             // labelD
             // 
             this.labelD.AutoSize = true;
@@ -639,30 +675,30 @@
             // 
             // Column2
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column2.FillWeight = 25.95899F;
             this.Column2.HeaderText = "Фамилия";
-            this.Column2.MinimumWidth = 6;
+            this.Column2.MinimumWidth = 150;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 150;
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.FillWeight = 25.95899F;
             this.Column3.HeaderText = "Имя";
-            this.Column3.MinimumWidth = 6;
+            this.Column3.MinimumWidth = 150;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Width = 150;
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column4.FillWeight = 288.4332F;
             this.Column4.HeaderText = "Отчество";
-            this.Column4.MinimumWidth = 6;
+            this.Column4.MinimumWidth = 150;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 150;
@@ -673,45 +709,9 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column10.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column10.HeaderText = "Должность";
-            this.Column10.MinimumWidth = 6;
+            this.Column10.MinimumWidth = 50;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            // 
-            // birthLabel
-            // 
-            this.birthLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birthLabel.Location = new System.Drawing.Point(137, 125);
-            this.birthLabel.Name = "birthLabel";
-            this.birthLabel.Size = new System.Drawing.Size(175, 19);
-            this.birthLabel.TabIndex = 8;
-            this.birthLabel.Text = "(нет данных)";
-            // 
-            // positionLabel
-            // 
-            this.positionLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.positionLabel.Location = new System.Drawing.Point(111, 174);
-            this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(201, 19);
-            this.positionLabel.TabIndex = 9;
-            this.positionLabel.Text = "(нет данных)";
-            // 
-            // phoneLabel
-            // 
-            this.phoneLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneLabel.Location = new System.Drawing.Point(96, 239);
-            this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(216, 19);
-            this.phoneLabel.TabIndex = 11;
-            this.phoneLabel.Text = "(нет данных)";
-            // 
-            // passportLabel
-            // 
-            this.passportLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passportLabel.Location = new System.Drawing.Point(147, 266);
-            this.passportLabel.Name = "passportLabel";
-            this.passportLabel.Size = new System.Drawing.Size(165, 19);
-            this.passportLabel.TabIndex = 12;
-            this.passportLabel.Text = "(нет данных)";
             // 
             // EmployeesForm
             // 
@@ -801,13 +801,13 @@
         private System.Windows.Forms.Label labelPA;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Label labelD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.Label birthLabel;
         private System.Windows.Forms.Label positionLabel;
         private System.Windows.Forms.Label passportLabel;
         private System.Windows.Forms.Label phoneLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

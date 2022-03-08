@@ -216,7 +216,7 @@
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.No;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cancelButton.Location = new System.Drawing.Point(182, 389);

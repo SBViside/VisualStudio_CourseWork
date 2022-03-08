@@ -58,12 +58,12 @@ namespace dns
         private void addClientButton_Click(object sender, EventArgs e)
         {
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
-            if (addClientForm.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("Клиент добавлен!", "Операция успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateClients();
-                clientComboBox.SelectedIndex = clientComboBox.Items.Count - 1;
-            }
+            if (addClientForm.ShowDialog() == DialogResult.No)
+                return;
+
+            MessageBox.Show("Клиент добавлен!", "Операция успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UpdateClients();
+            clientComboBox.SelectedIndex = clientComboBox.Items.Count - 1;
         }
 
         private void AddOrderForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -108,11 +108,17 @@ namespace dns
 
         private void FillProgressBar()
         {
+            progressBar1.Visible = true;
             for (int i = 0; i <= 100; i++)
             {
                 System.Threading.Thread.Sleep(10);
                 progressBar1.Value = i;
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            //this.Close();
         }
     }
 }
