@@ -104,9 +104,14 @@ namespace dns
                 return;
             }
 
+            // Запичь данных в переменные
+            string name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string count = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            string price = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+
             // Строка запроса на удаление 
-            query = $"DELETE FROM товары WHERE название='{dataGridView1.CurrentRow.Cells[0].Value}' and " +
-                $"количество={dataGridView1.CurrentRow.Cells[2].Value} and стоимость={dataGridView1.CurrentRow.Cells[3].Value}";
+            query = $"DELETE FROM товары WHERE название='{name}' AND " +
+                $"количество={count} AND стоимость={price}";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
             // Обновление таблицы
@@ -116,14 +121,7 @@ namespace dns
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
-            // открытие панели ввода данных
             addPanel.Visible = !addPanel.Visible;
-        }
-
-        private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Обновление данных
-            TableRefresh();
         }
 
         // Метод очистки полей ввода
@@ -148,31 +146,134 @@ namespace dns
                 priceTextBox.Value <= 0)
             {
                 MessageBox.Show("Проверьте введённые данные", "Действие невозможно", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
+            // Проверка на совпадения
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells[0].Value.ToString() == nameTextBox.Text)
+                string currName = row.Cells[0].Value.ToString();
+                if (currName == nameTextBox.Text)
                 {
                     MessageBox.Show("Товар с похожим названием уже существует", "Повторите попытку",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
             }
 
+            // Определяет код категории товара по названию
             string query = $"SELECT код_типа FROM типы WHERE название_типа='{typeComboBox.SelectedItem}'";
             string id = QueriesClass.ApplyQuery_Return(myConnection, query);
 
+            // Данные заносятся в Базу данных
             query = $"INSERT INTO товары (название, код_типа, количество, стоимость) " +
                 $"VALUES ('{nameTextBox.Text}', {id}, {countTextBox.Value}, {priceTextBox.Value})";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
+            // Таблица обновляется
             TableRefresh();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        public void UpdateData(string name, string type, int count, double price)
+        {
+            // Определяет код категории товара по названию
+            string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
+            string id = QueriesClass.ApplyQuery_Return(myConnection, query);
+
+            // Данные обновляются в Базе данных
+            query = $"UPDATE товары SET код_типа = {id}, количество = {count}, " +
+                $"стоимость = {price} WHERE название = '{name}'";
+            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
+
+            // Обновление таблицы
+            TableRefresh();
+        }
+
+        private void поиcкToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Очистка выделения
+            addPanel.Visible = false;
+            dataGridView1.ClearSelection();
+
+            // Создает окно поиска
+            SearchForm sf = new SearchForm(dataGridView1);
+            sf.ShowDialog();
+        }
+
+        private void Items_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            myConnection.Close();
+        }
+
+        private void слеваToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPanel.Dock = DockStyle.Left;
+            слеваToolStripMenuItem.Checked = !(справаToolStripMenuItem.Checked = false);
+        }
+
+        private void справаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPanel.Dock = DockStyle.Right;
+            справаToolStripMenuItem.Checked = !(слеваToolStripMenuItem.Checked = false);
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 30;
+            height_30.Checked = !(height_40.Checked = height_50.Checked = false);
+        }
+
+        private void height_40_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 40;
+            height_40.Checked = !(height_30.Checked = height_50.Checked = false);
+        }
+
+        private void height_50_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnHeadersHeight = 50;
+            height_50.Checked = !(height_40.Checked = height_30.Checked = false);
+        }
+
+        private void редакторКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPanel.Visible = false;
+
+            TypeEditor typeEditor = new TypeEditor(myConnection);
+            typeEditor.ShowDialog();
+
+            // Обновляю данные в ComboBox
+            QueriesClass.SetDataIntoList(myConnection, typeComboBox, "название_типа", "типы");
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            addPanel.Visible = false;
+        }
+
+        private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Меняю шрифт в таблице
+            if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.Font = fontDialog1.Font;
+        }
+
+        private void цветВыделенияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Меняю цвет выделения в таблице
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel) return;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = colorDialog1.Color;
+            dataGridView1.GridColor = colorDialog1.Color;
+        }
+
+        private void addPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            // Когда, статус Visible у панели меняется, происходит очистка полей ввода
+            ClearData();
+        }
+
+        private void updateItemButton_Click(object sender, EventArgs e)
         {
             addPanel.Visible = false;
 
@@ -193,107 +294,6 @@ namespace dns
             udf.priceTextBox.Value = int.Parse(curRow.Cells[3].Value.ToString());
 
             udf.ShowDialog();
-        }
-
-        public void UpdateData(string name, string type, int count, double price)
-        {
-            string query = $"SELECT код_типа FROM типы WHERE название_типа='{type}'";
-            string id = QueriesClass.ApplyQuery_Return(myConnection, query);
-
-            query = $"UPDATE товары SET код_типа = {id}, количество = {count}, " +
-                $"стоимость = {price} WHERE название = '{name}'";
-            QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
-
-            // Обновление таблицы
-            TableRefresh();
-        }
-
-        private void поиcкToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addPanel.Visible = false;
-
-            SearchForm sf = new SearchForm(dataGridView1);
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
-            sf.typeComboBox.SelectedIndex = 0;
-
-            sf.ShowDialog();
-        }
-
-        private void Items_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            myConnection.Close();
-        }
-
-        private void слеваToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addPanel.Dock = DockStyle.Left;
-            слеваToolStripMenuItem.Checked = true;
-            справаToolStripMenuItem.Checked = false;
-        }
-
-        private void справаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addPanel.Dock = DockStyle.Right;
-            справаToolStripMenuItem.Checked = true;
-            слеваToolStripMenuItem.Checked = false;
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            dataGridView1.ColumnHeadersHeight = 30;
-            height_30.Checked = true;
-            height_40.Checked = false;
-            height_50.Checked = false;
-        }
-
-        private void height_40_Click(object sender, EventArgs e)
-        {
-            dataGridView1.ColumnHeadersHeight = 40;
-            height_30.Checked = false;
-            height_40.Checked = true;
-            height_50.Checked = false;
-        }
-
-        private void height_50_Click(object sender, EventArgs e)
-        {
-            dataGridView1.ColumnHeadersHeight = 50;
-            height_30.Checked = false;
-            height_40.Checked = false;
-            height_50.Checked = true;
-        }
-
-        private void редакторКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addPanel.Visible = false;
-
-            TypeEditor typeEditor = new TypeEditor(myConnection);
-            typeEditor.ShowDialog();
-
-            QueriesClass.SetDataIntoList(myConnection, typeComboBox, "название_типа", "типы");
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            addPanel.Visible = false;
-        }
-
-        private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
-            dataGridView1.Font = fontDialog1.Font;
-        }
-
-        private void цветВыделенияToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (colorDialog1.ShowDialog() == DialogResult.Cancel) return;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = colorDialog1.Color;
-            dataGridView1.GridColor = colorDialog1.Color;
-        }
-
-        private void addPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            ClearData();
         }
     }
 }

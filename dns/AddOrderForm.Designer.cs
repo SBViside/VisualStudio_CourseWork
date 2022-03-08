@@ -94,9 +94,12 @@
             // 
             this.addClientButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addClientButton.BackgroundImage")));
             this.addClientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addClientButton.Location = new System.Drawing.Point(309, 25);
+            this.addClientButton.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.addClientButton.FlatAppearance.BorderSize = 0;
+            this.addClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addClientButton.Location = new System.Drawing.Point(309, 27);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(25, 25);
+            this.addClientButton.Size = new System.Drawing.Size(21, 21);
             this.addClientButton.TabIndex = 21;
             this.addClientButton.UseVisualStyleBackColor = true;
             this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
@@ -175,7 +178,7 @@
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.No;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cancelButton.Location = new System.Drawing.Point(244, 196);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(108, 33);
@@ -188,7 +191,7 @@
             // 
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.submitButton.Location = new System.Drawing.Point(137, 196);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(105, 33);

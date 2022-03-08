@@ -24,7 +24,7 @@ namespace dns
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            // Вызов метода UpdateData из главной формы
+            // Вызов метода UpdateData из родительской формы
             parentForm.UpdateData(nameTextBox.Text, typeComboBox.SelectedItem.ToString(), 
                 (int)countTextBox.Value, (int)priceTextBox.Value);
             this.Close();

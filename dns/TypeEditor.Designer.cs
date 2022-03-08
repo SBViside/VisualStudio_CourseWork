@@ -51,7 +51,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -64,8 +64,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(6, 411);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(181, 42);
@@ -82,26 +84,27 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(6, 142);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 91);
+            this.groupBox2.Size = new System.Drawing.Size(181, 105);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск по списку";
             // 
             // refreshButton
             // 
+            this.refreshButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
             this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refreshButton.Location = new System.Drawing.Point(10, 50);
+            this.refreshButton.Location = new System.Drawing.Point(42, 66);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(29, 29);
             this.refreshButton.TabIndex = 7;
-            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.UseVisualStyleBackColor = false;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // searchText
             // 
             this.searchText.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchText.Location = new System.Drawing.Point(9, 22);
+            this.searchText.Location = new System.Drawing.Point(9, 38);
             this.searchText.Name = "searchText";
             this.searchText.Size = new System.Drawing.Size(161, 24);
             this.searchText.TabIndex = 0;
@@ -109,10 +112,12 @@
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.Teal;
-            this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.searchButton.Location = new System.Drawing.Point(45, 50);
+            this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchButton.Location = new System.Drawing.Point(77, 66);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(126, 29);
+            this.searchButton.Size = new System.Drawing.Size(93, 29);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Поиск";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -153,7 +158,9 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.OliveDrab;
-            this.addButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addButton.Location = new System.Drawing.Point(9, 80);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(162, 29);

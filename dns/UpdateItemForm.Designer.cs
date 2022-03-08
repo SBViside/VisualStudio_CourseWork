@@ -47,9 +47,11 @@
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelButton.Location = new System.Drawing.Point(225, 202);
+            this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cancelButton.Location = new System.Drawing.Point(225, 200);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(108, 33);
             this.cancelButton.TabIndex = 11;
@@ -60,9 +62,11 @@
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
+            this.submitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.submitButton.Location = new System.Drawing.Point(114, 202);
+            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.submitButton.Location = new System.Drawing.Point(113, 200);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(105, 33);
             this.submitButton.TabIndex = 10;

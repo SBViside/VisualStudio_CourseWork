@@ -142,10 +142,8 @@ namespace dns
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(this.dataGridView1);
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
-            sf.typeComboBox.SelectedIndex = 0;
+            dataGridView1.ClearSelection();
+            SearchForm sf = new SearchForm(dataGridView1);
             sf.ShowDialog();
         }
 
@@ -189,7 +187,11 @@ namespace dns
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0) return;
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                ClearLabels();
+                return;
+            }
             GetInfo(dataGridView1.CurrentRow);
         }
 

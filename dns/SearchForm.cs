@@ -11,6 +11,10 @@ namespace dns
         {
             InitializeComponent();
             dgv = d;
+
+            for (int i = 0; i < dgv.ColumnCount; i++)
+                typeComboBox.Items.Add(dgv.Columns[i].HeaderText);
+            typeComboBox.SelectedIndex = 0;
         }
 
         private void executeButton_Click(object sender, EventArgs e)

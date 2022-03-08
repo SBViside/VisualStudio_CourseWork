@@ -170,21 +170,6 @@ namespace dns
             setStatusButton.Visible = false;
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //GetInfo(dataGridView1.CurrentRow);
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetInfo(dataGridView2.CurrentRow);
-        }
-
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetInfo(dataGridView3.CurrentRow);
-        }
-
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
             if (GetCurrentTab().SelectedRows.Count == 0)
@@ -226,10 +211,8 @@ namespace dns
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataGridView dgv = GetCurrentTab();
+            dgv.ClearSelection();
             SearchForm sf = new SearchForm(dgv);
-            for (int i = 0; i < dgv.ColumnCount; i++)
-                sf.typeComboBox.Items.Add(dgv.Columns[i].HeaderText);
-            sf.typeComboBox.SelectedIndex = 0;
             sf.ShowDialog();
         }
 
@@ -251,7 +234,11 @@ namespace dns
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (GetCurrentTab().SelectedRows.Count == 0) return;
+            if (GetCurrentTab().SelectedRows.Count == 0)
+            {
+                ClearLabels();
+                return;
+            }
             GetInfo(GetCurrentTab().CurrentRow);
         }
 
