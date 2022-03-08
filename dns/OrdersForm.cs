@@ -238,9 +238,14 @@ namespace dns
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            myConnection.Close();
+
             AddOrderForm addOrderForm = new AddOrderForm();
-            if(addOrderForm.ShowDialog() == DialogResult.OK) 
-                SetRefresh();
+            addOrderForm.ShowDialog();
+
+            myConnection.Open();
+            SetRefresh();
+
         }
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)

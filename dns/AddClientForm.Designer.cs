@@ -230,7 +230,6 @@
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
-            this.submitButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.submitButton.Location = new System.Drawing.Point(75, 389);

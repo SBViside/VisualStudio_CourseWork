@@ -36,8 +36,8 @@ namespace dns
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"], dbReader["отчество"], 
-                        dbReader["дата_рождения"].ToString().Split()[0], dbReader["адрес"], 
+                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"], dbReader["отчество"],
+                        dbReader["дата_рождения"].ToString().Split()[0], dbReader["адрес"],
                         dbReader["телефон"], dbReader["эл_почта"]);
 
                 dbReader.Close();
@@ -90,8 +90,10 @@ namespace dns
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchForm sf = new SearchForm(this.dataGridView1);
+
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 sf.typeComboBox.Items.Add(dataGridView1.Columns[i].HeaderText);
+
             sf.typeComboBox.SelectedIndex = 0;
             sf.ShowDialog();
         }
@@ -99,13 +101,13 @@ namespace dns
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
-            if (addClientForm.ShowDialog() == DialogResult.OK)
-                TableRefresh();
+            addClientForm.ShowDialog();
+            TableRefresh();
         }
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить клиента?", "Подтверждение действия", 
+            if (MessageBox.Show("Вы действительно хотите удалить клиента?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
             string query = $"SELECT * FROM заказы WHERE код_клиента " +

@@ -78,7 +78,7 @@ namespace dns
                 countTextBox.Value < 1 ||
                 deliveryComboBox.SelectedIndex < 0)
             {
-                MessageBox.Show("Введенные данные некорректны", "Действие невозможно", 
+                MessageBox.Show("Введенные данные некорректны", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -103,13 +103,14 @@ namespace dns
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
             FillProgressBar();
+            this.Close();
         }
 
         private void FillProgressBar()
         {
             for (int i = 0; i <= 100; i++)
             {
-                System.Threading.Thread.Sleep(35);
+                System.Threading.Thread.Sleep(10);
                 progressBar1.Value = i;
             }
         }

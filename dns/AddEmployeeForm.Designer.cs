@@ -36,6 +36,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.educationTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.passportTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.adressTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,10 +50,6 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.passportTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.educationTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -107,9 +107,9 @@
             // positionTextBox
             // 
             this.positionTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.positionTextBox.Location = new System.Drawing.Point(389, 29);
+            this.positionTextBox.Location = new System.Drawing.Point(389, 28);
             this.positionTextBox.Name = "positionTextBox";
-            this.positionTextBox.Size = new System.Drawing.Size(159, 24);
+            this.positionTextBox.Size = new System.Drawing.Size(144, 24);
             this.positionTextBox.TabIndex = 12;
             // 
             // label7
@@ -125,9 +125,9 @@
             // phoneTextBox
             // 
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneTextBox.Location = new System.Drawing.Point(99, 28);
+            this.phoneTextBox.Location = new System.Drawing.Point(93, 28);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(159, 24);
+            this.phoneTextBox.Size = new System.Drawing.Size(170, 24);
             this.phoneTextBox.TabIndex = 10;
             // 
             // groupBox1
@@ -153,6 +153,43 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общая информация";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(298, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Образование:";
+            // 
+            // educationTextBox
+            // 
+            this.educationTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.educationTextBox.Location = new System.Drawing.Point(302, 88);
+            this.educationTextBox.Multiline = true;
+            this.educationTextBox.Name = "educationTextBox";
+            this.educationTextBox.Size = new System.Drawing.Size(231, 48);
+            this.educationTextBox.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(298, 142);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 19);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Номер паспорта:";
+            // 
+            // passportTextBox
+            // 
+            this.passportTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passportTextBox.Location = new System.Drawing.Point(302, 165);
+            this.passportTextBox.Name = "passportTextBox";
+            this.passportTextBox.Size = new System.Drawing.Size(231, 24);
+            this.passportTextBox.TabIndex = 13;
             // 
             // label5
             // 
@@ -246,42 +283,6 @@
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(155, 24);
             this.surnameTextBox.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(298, 142);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 19);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Номер паспорта:";
-            // 
-            // passportTextBox
-            // 
-            this.passportTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passportTextBox.Location = new System.Drawing.Point(302, 165);
-            this.passportTextBox.Name = "passportTextBox";
-            this.passportTextBox.Size = new System.Drawing.Size(231, 24);
-            this.passportTextBox.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(298, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Образование:";
-            // 
-            // educationTextBox
-            // 
-            this.educationTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.educationTextBox.Location = new System.Drawing.Point(302, 88);
-            this.educationTextBox.Name = "educationTextBox";
-            this.educationTextBox.Size = new System.Drawing.Size(231, 24);
-            this.educationTextBox.TabIndex = 16;
             // 
             // AddEmployeeForm
             // 

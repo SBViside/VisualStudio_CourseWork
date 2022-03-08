@@ -28,28 +28,44 @@ namespace dns
             {
                 // Очистка таблицы на форме
                 dataGridView1.Rows.Clear();
+
                 // Строка запроса к БД
-                string query = "SELECT фамилия, имя, отчество, дата_рождения, образование, должность, " +
-                    "адрес, телефон, паспорт FROM сотрудники";
+                string query = "SELECT фамилия, имя, отчество, должность FROM сотрудники";
                 OleDbCommand command = new OleDbCommand(query, myConnection); // Создаю запрос
                 OleDbDataReader dbReader = command.ExecuteReader();   // Считываю данные
 
                 // Загрузка данных в таблицу
                 while (dbReader.Read())
-                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"], dbReader["отчество"],
-                        dbReader["дата_рождения"].ToString().Split()[0], dbReader["образование"], 
-                        dbReader["должность"], dbReader["адрес"], dbReader["телефон"], dbReader["паспорт"]);
+                    dataGridView1.Rows.Add(dbReader["фамилия"], dbReader["имя"],
+                        dbReader["отчество"], dbReader["должность"]);
 
                 dbReader.Close();
 
-                foreach (DataGridViewRow row in dataGridView1.Rows) 
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                     row.Height = 30;
 
+                dataGridView1.ClearSelection();
+                ClearLabels();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ClearLabels()
+        {
+            surnameLabel.Text = "(нет данных)";
+            nameLabel.Text = "(нет данных)";
+            patronymicLabel.Text = "(нет данных)";
+
+            birthLabel.Text = "(нет данных)";
+            positionLabel.Text = "(нет данных)";
+
+            educationLabel.Text = "(нет дынных)";
+            addressLabel.Text = "(нет дынных)";
+            phoneLabel.Text = "(нет данных)";
+            passportLabel.Text = "(нет данных)";
         }
 
         private void EmployeesForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,7 +85,7 @@ namespace dns
 
             string query = $"DELETE FROM сотрудники WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
                 $"and имя='{dataGridView1.CurrentRow.Cells[1].Value}' and отчество='{dataGridView1.CurrentRow.Cells[2].Value}' " +
-                $"and должность='{dataGridView1.CurrentRow.Cells[5].Value}'";
+                $"and должность='{dataGridView1.CurrentRow.Cells[3].Value}'";
 
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             TableRefresh();
@@ -128,12 +144,22 @@ namespace dns
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
+            ClearLabels();
+
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm(this, "adding");
             addEmployeeForm.ShowDialog();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Сотрудник не выбран", "Действие невозможно",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm(this, "updating");
 
             addEmployeeForm.surnameTextBox.Enabled = false;
@@ -144,13 +170,44 @@ namespace dns
             addEmployeeForm.surnameTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             addEmployeeForm.nameTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             addEmployeeForm.patronymicTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            addEmployeeForm.educationTextBox.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            addEmployeeForm.positionTextBox.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            addEmployeeForm.adressTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            addEmployeeForm.phoneTextBox.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            addEmployeeForm.passportTextBox.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+
+            addEmployeeForm.educationTextBox.Text = educationLabel.Text;
+            addEmployeeForm.positionTextBox.Text = positionLabel.Text.ToLower();
+            addEmployeeForm.adressTextBox.Text = addressLabel.Text;
+            addEmployeeForm.phoneTextBox.Text = phoneLabel.Text;
+            addEmployeeForm.passportTextBox.Text = passportLabel.Text;
 
             addEmployeeForm.ShowDialog();
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0) return;
+            GetInfo(dataGridView1.CurrentRow);
+        }
+
+        private void GetInfo(DataGridViewRow row)
+        {
+            surnameLabel.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            nameLabel.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            patronymicLabel.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            positionLabel.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString().ToUpper();
+
+            string query = $"SELECT дата_рождения, образование, адрес, телефон, паспорт " +
+                $"FROM сотрудники WHERE фамилия='{row.Cells[0].Value}' " +
+                $"AND имя='{row.Cells[1].Value}' AND отчество='{row.Cells[2].Value}'";
+
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader dbReader = command.ExecuteReader();
+
+            dbReader.Read();
+            birthLabel.Text = dbReader["дата_рождения"].ToString().Split()[0];
+            educationLabel.Text = dbReader["образование"].ToString();
+            addressLabel.Text = dbReader["адрес"].ToString();
+            phoneLabel.Text = dbReader["телефон"].ToString();
+            passportLabel.Text = dbReader["паспорт"].ToString();
+            dbReader.Close();
+        }
+
     }
 }
