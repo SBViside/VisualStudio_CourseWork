@@ -58,9 +58,9 @@ namespace dns
             {
                 case "adding":
                     query = $"INSERT INTO сотрудники (фамилия, имя, отчество, дата_рождения, образование, должность," +
-                        $" адрес, телефон, паспорт) " +
+                        $" дата_приема, адрес, телефон, паспорт) " +
                         $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{education}', " +
-                        $"'{position}', '{adress}', '{phone}', '{passport}')";
+                        $"'{position}', '{DateTime.Now.ToString("dd.MM.yyyy")}', '{adress}', '{phone}', '{passport}')";
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
                     break;
                 case "updating":

@@ -15,57 +15,22 @@ namespace dns
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            if (isNumber.Checked)
-                Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
-            else
-                Search(dgv, wordTextBox.Text, typeComboBox.SelectedIndex, checkRegister.Checked);
-
+            if (checkRegister.Checked && isNumber.Checked) Search_Reg_Sub(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
+            else if (!checkRegister.Checked && !isNumber.Checked) Search_noReg_noSub(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
+                else if (!checkRegister.Checked && isNumber.Checked) Search_noReg_Sub(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
+                    else if (checkRegister.Checked && !isNumber.Checked) Search_Reg_noSub(dgv, wordTextBox.Text, typeComboBox.SelectedIndex);
 
             this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        // Поиск с учетом регистра, но в подстроке
+        private void Search_Reg_Sub(DataGridView dataGridView1, string keyWord, int col)
         {
-            this.Close();
-        }
-
-        private void Search(DataGridView dataGridView1, string keyWord, int col, bool reg)
-        {
-            string currWord;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                currWord = dataGridView1.Rows[i].Cells[col].Value.ToString();
-                if (reg)
-                {
-                    if (currWord.Contains(keyWord))
-                    {
-                        dataGridView1.ClearSelection();
-                        dataGridView1.Rows[i].Selected = true;
-                        return;
-                    }
-                }
-                else
-                {
-                    if (currWord.ToLower().Contains(keyWord.ToLower()))
-                    {
-                        dataGridView1.ClearSelection();
-                        dataGridView1.Rows[i].Selected = true;
-                        return;
-                    }
-                }
-            }
-            MessageBox.Show("Совпадений не найдено", "Результат поиска",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+                string currWord = dataGridView1.Rows[i].Cells[col].Value.ToString();
 
-        private void Search(DataGridView dataGridView1, string keyNum, int col)
-        {
-            string currNum;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                currNum = dataGridView1.Rows[i].Cells[col].Value.ToString();
-
-                if (currNum == keyNum)
+                if (currWord.Contains(keyWord))
                 {
                     dataGridView1.ClearSelection();
                     dataGridView1.Rows[i].Selected = true;
@@ -75,5 +40,67 @@ namespace dns
             MessageBox.Show("Совпадений не найдено", "Результат поиска",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // Поиск без учета регистра, но в подстроке
+        private void Search_noReg_Sub(DataGridView dataGridView1, string keyWord, int col)
+        {
+            keyWord = keyWord.ToLower();
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                string currWord = dataGridView1.Rows[i].Cells[col].Value.ToString().ToLower();
+
+                if (currWord.Contains(keyWord))
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[i].Selected = true;
+                    return;
+                }
+            }
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Поиск без учета регистра, но не в подстроке
+        private void Search_noReg_noSub(DataGridView dataGridView1, string keyWord, int col)
+        {
+            keyWord = keyWord.ToLower();
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                string currWord = dataGridView1.Rows[i].Cells[col].Value.ToString().ToLower();
+
+                if (currWord == keyWord)
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[i].Selected = true;
+                    return;
+                }
+            }
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Поиск с учетом регистра, но не в подстроке
+        private void Search_Reg_noSub(DataGridView dataGridView1, string keyWord, int col)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                string currWord = dataGridView1.Rows[i].Cells[col].Value.ToString();
+
+                if (currWord == keyWord)
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[i].Selected = true;
+                    return;
+                }
+            }
+            MessageBox.Show("Совпадений не найдено", "Результат поиска",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

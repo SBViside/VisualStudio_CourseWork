@@ -6,7 +6,7 @@ namespace dns
 {
     public partial class ClientsForm : Form
     {
-        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
         public OleDbConnection myConnection;
 
         public ClientsForm(string log)
@@ -103,7 +103,7 @@ namespace dns
             dataGridView1.ClearSelection();
 
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
-            addClientForm.ShowDialog();
+            if (addClientForm.ShowDialog() == DialogResult.No) return;
 
             TableRefresh();
         }
@@ -167,7 +167,7 @@ namespace dns
             addClientForm.phoneTextBox.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             addClientForm.emailTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
-            addClientForm.ShowDialog();
+            if (addClientForm.ShowDialog() == DialogResult.No) return;
 
             TableRefresh();
         }

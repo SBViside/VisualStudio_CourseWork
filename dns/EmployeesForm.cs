@@ -6,7 +6,7 @@ namespace dns
 {
     public partial class EmployeesForm : Form
     {
-        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
         public OleDbConnection myConnection;
 
         public EmployeesForm(string log)
@@ -200,14 +200,15 @@ namespace dns
             patronymicLabel.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             positionLabel.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString().ToUpper();
 
-            string query = $"SELECT дата_рождения, образование, адрес, телефон, паспорт " +
-                $"FROM сотрудники WHERE фамилия='{row.Cells[0].Value}' " +
+            string query = $"SELECT дата_рождения, образование, дата_приема, адрес, телефон, " +
+                $"паспорт FROM сотрудники WHERE фамилия='{row.Cells[0].Value}' " +
                 $"AND имя='{row.Cells[1].Value}' AND отчество='{row.Cells[2].Value}'";
 
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader dbReader = command.ExecuteReader();
 
             dbReader.Read();
+            positionLabel.Text += $" от {dbReader["дата_приема"].ToString().Split()[0]}";
             birthLabel.Text = dbReader["дата_рождения"].ToString().Split()[0];
             educationLabel.Text = dbReader["образование"].ToString();
             addressLabel.Text = dbReader["адрес"].ToString();
