@@ -25,7 +25,7 @@ namespace dns
         private void submitButton_Click(object sender, EventArgs e)
         {
             if ( surnameTextBox.Text.Length < 1 || nameTextBox.Text.Length < 1 ||
-                patronymicTextBox.Text.Length < 1 || adressTextBox.Text.Length < 1 ||
+                patronymicTextBox.Text.Length < 1 || addressTextBox.Text.Length < 1 ||
                 phoneTextBox.Text.Length < 1 || emailTextBox.Text.Length < 1 )
             {
                 MessageBox.Show("Проверьте введённые данные", "Действие невозможно", 
@@ -46,7 +46,7 @@ namespace dns
             }
 
             string date = dateTimePicker.Value.ToString();
-            string adress = adressTextBox.Text;
+            string adress = addressTextBox.Text;
             string phone = phoneTextBox.Text;
             string email = emailTextBox.Text;
 

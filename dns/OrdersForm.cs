@@ -7,7 +7,7 @@ namespace dns
 {
     public partial class OrdersForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public OrdersForm(string log)
@@ -36,6 +36,15 @@ namespace dns
         private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+
+            if (fontDialog1.Font.Size >= 15)
+            {
+                fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
+                MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
+                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             dataGridView1.Font = fontDialog1.Font;
             dataGridView2.Font = fontDialog1.Font;
             dataGridView3.Font = fontDialog1.Font;

@@ -61,10 +61,10 @@
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.No;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cancelButton.Location = new System.Drawing.Point(352, 253);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelButton.Location = new System.Drawing.Point(469, 311);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(81, 27);
+            this.cancelButton.Size = new System.Drawing.Size(108, 33);
             this.cancelButton.TabIndex = 17;
             this.cancelButton.Text = "Отменить";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -75,10 +75,10 @@
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
             this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.submitButton.Location = new System.Drawing.Point(269, 253);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submitButton.Location = new System.Drawing.Point(359, 311);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(79, 27);
+            this.submitButton.Size = new System.Drawing.Size(105, 33);
             this.submitButton.TabIndex = 16;
             this.submitButton.Text = "Применить";
             this.submitButton.UseVisualStyleBackColor = false;
@@ -91,11 +91,11 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.phoneTextBox);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 184);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(12, 226);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(424, 61);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(565, 75);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Прочее";
@@ -104,40 +104,38 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(224, 24);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(299, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 11;
             this.label6.Text = "Должность:";
             // 
             // positionTextBox
             // 
             this.positionTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.positionTextBox.Location = new System.Drawing.Point(301, 23);
-            this.positionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.positionTextBox.Location = new System.Drawing.Point(401, 28);
+            this.positionTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.positionTextBox.Name = "positionTextBox";
-            this.positionTextBox.Size = new System.Drawing.Size(109, 21);
+            this.positionTextBox.Size = new System.Drawing.Size(144, 24);
             this.positionTextBox.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(15, 24);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(20, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 16);
+            this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 9;
             this.label7.Text = "Телефон:";
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneTextBox.Location = new System.Drawing.Point(75, 23);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneTextBox.Location = new System.Drawing.Point(100, 28);
+            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(123, 21);
+            this.phoneTextBox.Size = new System.Drawing.Size(163, 24);
             this.phoneTextBox.TabIndex = 10;
             // 
             // groupBox1
@@ -157,11 +155,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.surnameTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(424, 169);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(565, 208);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общая информация";
@@ -170,71 +168,67 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(224, 53);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(299, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.Size = new System.Drawing.Size(98, 19);
             this.label9.TabIndex = 15;
             this.label9.Text = "Образование:";
             // 
             // educationTextBox
             // 
             this.educationTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.educationTextBox.Location = new System.Drawing.Point(226, 72);
-            this.educationTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.educationTextBox.Location = new System.Drawing.Point(301, 89);
+            this.educationTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.educationTextBox.Multiline = true;
             this.educationTextBox.Name = "educationTextBox";
-            this.educationTextBox.Size = new System.Drawing.Size(184, 40);
+            this.educationTextBox.Size = new System.Drawing.Size(244, 48);
             this.educationTextBox.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(224, 115);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(299, 142);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 16);
+            this.label8.Size = new System.Drawing.Size(118, 19);
             this.label8.TabIndex = 14;
             this.label8.Text = "Номер паспорта:";
             // 
             // passportTextBox
             // 
             this.passportTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passportTextBox.Location = new System.Drawing.Point(226, 134);
-            this.passportTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passportTextBox.Location = new System.Drawing.Point(301, 165);
+            this.passportTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passportTextBox.Name = "passportTextBox";
-            this.passportTextBox.Size = new System.Drawing.Size(184, 21);
+            this.passportTextBox.Size = new System.Drawing.Size(244, 24);
             this.passportTextBox.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(19, 115);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(25, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 16);
+            this.label5.Size = new System.Drawing.Size(129, 19);
             this.label5.TabIndex = 12;
             this.label5.Text = "Адрес сотрудника:";
             // 
             // adressTextBox
             // 
             this.adressTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.adressTextBox.Location = new System.Drawing.Point(22, 134);
-            this.adressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adressTextBox.Location = new System.Drawing.Point(29, 165);
+            this.adressTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adressTextBox.Name = "adressTextBox";
-            this.adressTextBox.Size = new System.Drawing.Size(176, 21);
+            this.adressTextBox.Size = new System.Drawing.Size(233, 24);
             this.adressTextBox.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(224, 23);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(299, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 16);
+            this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "Дата рождения:";
             // 
@@ -243,10 +237,10 @@
             this.dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(320, 22);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Location = new System.Drawing.Point(425, 27);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(90, 21);
+            this.dateTimePicker.Size = new System.Drawing.Size(134, 24);
             this.dateTimePicker.TabIndex = 9;
             this.dateTimePicker.Value = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
             // 
@@ -254,69 +248,66 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(19, 72);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(25, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(73, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "Отчество:";
             // 
             // patronymicTextBox
             // 
             this.patronymicTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.patronymicTextBox.Location = new System.Drawing.Point(84, 71);
-            this.patronymicTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.patronymicTextBox.Location = new System.Drawing.Point(112, 87);
+            this.patronymicTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.patronymicTextBox.Name = "patronymicTextBox";
-            this.patronymicTextBox.Size = new System.Drawing.Size(114, 21);
+            this.patronymicTextBox.Size = new System.Drawing.Size(151, 24);
             this.patronymicTextBox.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(19, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(25, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 16);
+            this.label1.Size = new System.Drawing.Size(40, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "Имя:";
             // 
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameTextBox.Location = new System.Drawing.Point(84, 46);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Location = new System.Drawing.Point(112, 57);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(114, 21);
+            this.nameTextBox.Size = new System.Drawing.Size(151, 24);
             this.nameTextBox.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(19, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(25, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.Size = new System.Drawing.Size(70, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Фамилия:";
             // 
             // surnameTextBox
             // 
             this.surnameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.surnameTextBox.Location = new System.Drawing.Point(84, 22);
-            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.surnameTextBox.Location = new System.Drawing.Point(112, 27);
+            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(114, 21);
+            this.surnameTextBox.Size = new System.Drawing.Size(151, 24);
             this.surnameTextBox.TabIndex = 4;
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(9, 258);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBar1.Location = new System.Drawing.Point(12, 318);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(255, 19);
+            this.progressBar1.Size = new System.Drawing.Size(340, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 25;
             this.progressBar1.UseWaitCursor = true;
@@ -324,16 +315,16 @@
             // 
             // AddEmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 289);
+            this.ClientSize = new System.Drawing.Size(589, 356);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddEmployeeForm";

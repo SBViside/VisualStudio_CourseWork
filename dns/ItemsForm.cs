@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -7,7 +8,7 @@ namespace dns
     public partial class ItemsForm : Form
     {
         // Строка подлючения
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public ItemsForm(string log)
@@ -145,7 +146,7 @@ namespace dns
                 countTextBox.Value <= 0 ||
                 priceTextBox.Value <= 0)
             {
-                MessageBox.Show("Проверьте введённые данные", "Действие невозможно", 
+                MessageBox.Show("Проверьте введённые данные", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -256,6 +257,15 @@ namespace dns
         {
             // Меняю шрифт в таблице
             if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+
+            if (fontDialog1.Font.Size >= 15)
+            {
+                fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
+                MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
+                    "поэтому размер был автоматически установлен на 14.", "Внимание", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             dataGridView1.Font = fontDialog1.Font;
         }
 

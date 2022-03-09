@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -6,7 +7,7 @@ namespace dns
 {
     public partial class ClientsForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public ClientsForm(string log)
@@ -49,7 +50,7 @@ namespace dns
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -66,25 +67,19 @@ namespace dns
         private void height_30_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 30;
-            height_30.Checked = true;
-            height_40.Checked = false;
-            height_50.Checked = false;
+            height_30.Checked = !(height_40.Checked = height_50.Checked = false);
         }
 
         private void height_40_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 40;
-            height_30.Checked = false;
-            height_40.Checked = true;
-            height_50.Checked = false;
+            height_40.Checked = !(height_30.Checked = height_50.Checked = false);
         }
 
         private void height_50_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 50;
-            height_30.Checked = false;
-            height_40.Checked = false;
-            height_50.Checked = true;
+            height_50.Checked = !(height_40.Checked = height_30.Checked = false);
         }
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,17 +146,21 @@ namespace dns
 
             AddClientForm addClientForm = new AddClientForm(myConnection, "updating");
 
+            DataGridViewRow currentRow = dataGridView1.CurrentRow;
+
             addClientForm.surnameTextBox.Enabled = false;
             addClientForm.nameTextBox.Enabled = false;
             addClientForm.patronymicTextBox.Enabled = false;
-            addClientForm.dateTimePicker.Enabled = false;
 
-            addClientForm.surnameTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            addClientForm.nameTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            addClientForm.patronymicTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            addClientForm.adressTextBox.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            addClientForm.phoneTextBox.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            addClientForm.emailTextBox.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            string[] date = currentRow.Cells[3].Value.ToString().Split('.');
+            addClientForm.dateTimePicker.Value = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+
+            addClientForm.surnameTextBox.Text = currentRow.Cells[0].Value.ToString();
+            addClientForm.nameTextBox.Text = currentRow.Cells[1].Value.ToString();
+            addClientForm.patronymicTextBox.Text = currentRow.Cells[2].Value.ToString();
+            addClientForm.addressTextBox.Text = currentRow.Cells[4].Value.ToString();
+            addClientForm.phoneTextBox.Text = currentRow.Cells[5].Value.ToString();
+            addClientForm.emailTextBox.Text = currentRow.Cells[6].Value.ToString();
 
             if (addClientForm.ShowDialog() == DialogResult.No) return;
 
@@ -171,6 +170,15 @@ namespace dns
         private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+
+            if (fontDialog1.Font.Size >= 15)
+            {
+                fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
+                MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
+                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             dataGridView1.Font = fontDialog1.Font;
         }
 

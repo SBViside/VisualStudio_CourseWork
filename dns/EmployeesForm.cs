@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -6,7 +7,7 @@ namespace dns
 {
     public partial class EmployeesForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.accdb";
+        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public EmployeesForm(string log)
@@ -90,9 +91,11 @@ namespace dns
             if (MessageBox.Show("Вы действительно хотите удалить сотрудника?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            string query = $"DELETE FROM сотрудники WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
-                $"and имя='{dataGridView1.CurrentRow.Cells[1].Value}' and отчество='{dataGridView1.CurrentRow.Cells[2].Value}' " +
-                $"and должность='{dataGridView1.CurrentRow.Cells[3].Value}'";
+            DataGridViewRow currentRow = dataGridView1.CurrentRow;
+
+            string query = $"DELETE FROM сотрудники WHERE фамилия='{currentRow.Cells[0].Value}' " +
+                $"and имя='{currentRow.Cells[1].Value}' and отчество='{currentRow.Cells[2].Value}' " +
+                $"and должность='{currentRow.Cells[3].Value}'";
 
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             TableRefresh();
@@ -106,30 +109,33 @@ namespace dns
         private void height_30_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 30;
-            height_30.Checked = true;
-            height_40.Checked = false;
-            height_50.Checked = false;
+            height_30.Checked = !(height_40.Checked = height_50.Checked = false);
         }
 
         private void height_40_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 40;
-            height_30.Checked = false;
-            height_40.Checked = true;
-            height_50.Checked = false;
+            height_40.Checked = !(height_30.Checked = height_50.Checked = false);
         }
 
         private void height_50_Click(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersHeight = 50;
-            height_30.Checked = false;
-            height_40.Checked = false;
-            height_50.Checked = true;
+            height_50.Checked = !(height_40.Checked = height_30.Checked = false);
         }
 
         private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.Cancel) return;
+
+            if (fontDialog1.Font.Size >= 15)
+            {
+                fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
+                MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
+                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             dataGridView1.Font = fontDialog1.Font;
         }
 
@@ -170,14 +176,23 @@ namespace dns
             addEmployeeForm.surnameTextBox.Enabled = false;
             addEmployeeForm.nameTextBox.Enabled = false;
             addEmployeeForm.patronymicTextBox.Enabled = false;
-            addEmployeeForm.dateTimePicker.Enabled = false;
 
-            addEmployeeForm.surnameTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            addEmployeeForm.nameTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            addEmployeeForm.patronymicTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            DataGridViewRow currentRow = dataGridView1.CurrentRow;
+
+            // Получаю дату рождения из базы данных и заношу в DateTimePicker
+            string query = $"SELECT дата_рождения FROM сотрудники WHERE фамилия='{currentRow.Cells[0].Value}' " +
+                $"AND имя='{currentRow.Cells[1].Value}' AND отчество='{currentRow.Cells[2].Value}'";
+            string[] date = QueriesClass.ApplyQuery_Return(myConnection, query).Split()[0].Split('.');
+
+            addEmployeeForm.dateTimePicker.Value = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+
+            // Заношу остальные данные в поля ввода
+            addEmployeeForm.surnameTextBox.Text = currentRow.Cells[0].Value.ToString();
+            addEmployeeForm.nameTextBox.Text = currentRow.Cells[1].Value.ToString();
+            addEmployeeForm.patronymicTextBox.Text = currentRow.Cells[2].Value.ToString();
 
             addEmployeeForm.educationTextBox.Text = educationLabel.Text;
-            addEmployeeForm.positionTextBox.Text = positionLabel.Text.ToLower();
+            addEmployeeForm.positionTextBox.Text = currentRow.Cells[3].Value.ToString();
             addEmployeeForm.adressTextBox.Text = addressLabel.Text;
             addEmployeeForm.phoneTextBox.Text = phoneLabel.Text;
             addEmployeeForm.passportTextBox.Text = passportLabel.Text;
@@ -197,11 +212,13 @@ namespace dns
 
         private void GetInfo(DataGridViewRow row)
         {
-            surnameLabel.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            nameLabel.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            patronymicLabel.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            positionLabel.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString().ToUpper();
+            // Заношу данные из таблицы в метки
+            surnameLabel.Text = row.Cells[0].Value.ToString();
+            nameLabel.Text = row.Cells[1].Value.ToString();
+            patronymicLabel.Text = row.Cells[2].Value.ToString();
+            positionLabel.Text = row.Cells[3].Value.ToString();
 
+            // Генерирую запрос на получения данных
             string query = $"SELECT дата_рождения, образование, дата_приема, адрес, телефон, " +
                 $"паспорт FROM сотрудники WHERE фамилия='{row.Cells[0].Value}' " +
                 $"AND имя='{row.Cells[1].Value}' AND отчество='{row.Cells[2].Value}'";
@@ -209,6 +226,7 @@ namespace dns
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader dbReader = command.ExecuteReader();
 
+            // Заношу данные из Базы данных в метки
             dbReader.Read();
             positionLabel.Text += $" от {dbReader["дата_приема"].ToString().Split()[0]}";
             birthLabel.Text = dbReader["дата_рождения"].ToString().Split()[0];
