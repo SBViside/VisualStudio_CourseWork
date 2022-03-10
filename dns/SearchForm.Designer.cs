@@ -45,30 +45,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(10, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Что искать:";
             // 
             // wordTextBox
             // 
             this.wordTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.wordTextBox.Location = new System.Drawing.Point(83, 11);
-            this.wordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wordTextBox.Location = new System.Drawing.Point(111, 14);
+            this.wordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(188, 21);
+            this.wordTextBox.Size = new System.Drawing.Size(249, 24);
             this.wordTextBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(9, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.Size = new System.Drawing.Size(137, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Колонка для поиска:";
             // 
@@ -79,11 +77,11 @@
             this.groupBox1.Controls.Add(this.checkRegister);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 44);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 54);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(262, 84);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(349, 103);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
@@ -91,10 +89,10 @@
             // isNumber
             // 
             this.isNumber.AutoSize = true;
-            this.isNumber.Location = new System.Drawing.Point(148, 51);
-            this.isNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isNumber.Location = new System.Drawing.Point(197, 63);
+            this.isNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.isNumber.Name = "isNumber";
-            this.isNumber.Size = new System.Drawing.Size(105, 20);
+            this.isNumber.Size = new System.Drawing.Size(125, 23);
             this.isNumber.TabIndex = 8;
             this.isNumber.Text = "Искать внутри";
             this.isNumber.UseVisualStyleBackColor = true;
@@ -104,19 +102,19 @@
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(119, 17);
-            this.typeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.typeComboBox.Location = new System.Drawing.Point(159, 21);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(134, 24);
+            this.typeComboBox.Size = new System.Drawing.Size(177, 25);
             this.typeComboBox.TabIndex = 6;
             // 
             // checkRegister
             // 
             this.checkRegister.AutoSize = true;
-            this.checkRegister.Location = new System.Drawing.Point(10, 51);
-            this.checkRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkRegister.Location = new System.Drawing.Point(13, 63);
+            this.checkRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkRegister.Name = "checkRegister";
-            this.checkRegister.Size = new System.Drawing.Size(130, 20);
+            this.checkRegister.Size = new System.Drawing.Size(152, 23);
             this.checkRegister.TabIndex = 0;
             this.checkRegister.Text = "Учитывать регистр";
             this.checkRegister.UseVisualStyleBackColor = true;
@@ -124,10 +122,10 @@
             // executeButton
             // 
             this.executeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.executeButton.Location = new System.Drawing.Point(115, 132);
-            this.executeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.executeButton.Location = new System.Drawing.Point(153, 162);
+            this.executeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(76, 23);
+            this.executeButton.Size = new System.Drawing.Size(101, 28);
             this.executeButton.TabIndex = 4;
             this.executeButton.Text = "Выполнить";
             this.executeButton.UseVisualStyleBackColor = true;
@@ -136,10 +134,10 @@
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.Location = new System.Drawing.Point(195, 132);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelButton.Location = new System.Drawing.Point(260, 162);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(76, 23);
+            this.cancelButton.Size = new System.Drawing.Size(101, 28);
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Отменить";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -147,9 +145,8 @@
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 162);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(376, 199);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.executeButton);
             this.Controls.Add(this.groupBox1);
@@ -157,7 +154,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SearchForm";

@@ -56,10 +56,10 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(206, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(274, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(146, 374);
+            this.panel1.Size = new System.Drawing.Size(195, 460);
             this.panel1.TabIndex = 1;
             // 
             // button1
@@ -68,10 +68,10 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(7, 334);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(9, 411);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 34);
+            this.button1.Size = new System.Drawing.Size(177, 42);
             this.button1.TabIndex = 6;
             this.button1.Text = "Удалить";
             this.button1.UseVisualStyleBackColor = false;
@@ -83,11 +83,11 @@
             this.groupBox2.Controls.Add(this.searchText);
             this.groupBox2.Controls.Add(this.searchButton);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 127);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(9, 156);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(133, 92);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(177, 113);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск по списку";
@@ -97,10 +97,10 @@
             this.refreshButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
             this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refreshButton.Location = new System.Drawing.Point(33, 56);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refreshButton.Location = new System.Drawing.Point(44, 69);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(22, 24);
+            this.refreshButton.Size = new System.Drawing.Size(29, 30);
             this.refreshButton.TabIndex = 7;
             this.refreshButton.UseVisualStyleBackColor = false;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
@@ -108,10 +108,10 @@
             // searchText
             // 
             this.searchText.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchText.Location = new System.Drawing.Point(7, 31);
-            this.searchText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchText.Location = new System.Drawing.Point(9, 38);
+            this.searchText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(122, 21);
+            this.searchText.Size = new System.Drawing.Size(161, 24);
             this.searchText.TabIndex = 0;
             // 
             // searchButton
@@ -119,10 +119,10 @@
             this.searchButton.BackColor = System.Drawing.Color.Teal;
             this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchButton.Location = new System.Drawing.Point(59, 56);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchButton.Location = new System.Drawing.Point(79, 69);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(70, 24);
+            this.searchButton.Size = new System.Drawing.Size(93, 30);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Поиск";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -135,11 +135,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.addButton);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(133, 107);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(177, 132);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Новая категория";
@@ -147,20 +147,19 @@
             // typeName
             // 
             this.typeName.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeName.Location = new System.Drawing.Point(8, 42);
-            this.typeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.typeName.Location = new System.Drawing.Point(11, 52);
+            this.typeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeName.Name = "typeName";
-            this.typeName.Size = new System.Drawing.Size(120, 21);
+            this.typeName.Size = new System.Drawing.Size(159, 24);
             this.typeName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(9, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(73, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Название:";
             // 
@@ -169,10 +168,10 @@
             this.addButton.BackColor = System.Drawing.Color.OliveDrab;
             this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.addButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addButton.Location = new System.Drawing.Point(7, 67);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addButton.Location = new System.Drawing.Point(9, 82);
+            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(122, 24);
+            this.addButton.Size = new System.Drawing.Size(163, 30);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Добавить";
             this.addButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,7 +212,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -223,7 +222,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(206, 374);
+            this.dataGridView1.Size = new System.Drawing.Size(274, 460);
             this.dataGridView1.TabIndex = 4;
             // 
             // Column2
@@ -236,14 +235,13 @@
             // 
             // TypeEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 374);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(469, 460);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TypeEditor";

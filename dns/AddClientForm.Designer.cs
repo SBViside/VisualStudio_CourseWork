@@ -106,10 +106,10 @@
             this.dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(163, 142);
+            this.dateTimePicker.Location = new System.Drawing.Point(142, 145);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(121, 24);
+            this.dateTimePicker.Size = new System.Drawing.Size(142, 24);
             this.dateTimePicker.TabIndex = 9;
             this.dateTimePicker.Value = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
             // 
@@ -255,8 +255,7 @@
             // 
             // AddClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(319, 430);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
