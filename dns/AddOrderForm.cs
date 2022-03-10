@@ -13,7 +13,7 @@ namespace dns
 {
     public partial class AddOrderForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
+        const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public AddOrderForm()

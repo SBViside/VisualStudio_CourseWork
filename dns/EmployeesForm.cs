@@ -7,7 +7,7 @@ namespace dns
 {
     public partial class EmployeesForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
+        const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public EmployeesForm(string log)
@@ -42,11 +42,11 @@ namespace dns
 
                 dbReader.Close();
 
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                    row.Height = 30;
-
                 dataGridView1.ClearSelection();
                 ClearLabels();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                    row.Height = heightBar.Value;
             }
             catch (Exception ex)
             {
@@ -237,5 +237,13 @@ namespace dns
             dbReader.Close();
         }
 
+        private void heightBar_Scroll(object sender, EventArgs e)
+        {
+            sizeLabel.Text = heightBar.Value.ToString();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = heightBar.Value;
+            }
+        }
     }
 }

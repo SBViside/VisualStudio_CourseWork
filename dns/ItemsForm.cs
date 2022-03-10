@@ -8,7 +8,7 @@ namespace dns
     public partial class ItemsForm : Form
     {
         // Строка подлючения
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
+        const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public ItemsForm(string log)
@@ -64,6 +64,11 @@ namespace dns
                     row.Height = 30;
 
                 dataGridView1.ClearSelection();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Height = heightBar.Value;
+                }
             }
             catch (Exception ex)
             {
@@ -304,6 +309,15 @@ namespace dns
             udf.priceTextBox.Value = int.Parse(curRow.Cells[3].Value.ToString());
 
             udf.ShowDialog();
+        }
+
+        private void heightBar_Scroll(object sender, EventArgs e)
+        {
+            sizeLabel.Text = heightBar.Value.ToString();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = heightBar.Value;
+            }
         }
     }
 }

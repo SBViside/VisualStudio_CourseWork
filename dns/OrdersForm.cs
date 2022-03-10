@@ -7,7 +7,7 @@ namespace dns
 {
     public partial class OrdersForm : Form
     {
-        public const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
+        const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
         public OrdersForm(string log)
@@ -64,11 +64,12 @@ namespace dns
 
                 dbReader.Close();
 
-                foreach (DataGridViewRow row in dgv.Rows)
-                    row.Height = 30;
-
                 dgv.ClearSelection();
                 ClearLabels();
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                    row.Height = heightBar.Value;
+
             }
             catch (Exception ex)
             {
@@ -109,6 +110,8 @@ namespace dns
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetRefresh();
+            sizeLabel.Text = "30";
+            heightBar.Value = 30;
         }
 
         private void GetInfo(DataGridViewRow row)
@@ -181,7 +184,7 @@ namespace dns
 
         private void bindingNavigatorDelete_Click(object sender, EventArgs e)
         {
-            if (GetCurrentTab().SelectedRows.Count == 0)
+            if (CurrentTable.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Заказ не выбран", "Действие невозможно",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -191,7 +194,7 @@ namespace dns
             if (MessageBox.Show("Вы действительно хотите удалить заказ?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            DataGridView dgv = GetCurrentTab();
+            DataGridView dgv = CurrentTable;
             string query = $"DELETE FROM заказы WHERE код_заказа={dgv.CurrentRow.Cells[0].Value}";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             SetRefresh();
@@ -199,27 +202,30 @@ namespace dns
 
         private void setStatusButton_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = GetCurrentTab();
+            DataGridView dgv = CurrentTable;
             string query = $"UPDATE заказы SET статус='выполнен' WHERE код_заказа={dgv.CurrentRow.Cells[0].Value}";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             SetRefresh();
         }
 
-        private DataGridView GetCurrentTab()
+        private DataGridView CurrentTable
         {
-            switch (tabControl1.SelectedIndex)
+            get
             {
-                case 1:
-                    return dataGridView2;
-                case 2:
-                    return dataGridView3;
+                switch (tabControl1.SelectedIndex)
+                {
+                    case 1:
+                        return dataGridView2;
+                    case 2:
+                        return dataGridView3;
+                }
+                return dataGridView1;
             }
-            return dataGridView1;
         }
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = GetCurrentTab();
+            DataGridView dgv = CurrentTable;
             dgv.ClearSelection();
             SearchForm sf = new SearchForm(dgv);
             sf.ShowDialog();
@@ -243,13 +249,21 @@ namespace dns
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (GetCurrentTab().SelectedRows.Count == 0)
+            if (CurrentTable.SelectedRows.Count == 0)
             {
                 ClearLabels();
                 return;
             }
-            GetInfo(GetCurrentTab().CurrentRow);
+            GetInfo(CurrentTable.CurrentRow);
         }
 
+        private void heightBar_Scroll(object sender, EventArgs e)
+        {
+            sizeLabel.Text = heightBar.Value.ToString();
+            foreach (DataGridViewRow row in CurrentTable.Rows)
+            {
+                row.Height = heightBar.Value;
+            }
+        }
     }
 }
