@@ -46,7 +46,7 @@ namespace dns
             }
 
             string date = dateTimePicker.Value.ToString();
-            string adress = addressTextBox.Text;
+            string address = addressTextBox.Text;
             string phone = phoneTextBox.Text;
             string email = emailTextBox.Text;
 
@@ -54,14 +54,14 @@ namespace dns
             {
                 case "adding":
                     query = $"INSERT INTO клиенты (фамилия, имя, отчество, дата_рождения, адрес, телефон, эл_почта) " +
-                        $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{adress}', '{phone}', '{email}')";
+                        $"VALUES ('{surname}', '{name}', '{patronymic}', '{date}', '{address}', '{phone}', '{email}')";
                     QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
 
                 case "updating":
-                    query = $"UPDATE клиенты SET адрес='{adress}', " +
+                    query = $"UPDATE клиенты SET адрес='{address}', дата_рождения='{date}', " +
                         $"телефон='{phone}', эл_почта='{email}' WHERE фамилия='{surname}' " +
-                        $"and имя='{name}' and отчество='{patronymic}'";
+                        $"AND имя='{name}' AND отчество='{patronymic}'";
                     QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
             }

@@ -64,7 +64,7 @@ namespace dns
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
                     break;
                 case "updating":
-                    query = $"UPDATE сотрудники SET адрес='{adress}', " +
+                    query = $"UPDATE сотрудники SET адрес='{adress}',дата_рождения='{date}', " +
                         $"телефон='{phone}', должность='{position}', образование='{education}', паспорт='{passport}' " +
                         $"WHERE фамилия='{surname}' AND имя='{name}' and отчество='{patronymic}'";
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
