@@ -214,14 +214,14 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.LabelWarning);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.loginTextBox);
             this.panel2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // LabelWarning

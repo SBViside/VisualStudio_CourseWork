@@ -109,9 +109,9 @@ namespace dns
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetRefresh();
             sizeLabel.Text = "30";
             heightBar.Value = 30;
+            SetRefresh();
         }
 
         private void GetInfo(DataGridViewRow row)
