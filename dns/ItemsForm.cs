@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace dns
 {
@@ -267,7 +268,7 @@ namespace dns
             {
                 fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
                 MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
-                    "поэтому размер был автоматически установлен на 14.", "Внимание", 
+                    "поэтому размер был автоматически установлен на 14.", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -317,6 +318,39 @@ namespace dns
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Height = heightBar.Value;
+            }
+        }
+
+        private void выводВExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()
+        {
+            try
+            { 
+                Excel.Application exApp = new Excel.Application();
+                exApp.Visible = true;
+                exApp.Workbooks.Add();
+                Excel.Worksheet workSheet = exApp.ActiveSheet;
+
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+
+                    for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                    {
+                        workSheet.Cells[j + 2, i + 1] = dataGridView1.Rows[j].Cells[i].Value.ToString();
+                    }
+                }
+                workSheet.Range["A1", "D1"].Font.Bold = true;
+                workSheet.UsedRange.Borders.Weight = 2;
+                exApp.Columns.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

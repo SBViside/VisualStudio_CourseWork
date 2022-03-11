@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +91,7 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.выводВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -114,7 +115,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(948, 27);
+            this.menuStrip.Size = new System.Drawing.Size(948, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -122,9 +123,10 @@
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem1,
+            this.выводВExcelToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -135,7 +137,7 @@
             this.шрифтТаблицыToolStripMenuItem,
             this.цветВыделенияToolStripMenuItem});
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // позицияПонелиДобавитьToolStripMenuItem
@@ -219,7 +221,7 @@
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.закрытьToolStripMenuItem.Text = "Выход";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -232,7 +234,7 @@
             this.обновитьToolStripMenuItem,
             this.поискToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -278,7 +280,7 @@
             // редакторКатегорийToolStripMenuItem
             // 
             this.редакторКатегорийToolStripMenuItem.Name = "редакторКатегорийToolStripMenuItem";
-            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
+            this.редакторКатегорийToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
             this.редакторКатегорийToolStripMenuItem.Text = "Редактор категорий";
             this.редакторКатегорийToolStripMenuItem.Click += new System.EventHandler(this.редакторКатегорийToolStripMenuItem_Click);
             // 
@@ -296,14 +298,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -312,14 +314,14 @@
             this.Column4,
             this.Column5});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 76);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -358,8 +360,8 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column4.FillWeight = 288.4332F;
             this.Column4.HeaderText = "Количество";
             this.Column4.MinimumWidth = 130;
@@ -370,8 +372,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column5.FillWeight = 25.95899F;
             this.Column5.HeaderText = "Стоимость ($)";
             this.Column5.MinimumWidth = 140;
@@ -564,10 +566,10 @@
             this.addPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.addPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.addPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addPanel.Location = new System.Drawing.Point(0, 27);
+            this.addPanel.Location = new System.Drawing.Point(0, 28);
             this.addPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPanel.Name = "addPanel";
-            this.addPanel.Size = new System.Drawing.Size(331, 530);
+            this.addPanel.Size = new System.Drawing.Size(331, 529);
             this.addPanel.TabIndex = 7;
             this.addPanel.Visible = false;
             this.addPanel.VisibleChanged += new System.EventHandler(this.addPanel_VisibleChanged);
@@ -576,7 +578,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 341);
+            this.groupBox2.Location = new System.Drawing.Point(11, 340);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -602,7 +604,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(310, 334);
+            this.groupBox1.Size = new System.Drawing.Size(310, 333);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
@@ -715,7 +717,7 @@
             this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cancelButton.Location = new System.Drawing.Point(202, 489);
+            this.cancelButton.Location = new System.Drawing.Point(202, 488);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(119, 33);
@@ -733,7 +735,7 @@
             this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.submitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submitButton.Location = new System.Drawing.Point(73, 489);
+            this.submitButton.Location = new System.Drawing.Point(73, 488);
             this.submitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(119, 33);
@@ -752,6 +754,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(948, 3);
             this.panel2.TabIndex = 8;
+            // 
+            // выводВExcelToolStripMenuItem
+            // 
+            this.выводВExcelToolStripMenuItem.Name = "выводВExcelToolStripMenuItem";
+            this.выводВExcelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.выводВExcelToolStripMenuItem.Text = "Экспорт в Excel";
+            this.выводВExcelToolStripMenuItem.Click += new System.EventHandler(this.выводВExcelToolStripMenuItem_Click);
             // 
             // ItemsForm
             // 
@@ -849,5 +858,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.TrackBar heightBar;
         private System.Windows.Forms.Label sizeLabel;
+        private System.Windows.Forms.ToolStripMenuItem выводВExcelToolStripMenuItem;
     }
 }

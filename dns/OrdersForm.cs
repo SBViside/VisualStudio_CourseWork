@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace dns
 {
@@ -263,6 +264,39 @@ namespace dns
             foreach (DataGridViewRow row in CurrentTable.Rows)
             {
                 row.Height = heightBar.Value;
+            }
+        }
+
+        private void экспортВExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()
+        {
+            try
+            {
+                Excel.Application exApp = new Excel.Application();
+                exApp.Visible = true;
+                exApp.Workbooks.Add();
+                Excel.Worksheet workSheet = exApp.ActiveSheet;
+
+                for (int i = 0; i < CurrentTable.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = CurrentTable.Columns[i].HeaderText;
+
+                    for (int j = 0; j < CurrentTable.Rows.Count; j++)
+                    {
+                        workSheet.Cells[j + 2, i + 1] = CurrentTable.Rows[j].Cells[i].Value.ToString();
+                    }
+                }
+                workSheet.Range["A1", "C1"].Font.Bold = true;
+                workSheet.UsedRange.Borders.Weight = 2;
+                exApp.Columns.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

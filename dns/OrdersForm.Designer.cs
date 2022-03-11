@@ -100,6 +100,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.экспортВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heightBar)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -192,7 +193,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(961, 27);
+            this.menuStrip.Size = new System.Drawing.Size(961, 28);
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -200,9 +201,10 @@
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem1,
+            this.экспортВExcelToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -210,7 +212,7 @@
             this.настройкиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.шрифтТаблицыToolStripMenuItem});
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // шрифтТаблицыToolStripMenuItem
@@ -224,7 +226,7 @@
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.закрытьToolStripMenuItem.Text = "Выход";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -236,7 +238,7 @@
             this.обновитьToolStripMenuItem,
             this.посикToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -911,6 +913,13 @@
             this.panel3.Size = new System.Drawing.Size(961, 3);
             this.panel3.TabIndex = 13;
             // 
+            // экспортВExcelToolStripMenuItem
+            // 
+            this.экспортВExcelToolStripMenuItem.Name = "экспортВExcelToolStripMenuItem";
+            this.экспортВExcelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.экспортВExcelToolStripMenuItem.Text = "Экспорт в Excel";
+            this.экспортВExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортВExcelToolStripMenuItem_Click);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1022,5 +1031,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label sizeLabel;
         private System.Windows.Forms.TrackBar heightBar;
+        private System.Windows.Forms.ToolStripMenuItem экспортВExcelToolStripMenuItem;
     }
 }

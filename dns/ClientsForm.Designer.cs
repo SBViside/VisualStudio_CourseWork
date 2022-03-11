@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sizeLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.heightBar = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,14 +78,13 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sizeLabel = new System.Windows.Forms.Label();
-            this.heightBar = new System.Windows.Forms.TrackBar();
+            this.экспортВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.heightBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.heightBar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -96,7 +97,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1053, 27);
+            this.menuStrip.Size = new System.Drawing.Size(1053, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -104,9 +105,10 @@
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem1,
+            this.экспортВExcelToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -116,7 +118,7 @@
             this.шрифтТаблицыToolStripMenuItem,
             this.цветВыделенияToolStripMenuItem});
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // ширинаСтолбцовToolStripMenuItem
@@ -173,7 +175,7 @@
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.закрытьToolStripMenuItem.Text = "Выход";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -186,7 +188,7 @@
             this.обновитьToolStripMenuItem,
             this.посикToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
@@ -243,14 +245,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -262,14 +264,14 @@
             this.Column1,
             this.Column6});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 80);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -318,8 +320,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column5.FillWeight = 25.95899F;
             this.Column5.HeaderText = "Дата рождения";
             this.Column5.MinimumWidth = 6;
@@ -338,8 +340,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "Телефон";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -349,8 +351,8 @@
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "Email";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
@@ -372,6 +374,18 @@
             this.panel1.Size = new System.Drawing.Size(1053, 52);
             this.panel1.TabIndex = 5;
             // 
+            // sizeLabel
+            // 
+            this.sizeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sizeLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sizeLabel.Location = new System.Drawing.Point(728, 6);
+            this.sizeLabel.Name = "sizeLabel";
+            this.sizeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.sizeLabel.Size = new System.Drawing.Size(80, 40);
+            this.sizeLabel.TabIndex = 11;
+            this.sizeLabel.Text = "30";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -383,6 +397,21 @@
             this.label3.Size = new System.Drawing.Size(100, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "КЛИЕНТЫ";
+            // 
+            // heightBar
+            // 
+            this.heightBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.heightBar.AutoSize = false;
+            this.heightBar.Location = new System.Drawing.Point(796, 2);
+            this.heightBar.Maximum = 75;
+            this.heightBar.Minimum = 25;
+            this.heightBar.Name = "heightBar";
+            this.heightBar.Size = new System.Drawing.Size(257, 44);
+            this.heightBar.TabIndex = 10;
+            this.heightBar.TickFrequency = 2;
+            this.heightBar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.heightBar.Value = 30;
+            this.heightBar.Scroll += new System.EventHandler(this.heightBar_Scroll);
             // 
             // label2
             // 
@@ -513,32 +542,12 @@
             this.panel2.Size = new System.Drawing.Size(1053, 3);
             this.panel2.TabIndex = 9;
             // 
-            // sizeLabel
+            // экспортВExcelToolStripMenuItem
             // 
-            this.sizeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sizeLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sizeLabel.Location = new System.Drawing.Point(728, 6);
-            this.sizeLabel.Name = "sizeLabel";
-            this.sizeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.sizeLabel.Size = new System.Drawing.Size(80, 40);
-            this.sizeLabel.TabIndex = 11;
-            this.sizeLabel.Text = "30";
-            // 
-            // heightBar
-            // 
-            this.heightBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.heightBar.AutoSize = false;
-            this.heightBar.Location = new System.Drawing.Point(796, 2);
-            this.heightBar.Maximum = 75;
-            this.heightBar.Minimum = 25;
-            this.heightBar.Name = "heightBar";
-            this.heightBar.Size = new System.Drawing.Size(257, 44);
-            this.heightBar.TabIndex = 10;
-            this.heightBar.TickFrequency = 2;
-            this.heightBar.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.heightBar.Value = 30;
-            this.heightBar.Scroll += new System.EventHandler(this.heightBar_Scroll);
+            this.экспортВExcelToolStripMenuItem.Name = "экспортВExcelToolStripMenuItem";
+            this.экспортВExcelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.экспортВExcelToolStripMenuItem.Text = "Экспорт в Excel";
+            this.экспортВExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортВExcelToolStripMenuItem_Click);
             // 
             // ClientsForm
             // 
@@ -561,10 +570,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.heightBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.heightBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,5 +624,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label sizeLabel;
         private System.Windows.Forms.TrackBar heightBar;
+        private System.Windows.Forms.ToolStripMenuItem экспортВExcelToolStripMenuItem;
     }
 }
