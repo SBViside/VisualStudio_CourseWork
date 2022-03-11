@@ -85,6 +85,7 @@ namespace dns
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
+
             SearchForm sf = new SearchForm(dataGridView1);
             sf.ShowDialog();
         }
@@ -123,8 +124,8 @@ namespace dns
             }
 
             query = $"DELETE FROM клиенты WHERE фамилия='{dataGridView1.CurrentRow.Cells[0].Value}' " +
-                $"and имя='{dataGridView1.CurrentRow.Cells[1].Value}' and отчество='{dataGridView1.CurrentRow.Cells[2].Value}' " +
-                $"and адрес='{dataGridView1.CurrentRow.Cells[4].Value}'";
+                $"AND имя='{dataGridView1.CurrentRow.Cells[1].Value}' AND отчество='{dataGridView1.CurrentRow.Cells[2].Value}' " +
+                $"AND адрес='{dataGridView1.CurrentRow.Cells[4].Value}'";
 
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
             TableRefresh();
@@ -175,7 +176,7 @@ namespace dns
             {
                 fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
                 MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
-                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    "поэтому размер был автоматически установлен на 14", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

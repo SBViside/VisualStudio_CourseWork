@@ -5,8 +5,8 @@ namespace dns
 {
     public partial class AddEmployeeForm : Form
     {
-        private EmployeesForm parentForm;
-        private string action;
+        private readonly EmployeesForm parentForm;
+        private readonly string action;
 
         public AddEmployeeForm(EmployeesForm f, string ac)
         {
@@ -14,8 +14,6 @@ namespace dns
 
             parentForm = f;
             action = ac;
-
-            progressBar1.Maximum = 100;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -70,8 +68,10 @@ namespace dns
                     QueriesClass.ApplyQuery_ReturnNone(parentForm.myConnection, query);
                     break;
             }
+
             FillProgressBar();
             parentForm.TableRefresh();
+
             this.Close();
         }
 

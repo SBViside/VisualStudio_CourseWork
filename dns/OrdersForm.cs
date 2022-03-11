@@ -41,7 +41,7 @@ namespace dns
             {
                 fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
                 MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
-                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    "поэтому размер был автоматически установлен на 14", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -80,24 +80,25 @@ namespace dns
         public void SetRefresh()
         {
             string query;
+
             switch (tabControl1.SelectedIndex)
             {
                 case 0:
                     query = "SELECT заказы.код_заказа AS [Код заказа], товары.название AS Товар, " +
                     "заказы.статус AS Статус FROM заказы " +
                     "INNER JOIN товары ON заказы.код_товара=товары.код_товара WHERE заказы.статус='активен'";
-                    TableRefresh(this.dataGridView1, query);
+                    TableRefresh(dataGridView1, query);
                     break;
                 case 1:
                     query = "SELECT заказы.код_заказа AS [Код заказа], товары.название AS Товар, " +
                     "заказы.статус AS Статус FROM заказы " +
                     "INNER JOIN товары ON заказы.код_товара=товары.код_товара WHERE заказы.статус='выполнен'";
-                    TableRefresh(this.dataGridView2, query);
+                    TableRefresh(dataGridView2, query);
                     break;
                 case 2:
                     query = "SELECT заказы.код_заказа AS [Код заказа], товары.название AS Товар, " +
                     "заказы.статус AS Статус FROM заказы INNER JOIN товары ON заказы.код_товара=товары.код_товара";
-                    TableRefresh(this.dataGridView3, query);
+                    TableRefresh(dataGridView3, query);
                     break;
             }
         }
@@ -109,8 +110,6 @@ namespace dns
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sizeLabel.Text = "30";
-            heightBar.Value = 30;
             SetRefresh();
         }
 
@@ -190,7 +189,7 @@ namespace dns
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            // Окно подтверждения
+
             if (MessageBox.Show("Вы действительно хотите удалить заказ?", "Подтверждение действия",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
@@ -202,9 +201,12 @@ namespace dns
 
         private void setStatusButton_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = CurrentTable;
-            string query = $"UPDATE заказы SET статус='выполнен' WHERE код_заказа={dgv.CurrentRow.Cells[0].Value}";
+            if (MessageBox.Show("Заказ выполнен?", "Подтверждение действия",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            string query = $"UPDATE заказы SET статус='выполнен' WHERE код_заказа={CurrentTable.CurrentRow.Cells[0].Value}";
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
+
             SetRefresh();
         }
 
@@ -225,9 +227,8 @@ namespace dns
 
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = CurrentTable;
-            dgv.ClearSelection();
-            SearchForm sf = new SearchForm(dgv);
+            CurrentTable.ClearSelection();
+            SearchForm sf = new SearchForm(CurrentTable);
             sf.ShowDialog();
         }
 
@@ -244,7 +245,6 @@ namespace dns
 
             myConnection.Open();
             SetRefresh();
-
         }
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)

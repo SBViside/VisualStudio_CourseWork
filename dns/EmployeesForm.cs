@@ -132,7 +132,7 @@ namespace dns
             {
                 fontDialog1.Font = new Font(fontDialog1.Font.FontFamily, 14);
                 MessageBox.Show("Вы выбрали слишком большой размер шрифта, " +
-                    "поэтому размер был автоматически установлен на 14.", "Внимание",
+                    "поэтому размер был автоматически установлен на 14", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -142,6 +142,7 @@ namespace dns
         private void цветВыделенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.Cancel) return;
+
             dataGridView1.DefaultCellStyle.SelectionBackColor = colorDialog1.Color;
             dataGridView1.GridColor = colorDialog1.Color;
         }
@@ -149,6 +150,7 @@ namespace dns
         private void посикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
+
             SearchForm sf = new SearchForm(dataGridView1);
             sf.ShowDialog();
         }

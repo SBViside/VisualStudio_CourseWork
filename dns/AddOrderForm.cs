@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -27,8 +20,6 @@ namespace dns
             UpdateClients();
             UpdateItems();
             deliveryComboBox.SelectedIndex = 0;
-
-            progressBar1.Maximum = 100;
         }
 
         private void UpdateClients()
@@ -63,6 +54,7 @@ namespace dns
 
             MessageBox.Show("Клиент добавлен!", "Операция успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);
             UpdateClients();
+
             clientComboBox.SelectedIndex = clientComboBox.Items.Count - 1;
         }
 
@@ -78,7 +70,7 @@ namespace dns
                 countTextBox.Value < 1 ||
                 deliveryComboBox.SelectedIndex < 0)
             {
-                MessageBox.Show("Введенные данные некорректны", "Действие невозможно",
+                MessageBox.Show("Проверьте введенные данные", "Действие невозможно",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -114,11 +106,6 @@ namespace dns
                 System.Threading.Thread.Sleep(10);
                 progressBar1.Value = i;
             }
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            //this.Close();
         }
     }
 }

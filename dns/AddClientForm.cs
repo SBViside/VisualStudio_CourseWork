@@ -6,8 +6,8 @@ namespace dns
 {
     public partial class AddClientForm : Form
     {
-        private OleDbConnection myConnection;
-        private string action;
+        private readonly OleDbConnection myConnection;
+        private readonly string action;
 
         public AddClientForm(OleDbConnection con, string ac)
         {
@@ -15,11 +15,6 @@ namespace dns
 
             myConnection = con;
             action = ac;
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            //this.Close();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
