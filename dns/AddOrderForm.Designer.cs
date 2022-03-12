@@ -184,7 +184,7 @@
             // 
             this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cancelButton.Location = new System.Drawing.Point(292, 196);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -197,7 +197,7 @@
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.OliveDrab;
-            this.submitButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.submitButton.Location = new System.Drawing.Point(181, 196);
             this.submitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

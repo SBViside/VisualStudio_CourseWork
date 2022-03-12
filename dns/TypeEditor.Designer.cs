@@ -66,7 +66,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.IndianRed;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(9, 411);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -82,7 +82,7 @@
             this.groupBox2.Controls.Add(this.refreshButton);
             this.groupBox2.Controls.Add(this.searchText);
             this.groupBox2.Controls.Add(this.searchButton);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(9, 156);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -107,11 +107,11 @@
             // 
             // searchText
             // 
-            this.searchText.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchText.Location = new System.Drawing.Point(9, 38);
             this.searchText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(161, 24);
+            this.searchText.Size = new System.Drawing.Size(161, 22);
             this.searchText.TabIndex = 0;
             // 
             // searchButton
@@ -125,7 +125,6 @@
             this.searchButton.Size = new System.Drawing.Size(93, 30);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Поиск";
-            this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
@@ -134,7 +133,7 @@
             this.groupBox1.Controls.Add(this.typeName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.addButton);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(9, 5);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -146,20 +145,20 @@
             // 
             // typeName
             // 
-            this.typeName.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeName.Location = new System.Drawing.Point(11, 52);
             this.typeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeName.Name = "typeName";
-            this.typeName.Size = new System.Drawing.Size(159, 24);
+            this.typeName.Size = new System.Drawing.Size(159, 22);
             this.typeName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(9, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Название:";
             // 
@@ -174,7 +173,6 @@
             this.addButton.Size = new System.Drawing.Size(163, 30);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Добавить";
-            this.addButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.button3_Click);
             // 

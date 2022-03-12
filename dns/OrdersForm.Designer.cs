@@ -45,6 +45,7 @@
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.шрифтТаблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +101,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.экспортВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heightBar)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -120,13 +120,12 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.sizeLabel);
             this.panel1.Controls.Add(this.heightBar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -162,10 +161,10 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(93, 22);
+            this.label1.Location = new System.Drawing.Point(90, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 23);
             this.label1.TabIndex = 2;
@@ -174,18 +173,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(3, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 50);
+            this.label6.Size = new System.Drawing.Size(100, 45);
             this.label6.TabIndex = 1;
             this.label6.Text = "DNS";
             // 
             // menuStrip
             // 
-            this.menuStrip.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menuStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem,
@@ -193,7 +192,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(961, 28);
+            this.menuStrip.Size = new System.Drawing.Size(961, 30);
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -204,7 +203,7 @@
             this.экспортВExcelToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.настройкиToolStripMenuItem.Text = "Главная";
             // 
             // настройкиToolStripMenuItem1
@@ -212,21 +211,28 @@
             this.настройкиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.шрифтТаблицыToolStripMenuItem});
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(190, 26);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // шрифтТаблицыToolStripMenuItem
             // 
             this.шрифтТаблицыToolStripMenuItem.Name = "шрифтТаблицыToolStripMenuItem";
-            this.шрифтТаблицыToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.шрифтТаблицыToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.шрифтТаблицыToolStripMenuItem.Text = "Шрифт таблицы";
             this.шрифтТаблицыToolStripMenuItem.Click += new System.EventHandler(this.шрифтТаблицыToolStripMenuItem_Click);
+            // 
+            // экспортВExcelToolStripMenuItem
+            // 
+            this.экспортВExcelToolStripMenuItem.Name = "экспортВExcelToolStripMenuItem";
+            this.экспортВExcelToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.экспортВExcelToolStripMenuItem.Text = "Экспорт в Excel";
+            this.экспортВExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортВExcelToolStripMenuItem_Click);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.закрытьToolStripMenuItem.Text = "Выход";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -238,14 +244,14 @@
             this.обновитьToolStripMenuItem,
             this.посикToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
-            this.действияToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.действияToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.действияToolStripMenuItem.Text = "Действия";
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             this.добавитьToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
@@ -253,7 +259,7 @@
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.bindingNavigatorDelete_Click);
             // 
@@ -261,7 +267,7 @@
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
             this.обновитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.refreshButton_Click);
             // 
@@ -269,7 +275,7 @@
             // 
             this.посикToolStripMenuItem.Name = "посикToolStripMenuItem";
             this.посикToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.посикToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.посикToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.посикToolStripMenuItem.Text = "Поиск";
             this.посикToolStripMenuItem.Click += new System.EventHandler(this.посикToolStripMenuItem_Click);
             // 
@@ -295,7 +301,7 @@
             // setStatusButton
             // 
             this.setStatusButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.setStatusButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.setStatusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.setStatusButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.setStatusButton.Location = new System.Drawing.Point(11, 561);
             this.setStatusButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -309,7 +315,7 @@
             // 
             // statusLabel
             // 
-            this.statusLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.statusLabel.Location = new System.Drawing.Point(123, 478);
             this.statusLabel.Name = "statusLabel";
@@ -322,10 +328,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.Location = new System.Drawing.Point(13, 480);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 23);
+            this.label16.Size = new System.Drawing.Size(73, 20);
             this.label16.TabIndex = 10;
             this.label16.Text = "Статус:";
             // 
@@ -339,7 +345,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(11, 298);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -351,7 +357,7 @@
             // 
             // deliveryLabel
             // 
-            this.deliveryLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deliveryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deliveryLabel.Location = new System.Drawing.Point(117, 90);
             this.deliveryLabel.Name = "deliveryLabel";
             this.deliveryLabel.Size = new System.Drawing.Size(147, 18);
@@ -361,16 +367,16 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(20, 90);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 19);
+            this.label14.Size = new System.Drawing.Size(72, 16);
             this.label14.TabIndex = 8;
             this.label14.Text = "Доставка:";
             // 
             // priceLabel
             // 
-            this.priceLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.Location = new System.Drawing.Point(127, 138);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(144, 20);
@@ -380,7 +386,7 @@
             // 
             // countLabel
             // 
-            this.countLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.countLabel.Location = new System.Drawing.Point(117, 62);
             this.countLabel.Name = "countLabel";
             this.countLabel.Size = new System.Drawing.Size(147, 18);
@@ -389,7 +395,7 @@
             // 
             // productLabel
             // 
-            this.productLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.productLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.productLabel.Location = new System.Drawing.Point(117, 31);
             this.productLabel.Name = "productLabel";
             this.productLabel.Size = new System.Drawing.Size(147, 18);
@@ -399,30 +405,30 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(19, 137);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 24);
+            this.label11.Size = new System.Drawing.Size(69, 20);
             this.label11.TabIndex = 3;
             this.label11.Text = "Итого:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(20, 60);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 19);
+            this.label12.Size = new System.Drawing.Size(88, 16);
             this.label12.TabIndex = 2;
             this.label12.Text = "Количество:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(20, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 19);
+            this.label13.Size = new System.Drawing.Size(84, 16);
             this.label13.TabIndex = 1;
             this.label13.Text = "Код товара:";
             // 
@@ -436,7 +442,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(11, 6);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -449,7 +455,7 @@
             // addressLabel
             // 
             this.addressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addressLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addressLabel.Location = new System.Drawing.Point(19, 155);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(245, 116);
@@ -458,7 +464,7 @@
             // 
             // patronymicLabel
             // 
-            this.patronymicLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.patronymicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.patronymicLabel.Location = new System.Drawing.Point(103, 90);
             this.patronymicLabel.Name = "patronymicLabel";
             this.patronymicLabel.Size = new System.Drawing.Size(161, 18);
@@ -467,7 +473,7 @@
             // 
             // nameLabel
             // 
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameLabel.Location = new System.Drawing.Point(103, 60);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(161, 18);
@@ -476,7 +482,7 @@
             // 
             // surnameLabel
             // 
-            this.surnameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.surnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.surnameLabel.Location = new System.Drawing.Point(103, 30);
             this.surnameLabel.Name = "surnameLabel";
             this.surnameLabel.Size = new System.Drawing.Size(161, 18);
@@ -486,40 +492,40 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(20, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 19);
+            this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Адрес:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(20, 60);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.Size = new System.Drawing.Size(36, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Имя:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(20, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 19);
+            this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Фамилия:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(20, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 19);
+            this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Отчество:";
             // 
@@ -533,7 +539,7 @@
             this.bindingNavigator.CountItem = null;
             this.bindingNavigator.DeleteItem = null;
             this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bindingNavigator.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -584,7 +590,7 @@
             this.bindingNavigatorDelete.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDelete.Image")));
             this.bindingNavigatorDelete.Name = "bindingNavigatorDelete";
             this.bindingNavigatorDelete.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDelete.Size = new System.Drawing.Size(102, 46);
+            this.bindingNavigatorDelete.Size = new System.Drawing.Size(98, 46);
             this.bindingNavigatorDelete.Text = "Удалить";
             this.bindingNavigatorDelete.Click += new System.EventHandler(this.bindingNavigatorDelete_Click);
             // 
@@ -598,7 +604,7 @@
             this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(119, 46);
+            this.refreshButton.Size = new System.Drawing.Size(110, 46);
             this.refreshButton.Text = "Обновить";
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
@@ -621,7 +627,7 @@
             this.tabControl1.Controls.Add(this.currentTabPage);
             this.tabControl1.Controls.Add(this.completedTabPage);
             this.tabControl1.Controls.Add(this.allTabPage);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(11, 87);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -634,11 +640,11 @@
             // currentTabPage
             // 
             this.currentTabPage.Controls.Add(this.dataGridView1);
-            this.currentTabPage.Location = new System.Drawing.Point(4, 28);
+            this.currentTabPage.Location = new System.Drawing.Point(4, 25);
             this.currentTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.currentTabPage.Name = "currentTabPage";
             this.currentTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.currentTabPage.Size = new System.Drawing.Size(635, 580);
+            this.currentTabPage.Size = new System.Drawing.Size(635, 583);
             this.currentTabPage.TabIndex = 0;
             this.currentTabPage.Text = "Текущие";
             this.currentTabPage.UseVisualStyleBackColor = true;
@@ -656,7 +662,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -671,7 +677,7 @@
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -690,7 +696,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 576);
+            this.dataGridView1.Size = new System.Drawing.Size(629, 579);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
@@ -724,11 +730,11 @@
             // completedTabPage
             // 
             this.completedTabPage.Controls.Add(this.dataGridView2);
-            this.completedTabPage.Location = new System.Drawing.Point(4, 28);
+            this.completedTabPage.Location = new System.Drawing.Point(4, 25);
             this.completedTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.completedTabPage.Name = "completedTabPage";
             this.completedTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.completedTabPage.Size = new System.Drawing.Size(635, 580);
+            this.completedTabPage.Size = new System.Drawing.Size(635, 583);
             this.completedTabPage.TabIndex = 1;
             this.completedTabPage.Text = "Выполненные";
             this.completedTabPage.UseVisualStyleBackColor = true;
@@ -746,7 +752,7 @@
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -761,7 +767,7 @@
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -780,7 +786,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(629, 576);
+            this.dataGridView2.Size = new System.Drawing.Size(629, 579);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
@@ -814,11 +820,11 @@
             // allTabPage
             // 
             this.allTabPage.Controls.Add(this.dataGridView3);
-            this.allTabPage.Location = new System.Drawing.Point(4, 28);
+            this.allTabPage.Location = new System.Drawing.Point(4, 25);
             this.allTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.allTabPage.Name = "allTabPage";
             this.allTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.allTabPage.Size = new System.Drawing.Size(635, 580);
+            this.allTabPage.Size = new System.Drawing.Size(635, 583);
             this.allTabPage.TabIndex = 2;
             this.allTabPage.Text = "Все заказы";
             this.allTabPage.UseVisualStyleBackColor = true;
@@ -836,7 +842,7 @@
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -851,7 +857,7 @@
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -870,7 +876,7 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(629, 576);
+            this.dataGridView3.Size = new System.Drawing.Size(629, 579);
             this.dataGridView3.TabIndex = 10;
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
@@ -912,13 +918,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(961, 3);
             this.panel3.TabIndex = 13;
-            // 
-            // экспортВExcelToolStripMenuItem
-            // 
-            this.экспортВExcelToolStripMenuItem.Name = "экспортВExcelToolStripMenuItem";
-            this.экспортВExcelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.экспортВExcelToolStripMenuItem.Text = "Экспорт в Excel";
-            this.экспортВExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортВExcelToolStripMenuItem_Click);
             // 
             // OrdersForm
             // 

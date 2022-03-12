@@ -122,7 +122,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="loginTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="loginTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 32</value>
@@ -132,7 +132,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="loginTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 27</value>
+    <value>343, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loginTextBox.TabIndex" type="System.Int32, mscorlib">
@@ -1544,16 +1544,16 @@
     <value>True</value>
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10.2pt, style=Bold</value>
+    <value>Tahoma, 10.2pt, style=Bold</value>
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 44</value>
+    <value>141, 44</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 24</value>
+    <value>141, 21</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1577,16 +1577,16 @@
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10.2pt, style=Bold</value>
+    <value>Tahoma, 10.2pt, style=Bold</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 26</value>
+    <value>141, 26</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 24</value>
+    <value>96, 21</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1610,7 +1610,7 @@
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 36pt, style=Bold</value>
+    <value>Tahoma, 36pt, style=Bold</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1619,7 +1619,7 @@
     <value>1, -1</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 80</value>
+    <value>159, 72</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1649,7 +1649,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>583, 78</value>
+    <value>583, 74</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2079,7 +2079,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="LabelWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 12</value>
+    <value>141, 13</value>
   </data>
   <data name="LabelWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 18</value>
@@ -2112,10 +2112,10 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 24</value>
+    <value>3, 23</value>
   </data>
   <data name="LabelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 295</value>
+    <value>194, 296</value>
   </data>
   <data name="LabelDescription.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2136,7 +2136,7 @@
     <value>0</value>
   </data>
   <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10.2pt</value>
+    <value>Tahoma, 10.2pt</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 21</value>
@@ -2175,13 +2175,13 @@
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 78</value>
+    <value>0, 74</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>583, 356</value>
+    <value>583, 350</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2202,7 +2202,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>583, 434</value>
+    <value>583, 424</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
