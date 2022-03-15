@@ -9,6 +9,8 @@ namespace dns
         const string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=shopBD.mdb";
         public OleDbConnection myConnection;
 
+        private bool isSucessful = false;
+
         public AddOrderForm()
         {
             InitializeComponent();
@@ -49,7 +51,9 @@ namespace dns
         private void addClientButton_Click(object sender, EventArgs e)
         {
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
-            if (addClientForm.ShowDialog() == DialogResult.No)
+
+            DialogResult result = addClientForm.ShowDialog();
+            if (result == DialogResult.Abort || result == DialogResult.No)
                 return;
 
             MessageBox.Show("Клиент добавлен!", "Операция успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,6 +99,8 @@ namespace dns
             QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
 
             FillProgressBar();
+
+            isSucessful = true;
             this.Close();
         }
 
@@ -106,6 +112,12 @@ namespace dns
                 System.Threading.Thread.Sleep(10);
                 progressBar1.Value = i;
             }
+        }
+
+        private void AddOrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isSucessful) this.DialogResult = DialogResult.OK;
+            else this.DialogResult = DialogResult.No;
         }
     }
 }

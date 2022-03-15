@@ -233,6 +233,7 @@
             this.Name = "AddOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Оформление заказа";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddOrderForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddOrderForm_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -9,6 +9,8 @@ namespace dns
         private readonly OleDbConnection myConnection;
         private readonly string action;
 
+        private bool isSucessful = false;
+
         public AddClientForm(OleDbConnection con, string ac)
         {
             InitializeComponent();
@@ -60,7 +62,14 @@ namespace dns
                     QueriesClass.ApplyQuery_ReturnNone(myConnection, query);
                     break;
             }
+            isSucessful = true;
             this.Close();
+        }
+
+        private void AddClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isSucessful) this.DialogResult = DialogResult.OK;
+            else this.DialogResult = DialogResult.No;
         }
     }
 }

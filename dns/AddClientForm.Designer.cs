@@ -267,6 +267,7 @@
             this.Name = "AddClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ввод данных о клиенте";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddClientForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

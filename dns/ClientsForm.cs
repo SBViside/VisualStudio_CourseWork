@@ -170,6 +170,8 @@ namespace dns
             if (result == DialogResult.No || result == DialogResult.Abort) return;
 
             TableRefresh();
+
+            MessageBox.Show("Изменено успешно", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void шрифтТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
