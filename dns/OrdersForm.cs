@@ -238,7 +238,9 @@ namespace dns
             myConnection.Close();
 
             AddOrderForm addOrderForm = new AddOrderForm();
-            if (addOrderForm.ShowDialog() == DialogResult.No)
+
+            DialogResult result = addOrderForm.ShowDialog();
+            if (result == DialogResult.No || result == DialogResult.Abort)
             {
                 myConnection.Open();
                 return;

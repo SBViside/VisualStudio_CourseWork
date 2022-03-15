@@ -96,7 +96,9 @@ namespace dns
             dataGridView1.ClearSelection();
 
             AddClientForm addClientForm = new AddClientForm(myConnection, "adding");
-            if (addClientForm.ShowDialog() == DialogResult.No) return;
+
+            DialogResult result = addClientForm.ShowDialog();
+            if (result == DialogResult.No || result == DialogResult.Abort) return;
 
             TableRefresh();
         }
@@ -164,7 +166,8 @@ namespace dns
             addClientForm.phoneTextBox.Text = currentRow.Cells[5].Value.ToString();
             addClientForm.emailTextBox.Text = currentRow.Cells[6].Value.ToString();
 
-            if (addClientForm.ShowDialog() == DialogResult.No) return;
+            DialogResult result = addClientForm.ShowDialog();
+            if (result == DialogResult.No || result == DialogResult.Abort) return;
 
             TableRefresh();
         }

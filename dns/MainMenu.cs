@@ -6,6 +6,20 @@ namespace dns
 {
     public partial class MainMenu : Form
     {
+        private string[] descriptions = new string[]
+        {
+            "Наведите указатель мыши на нужную вам кнопку.",
+
+            "База данных 'Товары' (электронная техника) содержит информацию о продаваемых товарах, о категориях продаваемых товаров, количестве и цене за единицу товара.",
+            
+            "База данных 'Клиенты' содержит информацию о клиентах, которые хотя бы раз совершали покупку в нашем магазине. Мы записываем ФИО, дату рождения, " +
+                "телефон (или E-mail, для уведомления о скидках) и адрес клиента. Адрес нужен для курьера, который осуществляет доставку.",
+
+            "База данных 'Заказы' содержит информацию о заказах наших клиентов. Вы можете просматривать активные заказы, а также заказы, которые уже выполнены.",
+
+            "База данных 'Сотрудники' содержит информацию о сотрудниках, которые работают в нашем магазине, их ФИО, адреса, контакты, должности и остальную важную для нас информация."
+        };
+
         public MainMenu()
         {
             InitializeComponent();
@@ -28,7 +42,9 @@ namespace dns
         private void itemsButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+
             ItemsForm itemsForm = new ItemsForm(loginTextBox.Text);
+
             this.Hide();
             itemsForm.ShowDialog();
             this.Show();
@@ -37,7 +53,9 @@ namespace dns
         private void clientsButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+
             ClientsForm clientsForm = new ClientsForm(loginTextBox.Text);
+
             this.Hide();
             clientsForm.ShowDialog();
             this.Show();
@@ -46,7 +64,9 @@ namespace dns
         private void ordersButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+
             OrdersForm ordersForm = new OrdersForm(loginTextBox.Text);
+
             this.Hide();
             ordersForm.ShowDialog();
             this.Show();
@@ -55,7 +75,9 @@ namespace dns
         private void employeesButton_Click(object sender, EventArgs e)
         {
             if (!CheckLogin()) return;
+
             EmployeesForm employeesForm = new EmployeesForm(loginTextBox.Text);
+
             this.Hide();
             employeesForm.ShowDialog();
             this.Show();
@@ -63,7 +85,7 @@ namespace dns
 
         private void RestoreDescription()
         {
-            string desc = "Наведите указатель мыши на нужную вам кнопку.";
+            string desc = descriptions[0];
             LabelDescription.Text = desc;
         }
 
@@ -74,17 +96,13 @@ namespace dns
 
         private void itemsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Товары' (электронная техника) содержит информацию о " +
-                "продаваемых товарах, о категориях продаваемых товаров, количестве и цене за единицу товара.";
+            string desc = descriptions[1];
             LabelDescription.Text = desc;
         }
 
         private void clientsButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Клиенты' содержит информацию о клиентах, которые " +
-                "хотя бы раз совершали покупку в нашем магазине. Мы записываем ФИО, дату рождения, " +
-                "телефон (или E-mail, для уведомления о скидках) и адрес клиента. Адрес нужен для курьера, " +
-                "который осуществляет доставку.";
+            string desc = descriptions[2];
             LabelDescription.Text = desc;
         }
 
@@ -95,8 +113,7 @@ namespace dns
 
         private void ordersButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Заказы' содержит информацию о заказах наших клиентов. Вы можете " +
-                "просматривать активные заказы, а также заказы, которые уже выполнены.";
+            string desc = descriptions[3];
             LabelDescription.Text = desc;
         }
 
@@ -107,9 +124,7 @@ namespace dns
 
         private void employeesButton_MouseEnter(object sender, EventArgs e)
         {
-            string desc = "База данных 'Сотрудники' содержит информацию о сотрудниках, " +
-                "которые работают в нашем магазине, их ФИО, адреса, контакты, должности и остальную важную для " +
-                "нас информация.";
+            string desc = descriptions[4];
             LabelDescription.Text = desc;
         }
 
