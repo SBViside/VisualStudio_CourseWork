@@ -36,7 +36,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.refreshButton = new System.Windows.Forms.Button();
             this.searchText = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.typeName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.refreshButton);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -79,15 +79,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.refreshButton);
             this.groupBox2.Controls.Add(this.searchText);
-            this.groupBox2.Controls.Add(this.searchButton);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(9, 156);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(177, 113);
+            this.groupBox2.Size = new System.Drawing.Size(177, 74);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск по списку";
@@ -97,7 +95,7 @@
             this.refreshButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
             this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refreshButton.Location = new System.Drawing.Point(44, 69);
+            this.refreshButton.Location = new System.Drawing.Point(9, 234);
             this.refreshButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(29, 30);
@@ -113,20 +111,7 @@
             this.searchText.Name = "searchText";
             this.searchText.Size = new System.Drawing.Size(161, 22);
             this.searchText.TabIndex = 0;
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.Teal;
-            this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchButton.Location = new System.Drawing.Point(79, 69);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(93, 30);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Поиск";
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
             // 
             // groupBox1
             // 
@@ -263,7 +248,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox searchText;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

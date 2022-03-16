@@ -79,19 +79,6 @@ namespace dns
             typeName.Clear();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            if (searchText.Text.Length < 1)
-            {
-                MessageBox.Show("Строка поиска пустая", "Действие невозможно",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            ListSearch(searchText.Text);
-            searchText.Clear();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Index < 0)
@@ -134,6 +121,12 @@ namespace dns
         private void refreshButton_Click(object sender, EventArgs e)
         {
             ListRefresh();
+        }
+
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+
+            ListSearch(searchText.Text);
         }
     }
 }
