@@ -16,8 +16,7 @@ namespace dns
         {
             InitializeComponent();
 
-            // Записывает ЛОГИН в Label
-            currUserLabel.Text = "Вход выполнен: " + log;
+            this.Text = "Товары | Вход выполнен: " + log;
 
             // Подлючение к Базе данных через строку подключения
             myConnection = new OleDbConnection(connectionString);
@@ -329,7 +328,7 @@ namespace dns
         private void ExportToExcel()
         {
             try
-            { 
+            {
                 Excel.Application exApp = new Excel.Application();
                 exApp.Visible = true;
                 exApp.Workbooks.Add();
@@ -351,6 +350,27 @@ namespace dns
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchString_TextChanged(object sender, EventArgs e)
+        {
+            if (searchString.Text.Length < 1)
+            {
+                dataGridView1.ClearSelection();
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                string concat = "";
+                foreach (DataGridViewCell cell in row.Cells) concat += cell.Value.ToString();
+                concat = concat.ToLower();
+                if (concat.Contains(searchString.Text.ToLower()))
+                {
+                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                    row.Selected = true;
+                }
             }
         }
     }

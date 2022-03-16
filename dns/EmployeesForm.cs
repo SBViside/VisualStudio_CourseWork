@@ -14,7 +14,8 @@ namespace dns
         public EmployeesForm(string log)
         {
             InitializeComponent();
-            currUserLabel.Text = "Вход выполнен: " + log;
+
+            this.Text = "Сотрудники | Вход выполнен: " + log;
 
             // Подлючение к БД
             myConnection = new OleDbConnection(connectionString);
@@ -279,6 +280,27 @@ namespace dns
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchString_TextChanged(object sender, EventArgs e)
+        {
+            if (searchString.Text.Length < 1)
+            {
+                dataGridView1.ClearSelection();
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                string concat = "";
+                foreach (DataGridViewCell cell in row.Cells) concat += cell.Value.ToString();
+                concat = concat.ToLower();
+                if (concat.Contains(searchString.Text.ToLower()))
+                {
+                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                    row.Selected = true;
+                }
             }
         }
     }

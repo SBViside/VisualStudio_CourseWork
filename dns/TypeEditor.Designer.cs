@@ -32,9 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.searchText = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.typeName = new System.Windows.Forms.TextBox();
@@ -51,7 +51,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.refreshButton);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -61,6 +60,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 460);
             this.panel1.TabIndex = 1;
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
+            this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.refreshButton.Location = new System.Drawing.Point(11, 82);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(29, 30);
+            this.refreshButton.TabIndex = 7;
+            this.refreshButton.UseVisualStyleBackColor = false;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // button1
             // 
@@ -90,19 +102,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск по списку";
             // 
-            // refreshButton
-            // 
-            this.refreshButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
-            this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refreshButton.Location = new System.Drawing.Point(9, 234);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(29, 30);
-            this.refreshButton.TabIndex = 7;
-            this.refreshButton.UseVisualStyleBackColor = false;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
             // searchText
             // 
             this.searchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -115,6 +114,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.refreshButton);
             this.groupBox1.Controls.Add(this.typeName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.addButton);
@@ -152,10 +152,10 @@
             this.addButton.BackColor = System.Drawing.Color.OliveDrab;
             this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.addButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addButton.Location = new System.Drawing.Point(9, 82);
+            this.addButton.Location = new System.Drawing.Point(46, 82);
             this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(163, 30);
+            this.addButton.Size = new System.Drawing.Size(126, 30);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = false;

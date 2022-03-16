@@ -14,7 +14,8 @@ namespace dns
         public OrdersForm(string log)
         {
             InitializeComponent();
-            currUserLabel.Text = "Вход выполнен: " + log;
+
+            this.Text = "Заказы | Вход выполнен: " + log;
 
             // Подлючение к БД
             myConnection = new OleDbConnection(connectionString);
@@ -257,7 +258,7 @@ namespace dns
                 ClearLabels();
                 return;
             }
-            GetInfo(CurrentTable.CurrentRow);
+            GetInfo(CurrentTable.SelectedRows[0]);
         }
 
         private void heightBar_Scroll(object sender, EventArgs e)
@@ -299,6 +300,29 @@ namespace dns
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchString_TextChanged(object sender, EventArgs e)
+        {
+            if (searchString.Text.Length < 1)
+            {
+                CurrentTable.ClearSelection();
+                return;
+            }
+
+            foreach (DataGridViewRow row in CurrentTable.Rows)
+            {
+                string concat = "";
+                foreach (DataGridViewCell cell in row.Cells) concat += cell.Value.ToString();
+                concat = concat.ToLower();
+                if (concat.Contains(searchString.Text.ToLower()))
+                {
+
+                    CurrentTable.FirstDisplayedScrollingRowIndex = row.Index;
+                    CurrentTable.ClearSelection();
+                    row.Selected = true;
+                }
             }
         }
     }
