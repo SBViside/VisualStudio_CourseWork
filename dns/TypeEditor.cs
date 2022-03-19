@@ -42,6 +42,12 @@ namespace dns
 
         private void ListSearch(string keyWord)
         {
+            if (keyWord.Length < 1)
+            {
+                dataGridView1.ClearSelection();
+                return;
+            }
+
             keyWord = keyWord.ToLower();
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -49,6 +55,7 @@ namespace dns
                 string currentWord = dataGridView1.Rows[i].Cells[0].Value.ToString().ToLower();
                 if (currentWord.Contains(keyWord))
                 {
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;
                     dataGridView1.Rows[i].Selected = true;
                     return;
                 }
@@ -125,7 +132,6 @@ namespace dns
 
         private void searchText_TextChanged(object sender, EventArgs e)
         {
-
             ListSearch(searchText.Text);
         }
     }
