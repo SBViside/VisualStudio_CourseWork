@@ -284,16 +284,34 @@ namespace dns
                 exApp.Workbooks.Add();
                 Excel.Worksheet workSheet = exApp.ActiveSheet;
 
+
+                switch(tabControl1.SelectedIndex)
+                {
+                    case 0:
+                        workSheet.Cells[1, 1] = "Список активных заказов";
+                        break;
+                    case 1:
+                        workSheet.Cells[1, 1] = "Список выполненных заказов";
+                        break;
+                    case 2:
+                        workSheet.Cells[1, 1] = "Список всех заказов";
+                        break;
+                }
+
+                workSheet.Range["A1", "C1"].Merge();
+                workSheet.Range["A1", "A1"].HorizontalAlignment = Excel.Constants.xlCenter;
+                workSheet.Range["A1", "A1"].Font.Size = 14;
+
                 for (int i = 0; i < CurrentTable.Columns.Count; i++)
                 {
-                    workSheet.Cells[1, i + 1] = CurrentTable.Columns[i].HeaderText;
+                    workSheet.Cells[2, i + 1] = CurrentTable.Columns[i].HeaderText;
 
                     for (int j = 0; j < CurrentTable.Rows.Count; j++)
                     {
-                        workSheet.Cells[j + 2, i + 1] = CurrentTable.Rows[j].Cells[i].Value.ToString();
+                        workSheet.Cells[j + 3, i + 1] = CurrentTable.Rows[j].Cells[i].Value.ToString();
                     }
                 }
-                workSheet.Range["A1", "C1"].Font.Bold = true;
+                workSheet.Range["A2", "C2"].Font.Bold = true;
                 workSheet.UsedRange.Borders.Weight = 2;
                 exApp.Columns.AutoFit();
             }

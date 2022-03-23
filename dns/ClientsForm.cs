@@ -215,16 +215,21 @@ namespace dns
                 exApp.Workbooks.Add();
                 Excel.Worksheet workSheet = exApp.ActiveSheet;
 
+                workSheet.Cells[1, 1] = "Список клиентов магазина";
+                workSheet.Range["A1", "G1"].Merge();
+                workSheet.Range["A1", "A1"].HorizontalAlignment = Excel.Constants.xlCenter;
+                workSheet.Range["A1", "A1"].Font.Size = 14;
+
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
                 {
-                    workSheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                    workSheet.Cells[2, i + 1] = dataGridView1.Columns[i].HeaderText;
 
                     for (int j = 0; j < dataGridView1.Rows.Count; j++)
                     {
-                        workSheet.Cells[j + 2, i + 1] = dataGridView1.Rows[j].Cells[i].Value.ToString();
+                        workSheet.Cells[j + 3, i + 1] = dataGridView1.Rows[j].Cells[i].Value.ToString();
                     }
                 }
-                workSheet.Range["A1", "G1"].Font.Bold = true;
+                workSheet.Range["A2", "G2"].Font.Bold = true;
                 workSheet.UsedRange.Borders.Weight = 2;
                 exApp.Columns.AutoFit();
             }
